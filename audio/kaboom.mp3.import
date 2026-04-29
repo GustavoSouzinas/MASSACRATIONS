@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/kaboom.mp3-0cf85217f3de9f0be362fdf77c5fbce5.m
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

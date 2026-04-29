@@ -1,122 +1,176 @@
 extends CharacterBody3D
 
+# --- NÓS ---
 @onready var camera = $vision
 @onready var gun_stream = $gun_audio
 @onready var walk_stream = $walk_audio
+@onready var dano_stream = $dano
 
-var mouse_relative_x = 0.0
-var mouse_relative_y = 0.0
+var vida = 100:
+	set(valor):
+		vida = clamp(valor, 0, 100)
+		vida_alterada.emit(vida)
+		if vida <= 0 and not morto:
+			morrer()
+
+var aura = 1000
+var morto = false
+
+# --- SINAIS ---
+signal vida_alterada(valor)
+signal aura_alterada(valor)
+
+# --- MOVIMENTAÇÃO ---
+var SPEED = 17
+const ACCEL = 0.75
+const JUMP_VELOCITY = 4.5
 var camera_rot_x = 0.0
 
+# --- RECURSOS ---
 var savubu_prop = preload("res://assets/scenes/savubu/savubu_prop.tscn")
-
-var SPEED = 17
-const ACCEL = .75
-const JUMP_VELOCITY = 4.5
-
 var step1 = preload("res://assets/audios/step1.mp3")
-var crowbar = preload("res://assets/audios/hl_crowbar.mp3")	
+var crowbar = preload("res://assets/audios/hl_crowbar.mp3")
+var sound_dead = preload("res://assets/scenes/player/audio/dead.mp3")
 
+# --- EFEITOS (Shake e Passos) ---
 var step_timer = 0.0
 var shake_intensity = 0.0
-
-func vision_shake(forca: float):
-	shake_intensity = forca 
+var shake_decay = 5.0
 
 func _ready():
 	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	vida_alterada.emit(vida)
+	aura_alterada.emit(aura)
+
+func _input(event):
+	# Se estiver morto, ignora qualquer comando de ação/movimento
+	if morto: return
+
+	# Alternar Mouse (ESC)
+	if event is InputEventKey and event.keycode == KEY_ESCAPE and event.pressed:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	# Correr/Agachar (Shift)
+	if event is InputEventKey and event.keycode == KEY_SHIFT:
+		SPEED = (17.0 / 3.0) if event.pressed and is_on_floor() else 17.0
+
+	# Atirar/Gerar Objeto (Clique Esquerdo)
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			play_audio(gun_stream, crowbar)
+			gerar_personagem()
+
+	# Movimento da Câmera
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(event.relative.x * -0.002)
+		camera_rot_x -= event.relative.y * 0.002
+		camera_rot_x = clamp(camera_rot_x, -deg_to_rad(85), deg_to_rad(85))
+		camera.rotation.x = camera_rot_x
+
+func _process(delta: float) -> void:
+	# Sistema de Shake
+	if shake_intensity > 0:
+		camera.h_offset = randf_range(-1.0, 1.0) * shake_intensity
+		camera.v_offset = randf_range(-1.0, 1.0) * shake_intensity
+		camera.rotation.z = randf_range(-0.05, 0.05) * shake_intensity
+		shake_intensity = move_toward(shake_intensity, 0.0, delta * shake_decay)
+	elif not morto:
+		camera.h_offset = 0
+		camera.v_offset = 0
+		camera.rotation.z = 0
+
+	# Som de passos (apenas se vivo e no chão)
+	if not morto and is_on_floor() and velocity.length() > 0.1:
+		step_timer -= delta
+		if step_timer <= 0:
+			play_audio(walk_stream, step1)
+			step_timer = 0.3
+	else:
+		step_timer = 0
+
+func _physics_process(delta: float) -> void:
+	# Gravidade constante
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Se estiver morto, apenas processa a gravidade e para
+	if morto:
+		velocity.x = move_toward(velocity.x, 0, 0.5)
+		velocity.z = move_toward(velocity.z, 0, 0.5)
+		move_and_slide()
+		return
+
+	# Pulo
+	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Direção de Movimento
+	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	# Fallback para WASD caso as setas não estejam mapeadas
+	if input_dir == Vector2.ZERO:
+		input_dir = Vector2(
+			float(Input.is_key_pressed(KEY_D)) - float(Input.is_key_pressed(KEY_A)),
+			float(Input.is_key_pressed(KEY_S)) - float(Input.is_key_pressed(KEY_W))
+		)
+	
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	if direction:
+		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCEL)
+		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCEL)
+	else:
+		velocity.x = move_toward(velocity.x, 0, 0.7)
+		velocity.z = move_toward(velocity.z, 0, 0.7)
+
+	move_and_slide()
+
+# --- FUNÇÕES DE APOIO ---
+
+func tomar_dano(quantidade):
+	if morto: return
+	vida -= quantidade # O 'set' da variável vida cuida do resto
+	
+	if dano_stream:
+		dano_stream.pitch_scale = randf_range(0.9, 1.1)
+		dano_stream.play()
+	vision_shake(0.3, 1.0)
+
+func morrer():
+	morto = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if dano_stream:
+		dano_stream.stream = sound_dead
+		dano_stream.pitch_scale = 1.0 # Resetar o pitch para o som sair normal
+		dano_stream.play()
+	
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(camera, "rotation:z", deg_to_rad(45), 1.0).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(camera, "position:y", -1.2, 0.6).set_trans(Tween.TRANS_SINE)
+	
+	print("Morreu seu bacana!!")
+
+func vision_shake(forca: float, tempo: float = 0.5):
+	shake_intensity = forca
+	shake_decay = (forca / tempo) if tempo > 0 else 100.0
 
 func play_audio(stream: AudioStreamPlayer3D, audio: AudioStream):
 	if stream:
 		stream.stream = audio
-		stream.pitch_scale = randf_range(0.9, 1.1) 
+		stream.pitch_scale = randf_range(0.9, 1.1)
 		stream.play()
-	else:
-		return
 
 func gerar_personagem():
 	var novo_corpo = savubu_prop.instantiate()
 	get_parent().add_child(novo_corpo)
-	
-	# Define posição E rotação baseadas na câmera
 	novo_corpo.global_position = camera.global_position + (-camera.global_transform.basis.z * 1.5)
-	novo_corpo.global_rotation = camera.global_rotation # Faz o objeto "olhar" para onde você olha
+	novo_corpo.global_rotation = camera.global_rotation
 	
 	if novo_corpo is RigidBody3D:
 		var direcao_tiro = -camera.global_transform.basis.z
 		novo_corpo.apply_central_impulse(direcao_tiro * 25.0)
-		
-		# Opcional: Adiciona um torque para o objeto girar enquanto voa
 		novo_corpo.apply_torque_impulse(Vector3(randf(), randf(), randf()) * 5.0)
-func _input(event):
-	if event is InputEventKey:
-		if event.keycode == KEY_SHIFT:
-			if event.pressed and is_on_floor():
-				SPEED = 17.0 / 3.0
-			else:
-				SPEED = 17
-				
-	if event is InputEventMouseButton:
-		if event.button_index == 1 and event.pressed:
-			play_audio(gun_stream, crowbar)
-			gerar_personagem()
-				
-	if event is InputEventMouseMotion:
-		rotate_y(event.relative.x * -0.002)
-		
-		camera_rot_x -= event.relative.y * 0.002
-		camera_rot_x = clamp(camera_rot_x, -deg_to_rad(85), deg_to_rad(85)) # 85 graus é mais seguro que PI/2
-		
-		camera.rotation.x = camera_rot_x
-
-func _process(delta: float) -> void:
-	
-	if shake_intensity > 0:
-		camera.h_offset = randf_range(-1.0, 1.0) * shake_intensity
-		camera.v_offset = randf_range(-1.0, 1.0) * shake_intensity
-		
-		# Opcional: Rotaciona levemente para um efeito mais caótico
-		camera.rotation.z = randf_range(-0.05, 0.05) * shake_intensity
-		
-		shake_intensity = move_toward(shake_intensity, 0.0, delta * 5.0)
-	else:
-		# Reseta a câmera para a posição normal quando o tremor acaba
-		camera.h_offset = 0
-		camera.v_offset = 0
-		camera.rotation.z = 0
-	
-	var vel = Vector2(velocity.x, velocity.z)
-	
-	if vel.length() > 0.1 and is_on_floor():
-		step_timer -= delta
-		if step_timer <= 0:
-			play_audio(walk_stream, step1)  # ← ISSO TAVA FALTANDO!
-			step_timer = 0.3
-	else:
-		step_timer = 0  # Reseta quando para
-
-func _physics_process(delta: float) -> void:
-	# Gravidade
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
-	# Pulo
-	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	# Movimento
-	var input_dir := Vector2(
-		float(Input.is_key_pressed(KEY_D)) - float(Input.is_key_pressed(KEY_A)),
-		float(Input.is_key_pressed(KEY_S)) - float(Input.is_key_pressed(KEY_W)))
-	
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
-	if direction:
-		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCEL) 
-		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCEL) 
-	else:
-		velocity.x = move_toward(velocity.x, 0, .7)
-		velocity.z = move_toward(velocity.z, 0, .7)
-	
-	move_and_slide()

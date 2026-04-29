@@ -9,8 +9,12 @@
 [ext_resource type="Script" uid="uid://cc0diikil6gqy" path="res://animated_sprite_3d.gd" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/enemy.tscn" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://d3mj6mbffaq3n" path="res://assets/scenes/skytexture/panorama.png" id="9_efxa6"]
-[ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://spawner.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
+[ext_resource type="AudioStream" path="res://assets/scenes/player/audio/classic_hurt.mp3" id="9_w48qg"]
 [ext_resource type="PackedScene" uid="uid://lb7vqtxmx6pm" path="res://assets/scenes/city/cidade.fbx" id="11_efxa6"]
+[ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
+[ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(1.2871094, 23.946411, 0.5817871)
@@ -54,6 +58,19 @@ sky_material = SubResource("PanoramaSkyMaterial_4c57u")
 [sub_resource type="Environment" id="Environment_dg77c"]
 background_mode = 2
 sky = SubResource("Sky_efxa6")
+
+[sub_resource type="SystemFont" id="SystemFont_w48qg"]
+
+[sub_resource type="FontVariation" id="FontVariation_vivmo"]
+base_font = SubResource("SystemFont_w48qg")
+variation_embolden = 0.9
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = SubResource("FontVariation_vivmo")
+font_size = 55
+font_color = Color(0.98644596, 0, 0.21835831, 1)
+
+[sub_resource type="Theme" id="Theme_w48qg"]
 
 [node name="main" type="Node3D" unique_id=1560260624]
 
@@ -103,7 +120,7 @@ fov = 108.31018
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="player/vision" unique_id=989847990]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.02122885, -0.017131507, -0.39474684)
 sprite_frames = SubResource("SpriteFrames_272bh")
-frame_progress = 0.040591914
+frame_progress = 0.696646
 speed_scale = 0.5
 script = ExtResource("8_4c57u")
 
@@ -112,6 +129,11 @@ transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 1.782
 
 [node name="walk_audio" type="AudioStreamPlayer3D" parent="player" unique_id=269584973]
 transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 0.5942906, 0)
+
+[node name="dano" type="AudioStreamPlayer3D" parent="player" unique_id=495931999]
+stream = ExtResource("9_w48qg")
+
+[node name="dead" type="AudioStreamPlayer3D" parent="player" unique_id=1824439716]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
 environment = SubResource("Environment_dg77c")
@@ -124,7 +146,7 @@ light_indirect_energy = 1.015
 light_angular_distance = 28.51
 light_specular = 4.96
 
-[node name="Enemy" parent="." unique_id=393863426 instance=ExtResource("8_5vw27")]
+[node name="zumbi" parent="." unique_id=393863426 instance=ExtResource("8_5vw27")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -3.1368563, 1.2098339, 8.253054)
 
 [node name="Spawner2" type="Node3D" parent="." unique_id=2070155150]
@@ -136,3 +158,34 @@ enemy_scene = ExtResource("8_5vw27")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.17429, 2.7858076, 4.5247765)
 script = ExtResource("9_kek77")
 enemy_scene = ExtResource("8_5vw27")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2052648172]
+script = ExtResource("12_ycdy4")
+
+[node name="VIDA" type="Label" parent="CanvasLayer" unique_id=1080290022]
+offset_left = 429.0
+offset_top = 539.00006
+offset_right = 565.0
+offset_bottom = 615.00006
+text = "0"
+label_settings = SubResource("LabelSettings_efxa6")
+script = ExtResource("14_vivmo")
+
+[node name="Mensagem" type="Label" parent="CanvasLayer" unique_id=1184352003]
+anchors_preset = -1
+anchor_right = 0.091000006
+anchor_bottom = 0.15900001
+offset_left = 125.0
+offset_right = 937.16797
+offset_bottom = 247.96799
+theme = SubResource("Theme_w48qg")
+theme_type_variation = &"GraphNodeTitleLabel"
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LifeText" type="Sprite2D" parent="CanvasLayer" unique_id=617020098]
+texture_filter = 2
+position = Vector2(331, 613)
+scale = Vector2(0.3125, 0.3075)
+texture = ExtResource("15_vivmo")

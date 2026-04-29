@@ -53,7 +53,6 @@ func tomar_dano(quantidade):
 	if dano_stream:
 		dano_stream.pitch_scale = randf_range(0.9, 1.1)
 		dano_stream.play()
-	
 	vision_shake(0.3, 1) 
 
 func play_audio(stream: AudioStreamPlayer3D, audio: AudioStream):
@@ -79,6 +78,13 @@ func gerar_personagem():
 		# Opcional: Adiciona um torque para o objeto girar enquanto voa
 		novo_corpo.apply_torque_impulse(Vector3(randf(), randf(), randf()) * 5.0)
 func _input(event):
+	
+	if event is InputEventKey and event.keycode == KEY_ESCAPE:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
 	if event is InputEventKey:
 		if event.keycode == KEY_SHIFT:
 			if event.pressed and is_on_floor():

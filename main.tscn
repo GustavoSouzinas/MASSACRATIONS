@@ -12,8 +12,8 @@
 [ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
 [ext_resource type="AudioStream" uid="uid://c5bqiqhhdum6k" path="res://assets/scenes/player/audio/classic_hurt.mp3" id="9_w48qg"]
 [ext_resource type="PackedScene" uid="uid://lb7vqtxmx6pm" path="res://assets/scenes/city/cidade.fbx" id="11_efxa6"]
-[ext_resource type="Texture2D" uid="uid://f1pki3efiy3r" path="res://assets/scenes/player/fill.png" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(1.2871094, 23.946411, 0.5817871)
@@ -58,12 +58,18 @@ sky_material = SubResource("PanoramaSkyMaterial_4c57u")
 background_mode = 2
 sky = SubResource("Sky_efxa6")
 
-[sub_resource type="SystemFont" id="SystemFont_ycdy4"]
+[sub_resource type="SystemFont" id="SystemFont_w48qg"]
+
+[sub_resource type="FontVariation" id="FontVariation_vivmo"]
+base_font = SubResource("SystemFont_w48qg")
+variation_embolden = 0.9
 
 [sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
-font = SubResource("SystemFont_ycdy4")
-font_size = 40
+font = SubResource("FontVariation_vivmo")
+font_size = 55
 font_color = Color(0.98644596, 0, 0.21835831, 1)
+
+[sub_resource type="Theme" id="Theme_w48qg"]
 
 [node name="main" type="Node3D" unique_id=1560260624]
 
@@ -113,7 +119,7 @@ fov = 108.31018
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="player/vision" unique_id=989847990]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.02122885, -0.017131507, -0.39474684)
 sprite_frames = SubResource("SpriteFrames_272bh")
-frame_progress = 0.8139691
+frame_progress = 0.696646
 speed_scale = 0.5
 script = ExtResource("8_4c57u")
 
@@ -153,24 +159,29 @@ enemy_scene = ExtResource("8_5vw27")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2052648172]
 script = ExtResource("12_ycdy4")
 
-[node name="GUI" type="Label" parent="CanvasLayer" unique_id=106435294]
-offset_right = 522.0
-offset_bottom = 129.0
-text = "GTFH EARLY ACCESS (CETEPS ONLY)"
+[node name="VIDA" type="Label" parent="CanvasLayer" unique_id=1080290022]
+offset_left = 429.0
+offset_top = 539.00006
+offset_right = 565.0
+offset_bottom = 615.00006
+text = "0"
 label_settings = SubResource("LabelSettings_efxa6")
 
-[node name="Fill" type="Sprite2D" parent="CanvasLayer/GUI" unique_id=1510725363]
-position = Vector2(199, 476.00003)
-rotation = 1.6982054
-scale = Vector2(0.4968749, 0.5208389)
-texture = ExtResource("12_dg77c")
+[node name="Mensagem" type="Label" parent="CanvasLayer" unique_id=1184352003]
+anchors_preset = -1
+anchor_right = 0.091000006
+anchor_bottom = 0.15900001
+offset_left = 125.0
+offset_right = 937.16797
+offset_bottom = 247.96799
+theme = SubResource("Theme_w48qg")
+theme_type_variation = &"GraphNodeTitleLabel"
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/GUI" unique_id=1524738022]
-layout_mode = 0
-offset_left = 79.0
-offset_top = 466.0
-offset_right = 714.0
-offset_bottom = 648.0
-text = "LIFE
-AURA"
-label_settings = SubResource("LabelSettings_efxa6")
+[node name="LifeText" type="Sprite2D" parent="CanvasLayer" unique_id=617020098]
+texture_filter = 2
+position = Vector2(331, 613)
+scale = Vector2(0.3125, 0.3075)
+texture = ExtResource("15_vivmo")

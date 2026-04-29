@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bl6hw6e0dvte0"]
+
+[ext_resource type="PackedScene" uid="uid://51ktni173amj" path="res://assets/scenes/savubu/savubu.glb" id="1_def16"]
+[ext_resource type="Script" uid="uid://tkuijxwgm3kl" path="res://assets/scenes/savubu/savubu_prop.gd" id="2_6tkmk"]
+[ext_resource type="Script" uid="uid://bhd476l66v7a5" path="res://assets/scenes/savubu/collision.gd" id="2_nxxfu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q6rbo"]
+radius = 0.12597656
+height = 0.7426758
+
+[node name="savubu_prop" unique_id=1681170881 instance=ExtResource("1_def16")]
+script = ExtResource("2_6tkmk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=28754280]
+transform = Transform3D(2.3448944, 0, 0, 0, 0.48140603, 0, 0, 0, 1, 0, 0.2020874, 0)
+shape = SubResource("CapsuleShape3D_q6rbo")
+script = ExtResource("2_nxxfu")
+
+[node name="kaboom" type="AudioStreamPlayer3D" parent="." index="2" unique_id=345972863]

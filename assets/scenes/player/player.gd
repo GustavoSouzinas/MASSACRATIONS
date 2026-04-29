@@ -4,11 +4,17 @@ extends CharacterBody3D
 @onready var gun_stream = $gun_audio
 @onready var walk_stream = $walk_audio
 
+var vida = 100
+var aura = 1000
+
 var mouse_relative_x = 0.0
 var mouse_relative_y = 0.0
 var camera_rot_x = 0.0
 
 var savubu_prop = preload("res://assets/scenes/savubu/savubu_prop.tscn")
+
+signal vida_alterada(valor)
+signal aura_alterada(valor)
 
 var SPEED = 17
 const ACCEL = .75
@@ -26,6 +32,13 @@ func vision_shake(forca: float):
 func _ready():
 	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	vida_alterada.emit(vida)
+	aura_alterada.emit(aura)
+	
+func tomar_dano(quantidade):
+	vida -= quantidade
+	vida = clamp(vida, 0, 100) # Mantém entre 0 e 100
+	vida_alterada.emit(vida) # Avisa a UI
 
 func play_audio(stream: AudioStreamPlayer3D, audio: AudioStream):
 	if stream:

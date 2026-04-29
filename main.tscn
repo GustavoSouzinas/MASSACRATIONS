@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/enemy.tscn" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://d3mj6mbffaq3n" path="res://assets/scenes/skytexture/panorama.png" id="9_efxa6"]
 [ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
-[ext_resource type="AudioStream" uid="uid://c5bqiqhhdum6k" path="res://assets/scenes/player/audio/classic_hurt.mp3" id="9_w48qg"]
+[ext_resource type="AudioStream" path="res://assets/scenes/player/audio/classic_hurt.mp3" id="9_w48qg"]
 [ext_resource type="PackedScene" uid="uid://lb7vqtxmx6pm" path="res://assets/scenes/city/cidade.fbx" id="11_efxa6"]
 [ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
@@ -132,6 +133,8 @@ transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 0.594
 [node name="dano" type="AudioStreamPlayer3D" parent="player" unique_id=495931999]
 stream = ExtResource("9_w48qg")
 
+[node name="dead" type="AudioStreamPlayer3D" parent="player" unique_id=1824439716]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
 environment = SubResource("Environment_dg77c")
 
@@ -166,6 +169,7 @@ offset_right = 565.0
 offset_bottom = 615.00006
 text = "0"
 label_settings = SubResource("LabelSettings_efxa6")
+script = ExtResource("14_vivmo")
 
 [node name="Mensagem" type="Label" parent="CanvasLayer" unique_id=1184352003]
 anchors_preset = -1

@@ -3,6 +3,8 @@ extends CharacterBody3D
 @onready var camera = $vision
 @onready var gun_stream = $gun_audio
 @onready var walk_stream = $walk_audio
+@onready var dano_stream = $dano
+
 
 var vida = 100
 var aura = 1000
@@ -25,9 +27,15 @@ var crowbar = preload("res://assets/audios/hl_crowbar.mp3")
 
 var step_timer = 0.0
 var shake_intensity = 0.0
+var shake_decay = 5.0 # Valor padrão de decaimento
 
-func vision_shake(forca: float):
-	shake_intensity = forca 
+func vision_shake(forca: float, tempo: float = 0.5):
+	shake_intensity = forca
+	
+	if tempo > 0:
+		shake_decay = forca / tempo
+	else:
+		shake_decay = 100.0
 
 func _ready():
 	add_to_group("player")
@@ -36,9 +44,17 @@ func _ready():
 	aura_alterada.emit(aura)
 	
 func tomar_dano(quantidade):
+	if vida <= 0: return # Evita tocar som se já estiver morto
+	
 	vida -= quantidade
-	vida = clamp(vida, 0, 100) # Mantém entre 0 e 100
-	vida_alterada.emit(vida) # Avisa a UI
+	vida = clamp(vida, 0, 100)
+	vida_alterada.emit(vida)
+	
+	if dano_stream:
+		dano_stream.pitch_scale = randf_range(0.9, 1.1)
+		dano_stream.play()
+	
+	vision_shake(0.3, 1) 
 
 func play_audio(stream: AudioStreamPlayer3D, audio: AudioStream):
 	if stream:
@@ -92,7 +108,7 @@ func _process(delta: float) -> void:
 		# Opcional: Rotaciona levemente para um efeito mais caótico
 		camera.rotation.z = randf_range(-0.05, 0.05) * shake_intensity
 		
-		shake_intensity = move_toward(shake_intensity, 0.0, delta * 5.0)
+		shake_intensity = move_toward(shake_intensity, 0.0, delta * shake_decay)
 	else:
 		# Reseta a câmera para a posição normal quando o tremor acaba
 		camera.h_offset = 0

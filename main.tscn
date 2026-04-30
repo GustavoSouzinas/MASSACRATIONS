@@ -98,6 +98,8 @@ font_color = Color(0.98644596, 0, 0.21835831, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
 shader = ExtResource("21_getpj")
+shader_parameter/pixel_size = 2.0
+shader_parameter/color_levels = 32.0
 
 [node name="main" type="Node3D" unique_id=1560260624]
 

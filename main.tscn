@@ -16,11 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/enemy.tscn" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://d3mj6mbffaq3n" path="res://assets/scenes/skytexture/panorama.png" id="9_efxa6"]
 [ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
-[ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
-[ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="12_ycdy4"]
+[ext_resource type="Script" path="res://vida.gd" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://detnvpwiayoky" path="res://assets/scenes/player/gui/mira.png" id="15_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
-[ext_resource type="Shader" uid="uid://bc16lahd3vl26" path="res://assets/ps1shader.gdshader" id="21_getpj"]
+[ext_resource type="Shader" path="res://assets/ps1shader.gdshader" id="21_getpj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycdy4"]
 size = Vector3(51.54457, 1, 11.171997)
@@ -113,7 +113,7 @@ transform = Transform3D(3.8751452, 0, 0, 0, 1.3774563, 0, 0, 0, 5.7085643, -20.1
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, -1.3091187, -1.6843894, 5.085998)
 shape = SubResource("BoxShape3D_ycdy4")
 
-[node name="cidade" parent="map" unique_id=1515142825 instance=ExtResource("1_vivmo")]
+[node name="cidade" parent="map" unique_id=909763773 instance=ExtResource("1_vivmo")]
 transform = Transform3D(0.25805485, 0, 0, 0, 0.7259758, 0, 0, 0, 0.1751754, 0, -1.205, 0)
 
 [node name="player" type="CharacterBody3D" parent="." unique_id=668506230]

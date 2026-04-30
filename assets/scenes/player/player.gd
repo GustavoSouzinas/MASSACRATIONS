@@ -63,6 +63,8 @@ func _ready():
 	camera_origin_base = camera.transform.origin
 
 func _input(event):
+	
+	
 	if morto: return
 
 	# Alternar Mouse (ESC)

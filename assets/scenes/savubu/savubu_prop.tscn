@@ -3,17 +3,85 @@
 [ext_resource type="PackedScene" uid="uid://51ktni173amj" path="res://assets/scenes/savubu/savubu.glb" id="1_def16"]
 [ext_resource type="Script" uid="uid://tkuijxwgm3kl" path="res://assets/scenes/savubu/savubu_prop.gd" id="2_6tkmk"]
 [ext_resource type="Script" uid="uid://bhd476l66v7a5" path="res://assets/scenes/savubu/collision.gd" id="2_nxxfu"]
+[ext_resource type="Shader" uid="uid://dlsr1sj3f3lsm" path="res://addons/GPUTrail/shaders/trail.gdshader" id="4_aajj2"]
+[ext_resource type="Shader" uid="uid://dknayv8ljaovo" path="res://addons/GPUTrail/shaders/trail_draw_pass.gdshader" id="5_amhq8"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail/defaults/texture.tres" id="6_amhq8"]
+[ext_resource type="Script" uid="uid://b7a1kemh7y1hi" path="res://addons/GPUTrail/GPUTrail3D.gd" id="6_ksw4d"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q6rbo"]
-radius = 0.12597656
-height = 0.7426758
+[sub_resource type="SphereShape3D" id="SphereShape3D_6tkmk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56q6o"]
+shader = ExtResource("4_aajj2")
+
+[sub_resource type="Gradient" id="Gradient_hx32l"]
+colors = PackedColorArray(1, 1, 1, 0.02745098, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uk7x2"]
+gradient = SubResource("Gradient_hx32l")
+
+[sub_resource type="Curve" id="Curve_dw4pv"]
+bake_resolution = 16
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wfsuc"]
+curve = SubResource("Curve_dw4pv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_od4eq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_amhq8")
+shader_parameter/tex = ExtResource("6_amhq8")
+shader_parameter/mask_strength = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_uk7x2")
+shader_parameter/curve = SubResource("CurveTexture_wfsuc")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 42
+
+[sub_resource type="QuadMesh" id="QuadMesh_k8uqh"]
+material = SubResource("ShaderMaterial_od4eq")
 
 [node name="savubu_prop" unique_id=1681170881 instance=ExtResource("1_def16")]
 script = ExtResource("2_6tkmk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=28754280]
-transform = Transform3D(2.3448944, 0, 0, 0, 0.48140603, 0, 0, 0, 1, 0, 0.2020874, 0)
-shape = SubResource("CapsuleShape3D_q6rbo")
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.2020874, 0)
+shape = SubResource("SphereShape3D_6tkmk")
 script = ExtResource("2_nxxfu")
 
 [node name="kaboom" type="AudioStreamPlayer3D" parent="." index="2" unique_id=345972863]
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="." index="3" unique_id=1897800734]
+transform = Transform3D(-4.371139e-08, -0.18716563, 0, 1, -8.18127e-09, 0, 0, 0, 1, 0.6467869, 0.27754575, -0.21961832)
+amount = 60
+lifetime = 60.0
+explosiveness = 1.0
+fixed_fps = 143
+process_material = SubResource("ShaderMaterial_56q6o")
+draw_pass_1 = SubResource("QuadMesh_k8uqh")
+script = ExtResource("6_ksw4d")
+length = 60
+length_seconds = 0.4195804195804196
+color_ramp = SubResource("GradientTexture1D_uk7x2")
+curve = SubResource("CurveTexture_wfsuc")
+use_red_as_alpha = true
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://b7a1kemh7y1hi"
+
+[node name="GPUTrail3D2" type="GPUParticles3D" parent="." index="4" unique_id=833743469]
+transform = Transform3D(-4.371139e-08, -0.18716563, 0, 1, -8.18127e-09, 0, 0, 0, 1, -0.647, 0.278, -0.22)
+amount = 60
+lifetime = 60.0
+explosiveness = 1.0
+fixed_fps = 143
+process_material = SubResource("ShaderMaterial_56q6o")
+draw_pass_1 = SubResource("QuadMesh_k8uqh")
+script = ExtResource("6_ksw4d")
+length = 60
+length_seconds = 0.4195804195804196
+color_ramp = SubResource("GradientTexture1D_uk7x2")
+curve = SubResource("CurveTexture_wfsuc")
+use_red_as_alpha = true
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://b7a1kemh7y1hi"

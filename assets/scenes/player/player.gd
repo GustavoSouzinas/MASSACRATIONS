@@ -6,10 +6,20 @@ extends CharacterBody3D
 @onready var walk_stream = $walk_audio
 @onready var dano_stream = $dano
 
+# --- ARM- cof cof, itens de defesa ---
+
+enum aparato_de_ataque {
+	SAVUBU,
+	CUMBUCA
+}
+
+var aparato_atual = aparato_de_ataque.SAVUBU
+
 # --- CONFIGURAÇÕES DE BALANÇO (HEAD BOB) ---
 const BOB_FREQ = 1.8    # Diminuído de 2.4 para 1.8 (mais lento)
 const BOB_AMP = 0.05
 var t_bob = 0.0
+var camera_origin_base = Vector3.ZERO #Armazenando o valor original
 
 # --- STATUS ---
 var vida = 100:
@@ -33,9 +43,11 @@ const JUMP_VELOCITY = 4.5
 var camera_rot_x = 0.0
 
 # --- RECURSOS ---
+var farofa_prop = preload("res://assets/scenes/cumbuca/farofa_particle.tscn")
 var savubu_prop = preload("res://assets/scenes/savubu/savubu_prop.tscn")
 var step1 = preload("res://assets/audios/step1.mp3")
 var crowbar = preload("res://assets/audios/hl_crowbar.mp3")
+var cough = preload("res://assets/audios/cough.mp3")
 var sound_dead = preload("res://assets/scenes/player/audio/dead.mp3")
 
 # --- EFEITOS (Shake e Passos) ---
@@ -48,6 +60,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	vida_alterada.emit(vida)
 	aura_alterada.emit(aura)
+	camera_origin_base = camera.transform.origin
 
 func _input(event):
 	if morto: return
@@ -62,8 +75,17 @@ func _input(event):
 
 	# Atirar/Gerar Objeto
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		play_audio(gun_stream, crowbar)
-		gerar_personagem()
+		match aparato_atual:
+			aparato_de_ataque.SAVUBU:
+				savubu_shoot()
+			aparato_de_ataque.CUMBUCA:
+				cumbuca_shoot()
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_1:
+			aparato_atual = aparato_de_ataque.SAVUBU
+
+		if event.keycode == KEY_2:
+			aparato_atual = aparato_de_ataque.CUMBUCA
 
 	# Movimento da Câmera
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -80,7 +102,7 @@ func _process(delta: float) -> void:
 		var bob_pos = Vector3.ZERO
 		bob_pos.y = sin(t_bob * BOB_FREQ) * BOB_AMP
 		bob_pos.x = cos(t_bob * BOB_FREQ / 2) * BOB_AMP
-		camera.transform.origin = bob_pos
+		camera.transform.origin = camera_origin_base + bob_pos
 		
 		# Som de passos sincronizado
 		step_timer -= delta
@@ -89,7 +111,7 @@ func _process(delta: float) -> void:
 			step_timer = 0.35 # Ajuste conforme o ritmo da animação
 	else:
 		t_bob = 0.0
-		camera.transform.origin = camera.transform.origin.lerp(Vector3.ZERO, delta * 10.0)
+		camera.transform.origin = camera.transform.origin.lerp(camera_origin_base, delta * 10.0)
 		step_timer = 0
 
 	# 2. SISTEMA DE SHAKE (Impacto e Dano)
@@ -170,13 +192,37 @@ func play_audio(stream: AudioStreamPlayer3D, audio: AudioStream):
 		stream.pitch_scale = randf_range(0.9, 1.1)
 		stream.play()
 
-func gerar_personagem():
+func savubu_shoot():
 	var novo_corpo = savubu_prop.instantiate()
 	get_parent().add_child(novo_corpo)
+	play_audio(gun_stream, crowbar)
 	novo_corpo.global_position = camera.global_position + (-camera.global_transform.basis.z * 1.5)
 	novo_corpo.global_rotation = camera.global_rotation
 	
 	if novo_corpo is RigidBody3D:
 		var direcao_tiro = -camera.global_transform.basis.z
+		direcao_tiro = direcao_tiro.rotated(Vector3.UP, deg_to_rad(4.5)) # ajuste fino
 		novo_corpo.apply_central_impulse(direcao_tiro * 25.0)
 		novo_corpo.apply_torque_impulse(Vector3(randf(), randf(), randf()) * 5.0)
+
+func cumbuca_shoot():
+	var novo_corpo = farofa_prop.instantiate()
+	get_parent().add_child(novo_corpo)
+	play_audio(gun_stream, cough)
+	var origem = camera.global_position + (-camera.global_transform.basis.z * 1.5)
+	novo_corpo.global_position = camera.global_position + (-camera.global_transform.basis.z * 1.5)
+	
+	var radius = 4.0
+
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy is CharacterBody3D:
+			var dir = enemy.global_position - origem
+			var dist = dir.length()
+
+			if dist < radius:
+				dir = dir.normalized()
+
+				# força decresce com distância
+				var force = (3.0 - (dist / radius)) * 18.0
+
+				enemy.aplicar_knockback(dir, force)

@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://c1hlv1iyn4sk3"]
+
+[ext_resource type="Script" uid="uid://ov4cppvnpyff" path="res://assets/scenes/player/player.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://lb7vqtxmx6pm" path="res://assets/scenes/city/cidade.fbx" id="1_vivmo"]
+[ext_resource type="Texture2D" uid="uid://d3ha6hehw2u3p" path="res://assets/sprites/guns/savubu/output/f1.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bbn5unwhwwdq" path="res://assets/sprites/guns/savubu/output/f2.png" id="4_kek77"]
+[ext_resource type="Texture2D" uid="uid://d3bc6f1do3hv8" path="res://assets/sprites/guns/savubu/output/f3.png" id="5_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cdhlavpyhb43e" path="res://assets/sprites/guns/savubu/output/f4.png" id="6_efxa6"]
+[ext_resource type="Texture2D" uid="uid://x6h13r4a0x6a" path="res://assets/sprites/guns/savubu/output/f5.png" id="7_dg77c"]
+[ext_resource type="Script" uid="uid://cc0diikil6gqy" path="res://animated_sprite_3d.gd" id="8_4c57u"]
+[ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/enemy.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://d3mj6mbffaq3n" path="res://assets/scenes/skytexture/panorama.png" id="9_efxa6"]
+[ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
+[ext_resource type="Texture2D" uid="uid://6kx53luahyiu" path="res://assets/scenes/enemy/Walking (2)_17.png" id="14_w48qg"]
+[ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycdy4"]
+size = Vector3(51.54457, 1, 11.171997)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kek77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4c57u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_efxa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dg77c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4c57u"]
+panorama = ExtResource("9_efxa6")
+
+[sub_resource type="Sky" id="Sky_efxa6"]
+sky_material = SubResource("PanoramaSkyMaterial_4c57u")
+
+[sub_resource type="Environment" id="Environment_dg77c"]
+background_mode = 2
+sky = SubResource("Sky_efxa6")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vivmo"]
+height = 2.9501953
+
+[sub_resource type="SystemFont" id="SystemFont_w48qg"]
+
+[sub_resource type="FontVariation" id="FontVariation_vivmo"]
+base_font = SubResource("SystemFont_w48qg")
+variation_embolden = 0.9
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = SubResource("FontVariation_vivmo")
+font_size = 55
+font_color = Color(0.98644596, 0, 0.21835831, 1)
+
+[sub_resource type="Theme" id="Theme_w48qg"]
+
+[node name="main" type="Node3D" unique_id=1560260624]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1926288094]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 28.863628, 20.331827, 0)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 4.376
+shadow_blur = 0.703
+directional_shadow_max_distance = 869.0
+
+[node name="map" type="StaticBody3D" parent="." unique_id=1255493123]
+transform = Transform3D(3.8751452, 0, 0, 0, 1.3774563, 0, 0, 0, 5.7085643, -20.144854, 1.0272236, -25.524014)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map" unique_id=1015730719]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, -1.3091187, -1.6843894, 5.085998)
+shape = SubResource("BoxShape3D_ycdy4")
+
+[node name="cidade" parent="map" unique_id=1515142825 instance=ExtResource("1_vivmo")]
+transform = Transform3D(0.25805485, 0, 0, 0, 0.7259758, 0, 0, 0, 0.1751754, 0, -1.205, 0)
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=668506230]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -33.023605, 5.0708275, -18.080393)
+script = ExtResource("1_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=2021657719]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_0xm2m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player" unique_id=1547857730]
+mesh = SubResource("CapsuleMesh_h2yge")
+
+[node name="vision" type="Camera3D" parent="player" unique_id=15524673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608, -0.558)
+fov = 100.0
+near = 0.001
+far = 200.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="player/vision" unique_id=989847990]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.02122885, -0.017131507, -0.39474684)
+sprite_frames = SubResource("SpriteFrames_272bh")
+frame_progress = 0.696646
+speed_scale = 0.5
+script = ExtResource("8_4c57u")
+
+[node name="gun_audio" type="AudioStreamPlayer3D" parent="player" unique_id=1348551641]
+transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 1.7827611, -1.4359106)
+
+[node name="walk_audio" type="AudioStreamPlayer3D" parent="player" unique_id=269584973]
+transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 0.5942906, 0)
+
+[node name="dano" type="AudioStreamPlayer3D" parent="player" unique_id=495931999]
+
+[node name="dead" type="AudioStreamPlayer3D" parent="player" unique_id=1824439716]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
+environment = SubResource("Environment_dg77c")
+
+[node name="zumbi" parent="." unique_id=393863426 instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -3.1368563, 1.2098339, 8.935927)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zumbi" unique_id=398597819]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zumbi/MeshInstance3D" unique_id=1841148394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0075178146, 0.08268666, 0.08577442)
+shape = SubResource("CapsuleShape3D_vivmo")
+
+[node name="Spawner2" type="Node3D" parent="." unique_id=2070155150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.187954, 4.6245174, 8.973148)
+script = ExtResource("9_kek77")
+enemy_scene = ExtResource("8_5vw27")
+
+[node name="Spawner" type="Node3D" parent="." unique_id=201269209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.17429, 2.7858076, 4.5247765)
+script = ExtResource("9_kek77")
+enemy_scene = ExtResource("8_5vw27")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2052648172]
+script = ExtResource("12_ycdy4")
+
+[node name="VIDA" type="Label" parent="CanvasLayer" unique_id=1080290022]
+offset_left = 222.0
+offset_top = 552.0
+offset_right = 358.0
+offset_bottom = 628.0
+text = "0"
+label_settings = SubResource("LabelSettings_efxa6")
+script = ExtResource("14_vivmo")
+
+[node name="Mensagem" type="Label" parent="CanvasLayer" unique_id=1184352003]
+anchors_preset = -1
+anchor_right = 0.091000006
+anchor_bottom = 0.15900001
+offset_left = 125.0
+offset_right = 937.16797
+offset_bottom = 247.96799
+theme = SubResource("Theme_w48qg")
+theme_type_variation = &"GraphNodeTitleLabel"
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LifeText" type="Sprite2D" parent="CanvasLayer" unique_id=617020098]
+texture_filter = 2
+position = Vector2(119.00003, 624)
+scale = Vector2(0.3125, 0.3075)
+texture = ExtResource("15_vivmo")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1334760952]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/CenterContainer" unique_id=1363961309]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("14_w48qg")

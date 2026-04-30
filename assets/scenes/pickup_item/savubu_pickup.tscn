@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4ohapltrnwkn"]
+
+[ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="1_yfi55"]
+[ext_resource type="Script" uid="uid://cd20vqy1foi2j" path="res://assets/scenes/pickup_item/savubu_pickup.gd" id="2_gfwgy"]
+[ext_resource type="Texture2D" uid="uid://chasaamlnq6sd" path="res://assets/sprites/savubu.png" id="2_xovwf"]
+
+[node name="savubu_pickup" unique_id=118201621 instance=ExtResource("1_yfi55")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+script = ExtResource("2_gfwgy")
+
+[node name="Sprite3D" parent="." index="0" unique_id=1073869072]
+texture = ExtResource("2_xovwf")

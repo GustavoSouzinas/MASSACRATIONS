@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bbn5unwhwwdq" path="res://assets/sprites/guns/savubu/output/f2.png" id="4_kek77"]
 [ext_resource type="Texture2D" uid="uid://d3bc6f1do3hv8" path="res://assets/sprites/guns/savubu/output/f3.png" id="5_4c57u"]
 [ext_resource type="Texture2D" uid="uid://cye4kgukper8w" path="res://assets/sprites/guns/cumbuca/c3.png" id="5_ryguw"]
-[ext_resource type="PackedScene" uid="uid://b4ohapltrnwkn" path="res://assets/scenes/pickup_item/savubu_pickup.tscn" id="5_seu75"]
 [ext_resource type="Texture2D" uid="uid://crsy3nq2ix66q" path="res://assets/sprites/guns/cumbuca/c4.png" id="6_d13ii"]
 [ext_resource type="Texture2D" uid="uid://cdhlavpyhb43e" path="res://assets/sprites/guns/savubu/output/f4.png" id="6_efxa6"]
 [ext_resource type="Texture2D" uid="uid://bee281bu0loud" path="res://assets/sprites/guns/cumbuca/c5.png" id="7_1u8w0"]
@@ -30,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://ce2xa6px4ldgu" path="res://assets/scenes/player/gui/cortisol.png" id="25_0odxb"]
 [ext_resource type="Script" uid="uid://d3bsmhjn1nhhp" path="res://cortisol.gd" id="25_xuqvo"]
 [ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
-[ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycdy4"]
 size = Vector3(51.54457, 1, 11.171997)
@@ -119,9 +117,6 @@ shader_parameter/color_levels = 32.0
 [node name="map" type="StaticBody3D" parent="." unique_id=1255493123]
 transform = Transform3D(3.8751452, 0, 0, 0, 1.3774563, 0, 0, 0, 5.7085643, -20.144854, 1.0272236, -25.524014)
 
-[node name="farofa_pickup" parent="map" unique_id=267819157 instance=ExtResource("30_kq58d")]
-transform = Transform3D(0.25805482, 0, 0, 0, 0.72597575, 0, 0, 0, 0.17517538, 2.7614205, -0.0060405135, -0.11409092)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map" unique_id=1015730719]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, -1.3091187, -1.6843894, 5.085998)
 shape = SubResource("BoxShape3D_ycdy4")
@@ -133,12 +128,6 @@ transform = Transform3D(0.25805485, 0, 0, 0, 0.7259758, 0, 0, 0, 0.1751754, 0, -
 stream = ExtResource("2_lswn8")
 autoplay = true
 script = ExtResource("3_a6jrf")
-
-[node name="savubu_pickup" parent="map" unique_id=118201621 instance=ExtResource("5_seu75")]
-transform = Transform3D(0.25805485, 0, 0, 0, 0.72597575, 0, 0, 0, 0.1751754, 4.040856, -0.061972737, -0.018119812)
-arma = 0
-quantidade = 5
-respawn_time = 7.0
 
 [node name="player" type="CharacterBody3D" parent="." unique_id=668506230]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -33.023605, 5.0708275, -18.080393)
@@ -275,11 +264,8 @@ texture = ExtResource("25_0odxb")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = -81.0
-offset_right = 292.0
-offset_bottom = -20.0
+offset_top = -117.0
+offset_right = 232.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 44
-text = "TEMPLATE"
+text = "AMMO: 10"
 script = ExtResource("29_qsp4k")

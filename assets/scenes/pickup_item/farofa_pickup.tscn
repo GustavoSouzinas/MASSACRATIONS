@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d2lhpacwr1rjy"]
+
+[ext_resource type="Script" uid="uid://d0pmycq7kcq2o" path="res://assets/scenes/pickup_item/farofa_pickup.gd" id="1_xchgq"]
+[ext_resource type="Texture2D" uid="uid://comvu14a5mdpd" path="res://assets/sprites/farofayoki.png" id="2_ki0e3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1cfqw"]
+
+[node name="farofa_pickup" type="Area3D" unique_id=118201621]
+script = ExtResource("1_xchgq")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1073869072]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_ki0e3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=591605582]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_1cfqw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

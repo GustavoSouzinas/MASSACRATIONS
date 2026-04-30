@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://e72y3ta5g2rj"]
+
+[ext_resource type="Texture2D" uid="uid://btt013f1tjws2" path="res://assets/scenes/player/gui/MASSACRATIONS_titlecard.png" id="1_d2nv2"]
+[ext_resource type="Script" uid="uid://d3473pyynp46g" path="res://button.gd" id="2_wgsso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igs2m"]
+bg_color = Color(0, 0.78431374, 0, 1)
+
+[node name="Control" type="Control" unique_id=411521441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=831199691]
+layout_mode = 1
+offset_right = 1828.5713
+offset_bottom = 1028.5714
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_d2nv2")
+
+[node name="Button" type="Button" parent="." unique_id=98686803]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 410.0
+offset_right = 603.0
+offset_bottom = 512.0
+tooltip_text = "APERTA LOGO"
+theme_override_colors/font_color = Color(1, 0, 0.019607844, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_igs2m")
+text = "ESSE BOTAO FAZ O JOGO
+SER JOGADO"
+script = ExtResource("2_wgsso")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

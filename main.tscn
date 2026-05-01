@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bee281bu0loud" path="res://assets/sprites/guns/cumbuca/c5.png" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://x6h13r4a0x6a" path="res://assets/sprites/guns/savubu/output/f5.png" id="7_dg77c"]
 [ext_resource type="Script" uid="uid://cc0diikil6gqy" path="res://animated_sprite_3d.gd" id="8_4c57u"]
-[ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/enemy.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/zumbi/zumbi.tscn" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://d3mj6mbffaq3n" path="res://assets/scenes/skytexture/panorama.png" id="9_efxa6"]
 [ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
 [ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
@@ -31,9 +31,16 @@
 [ext_resource type="Script" uid="uid://d3bsmhjn1nhhp" path="res://cortisol.gd" id="25_xuqvo"]
 [ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
+[ext_resource type="PackedScene" uid="uid://nhpxcn4y6m05" path="res://assets/scenes/enemy/macaco/macacosniper.tscn" id="32_htxhm"]
+[ext_resource type="Script" uid="uid://dxi5rqcxea25e" path="res://parryflash.gd" id="33_jq2sk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycdy4"]
 size = Vector3(51.54457, 1, 11.171997)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
+size = Vector3(2.2185059, 0.51745605, 2.194336)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jq2sk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
 
@@ -95,9 +102,6 @@ sky_material = SubResource("PanoramaSkyMaterial_4c57u")
 background_mode = 2
 sky = SubResource("Sky_efxa6")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vivmo"]
-height = 2.9501953
-
 [sub_resource type="SystemFont" id="SystemFont_w48qg"]
 
 [sub_resource type="FontVariation" id="FontVariation_vivmo"]
@@ -140,8 +144,16 @@ arma = 0
 quantidade = 5
 respawn_time = 7.0
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map" unique_id=1700324035]
+transform = Transform3D(14.085005, 0, 0, 0, 14.085001, 0, 0, 0, 14.085, 0.7171416, -6.6028256, 22.221699)
+shape = SubResource("BoxShape3D_4k2k6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="map" unique_id=260396344]
+transform = Transform3D(14.085004, 0, 0, 0, 14.084998, 0, 0, 0, 14.085, 0.5022216, -3.204511, 23.411499)
+mesh = SubResource("PlaneMesh_jq2sk")
+
 [node name="player" type="CharacterBody3D" parent="." unique_id=668506230]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -33.023605, 5.0708275, -18.080393)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -30.196032, -0.37338352, 75.64816)
 script = ExtResource("1_ig7tw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=2021657719]
@@ -178,23 +190,13 @@ stream = SubResource("AudioStreamMP3_getpj")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
 environment = SubResource("Environment_dg77c")
 
-[node name="zumbi" parent="." unique_id=393863426 instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -3.1368563, 1.2098339, 8.935927)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="zumbi" unique_id=398597819]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="zumbi/MeshInstance3D" unique_id=1841148394]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0075178146, 0.08268666, 0.08577442)
-shape = SubResource("CapsuleShape3D_vivmo")
-
 [node name="Spawner2" type="Node3D" parent="." unique_id=2070155150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.187954, 4.6245174, 8.973148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.951878, 4.6245174, 85.711754)
 script = ExtResource("9_kek77")
-enemy_scene = ExtResource("8_5vw27")
+enemy_scene = ExtResource("32_htxhm")
 
 [node name="Spawner" type="Node3D" parent="." unique_id=201269209]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.17429, 2.7858076, 4.5247765)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.909056, 2.7858114, 80.86751)
 script = ExtResource("9_kek77")
 enemy_scene = ExtResource("8_5vw27")
 
@@ -283,3 +285,12 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 44
 text = "TEMPLATE"
 script = ExtResource("29_qsp4k")
+
+[node name="parryflash" type="ColorRect" parent="gui" unique_id=573530240 groups=["flash"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.38039216)
+script = ExtResource("33_jq2sk")

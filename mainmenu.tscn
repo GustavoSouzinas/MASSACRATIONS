@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://btt013f1tjws2" path="res://assets/scenes/player/gui/MASSACRATIONS_titlecard.png" id="1_d2nv2"]
 [ext_resource type="Script" uid="uid://d3473pyynp46g" path="res://button.gd" id="2_wgsso"]
+[ext_resource type="AudioStream" uid="uid://ctespacuf2fo5" path="res://assets/audios/music/mainmenu.wav" id="3_wgsso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igs2m"]
 bg_color = Color(0, 0.78431374, 0, 1)
@@ -34,5 +35,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_igs2m")
 text = "ESSE BOTAO FAZ O JOGO
 SER JOGADO"
 script = ExtResource("2_wgsso")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=299306947]
+stream = ExtResource("3_wgsso")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

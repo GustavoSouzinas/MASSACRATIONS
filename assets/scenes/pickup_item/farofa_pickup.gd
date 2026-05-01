@@ -14,8 +14,7 @@ func _on_body_entered(body):
 		return
 		
 	if body.is_in_group("player"):
-		if body.aparato_atual != arma:
-			return
+		
 		
 		body.adicionar_municao(arma, quantidade)
 		desativar_temporariamente()

@@ -27,7 +27,7 @@ var ammo_max = {
 }
 
 func adicionar_municao(arma, quantidade):
-	ammo[aparato_atual] = clamp(ammo[aparato_atual] + quantidade, 0, ammo_max[aparato_atual])
+	ammo[arma] = clamp(ammo[arma] + quantidade, 0, ammo_max[arma])
 
 # --- CONFIGURAÇÕES DE BALANÇO (HEAD BOB) ---
 const BOB_FREQ = 1.8    # Diminuído de 2.4 para 1.8 (mais lento)
@@ -235,11 +235,15 @@ func cumbuca_shoot():
 	var novo_corpo = farofa_prop.instantiate()
 	get_parent().add_child(novo_corpo)
 	play_audio(gun_stream, cough)
+
 	var origem = camera.global_position + (-camera.global_transform.basis.z * 1.5)
-	novo_corpo.global_position = camera.global_position + (-camera.global_transform.basis.z * 1.5)
+	novo_corpo.global_position = origem
 	
 	var radius = 4.0
-
+	var parry_radius = 2.0
+	# -------------------------
+	# KNOCKBACK (já existe)
+	# -------------------------
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if enemy is CharacterBody3D:
 			var dir = enemy.global_position - origem
@@ -247,11 +251,21 @@ func cumbuca_shoot():
 
 			if dist < radius:
 				dir = dir.normalized()
-
-				# força decresce com distância
 				var force = (3.0 - (dist / radius)) * 18.0
-
 				enemy.aplicar_knockback(dir, force)
+
+	# -------------------------
+	#PARRY NAS BALAS
+	# -------------------------
+	for bullet in get_tree().get_nodes_in_group("enemy_bullets"):
+		var dist_cumbuca = bullet.global_position.distance_to(origem)
+		var dist_player = bullet.global_position.distance_to(camera.global_position)
+
+		if dist_cumbuca < radius and dist_player < parry_radius:
+			if bullet.has_method("parry"):
+				bullet.parry(self)
+				
+				
 
 func calcular_cortisol():
 	var origem = global_position

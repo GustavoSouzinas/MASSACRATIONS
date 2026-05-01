@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ckvf8tkmug6jm"]
+
+[ext_resource type="Script" uid="uid://dk7veg1vruhgu" path="res://assets/scenes/enemy/zumbi/zumbi.gd" id="1_0ksl4"]
+[ext_resource type="PackedScene" uid="uid://fvqfxlxta5mo" path="res://assets/scenes/enemy/zumbi/Walking (2).fbx" id="2_0ksl4"]
+[ext_resource type="Script" uid="uid://cxvtsx75jh5w5" path="res://assets/scenes/enemy/zumbi/walking_(2).gd" id="3_fwjyb"]
+[ext_resource type="AudioStream" uid="uid://be5w64nf2owhx" path="res://assets/scenes/enemy/zumbi/voce-nao-tem-aura.mp3" id="4_go5br"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qlmac"]
+
+[node name="enemy" type="CharacterBody3D" unique_id=812455656]
+script = ExtResource("1_0ksl4")
+
+[node name="colision" type="CollisionShape3D" parent="." unique_id=652605648]
+shape = SubResource("CylinderShape3D_qlmac")
+debug_color = Color(0.8715102, 0.0004863131, 0.8475583, 0.41960785)
+
+[node name="Walking (2)" parent="." unique_id=417700467 instance=ExtResource("2_0ksl4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.08149, 0)
+script = ExtResource("3_fwjyb")
+
+[node name="Naotemaura" type="AudioStreamPlayer3D" parent="." unique_id=170999836]
+stream = ExtResource("4_go5br")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2053198292]
+transform = Transform3D(1, 0, 0, 0, -0.74690527, -0.6649306, 0, 0.6649306, -0.74690527, -0.14111376, 0.37228864, -1.0668709)
+light_color = Color(0.6511058, 0.312577, 0, 1)
+light_energy = 16.0
+spot_range = 1.8636444
+spot_angle = 36.268692

@@ -32,5 +32,5 @@ spot_angle = 34.256535
 stream = ExtResource("3_k1q7t")
 
 [node name="Run Forward (2)" parent="." unique_id=862972073 instance=ExtResource("5_gjnl0")]
-transform = Transform3D(-0.54, 0, -4.72083e-08, 0, 0.54, 0, 4.72083e-08, 0, -0.54, 0, -0.985, 0)
+transform = Transform3D(-0.54, 0, -4.72083e-08, 0, 0.54, 0, 4.72083e-08, 0, -0.54, 0, -1.0698721, 0)
 script = ExtResource("6_t8ibh")

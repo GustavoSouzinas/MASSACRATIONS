@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="insanity_massacration"
-run/main_scene="res://main.tscn"
+run/main_scene="uid://e72y3ta5g2rj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Hitstop="*uid://b7dxefak8nm3p"
 
 [display]
 

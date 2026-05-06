@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://nhpxcn4y6m05"]
+
+[ext_resource type="Script" uid="uid://cif282w7kdrit" path="res://assets/scenes/enemy/macaco/macacosniper.gd" id="2_8susi"]
+[ext_resource type="AudioStream" uid="uid://c12rv4krd2ilq" path="res://assets/audios/macaco.mp3" id="3_k1q7t"]
+[ext_resource type="PackedScene" uid="uid://dydm7m7nlx0i7" path="res://assets/scenes/enemy/macaco/balamacaco.tscn" id="3_t6wj7"]
+[ext_resource type="PackedScene" uid="uid://d0wybfu5akkmb" path="res://assets/scenes/enemy/macaco/Run Forward (2).fbx" id="5_gjnl0"]
+[ext_resource type="AudioStream" uid="uid://be5w64nf2owhx" path="res://assets/scenes/enemy/zumbi/voce-nao-tem-aura.mp3" id="6_53mh1"]
+[ext_resource type="Script" uid="uid://dogytqb6a05kv" path="res://assets/scenes/enemy/macaco/run_forward_(2).gd" id="6_t8ibh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qlmac"]
+
+[node name="enemy" type="CharacterBody3D" unique_id=812455656]
+script = ExtResource("2_8susi")
+shoot_sound = ExtResource("3_k1q7t")
+bullet_scene = ExtResource("3_t6wj7")
+
+[node name="colision" type="CollisionShape3D" parent="." unique_id=652605648]
+shape = SubResource("CylinderShape3D_qlmac")
+debug_color = Color(0.8715102, 0.0004863131, 0.8475583, 0.41960785)
+
+[node name="Naotemaura" type="AudioStreamPlayer3D" parent="." unique_id=170999836]
+stream = ExtResource("6_53mh1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2053198292]
+transform = Transform3D(1, 0, 0, 0, -0.2730526, 0.9619991, 0, -0.9619991, -0.2730526, 0.12620538, 1.4467103, -0.85548556)
+light_color = Color(0.30487698, 0.25722086, 1, 1)
+light_energy = 16.0
+spot_range = 1.872509
+spot_angle = 34.256535
+
+[node name="atiramacaco" type="AudioStreamPlayer3D" parent="." unique_id=248356398]
+stream = ExtResource("3_k1q7t")
+
+[node name="Run Forward (2)" parent="." unique_id=862972073 instance=ExtResource("5_gjnl0")]
+transform = Transform3D(-0.54, 0, -4.72083e-08, 0, 0.54, 0, 4.72083e-08, 0, -0.54, 0, -1.0698721, 0)
+script = ExtResource("6_t8ibh")

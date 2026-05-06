@@ -32,7 +32,8 @@ func _on_body_entered(body: Node):
 		else:
 			print("ERRO: Nenhum nó encontrado no grupo 'player'. Verifique as abas de Group do Player!")
 		if body.is_in_group("enemies"):
-			body.die()
+			if body.has_method("tomar_dano"):
+				body.tomar_dano("savubu")
 		visible = false
 		$CollisionShape3D.set_deferred("disabled", true)
 		await get_tree().create_timer(1.0).timeout

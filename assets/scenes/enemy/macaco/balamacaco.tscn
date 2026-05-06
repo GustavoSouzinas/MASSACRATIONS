@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dydm7m7nlx0i7"]
+
+[ext_resource type="Script" uid="uid://cqn1r46oiedyn" path="res://assets/scenes/enemy/macaco/balamacaco.gd" id="1_i6aib"]
+[ext_resource type="Shader" uid="uid://dlsr1sj3f3lsm" path="res://addons/GPUTrail/shaders/trail.gdshader" id="2_evc83"]
+[ext_resource type="Shader" uid="uid://dknayv8ljaovo" path="res://addons/GPUTrail/shaders/trail_draw_pass.gdshader" id="3_dsn7n"]
+[ext_resource type="Script" uid="uid://b7a1kemh7y1hi" path="res://addons/GPUTrail/GPUTrail3D.gd" id="4_nfqrx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gyni3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evc83"]
+emission_enabled = true
+emission = Color(0.9687043, 0.7631082, 1.540184e-06, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ff1in"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1k6c"]
+shader = ExtResource("2_evc83")
+
+[sub_resource type="Gradient" id="Gradient_kqn6s"]
+colors = PackedColorArray(0.99471027, 0.6853223, 7.70092e-07, 1, 0.6666667, 0.07058824, 0, 0.76862746)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qujwy"]
+gradient = SubResource("Gradient_kqn6s")
+
+[sub_resource type="Curve" id="Curve_brfn1"]
+bake_resolution = 16
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_c300h"]
+curve = SubResource("Curve_brfn1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fem2g"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_dsn7n")
+shader_parameter/mask_strength = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_qujwy")
+shader_parameter/curve = SubResource("CurveTexture_c300h")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 40
+
+[sub_resource type="QuadMesh" id="QuadMesh_1u54g"]
+material = SubResource("ShaderMaterial_fem2g")
+
+[node name="balamacaco" type="Area3D" unique_id=1711576891]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_i6aib")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1542502280]
+mesh = SubResource("SphereMesh_gyni3")
+surface_material_override/0 = SubResource("StandardMaterial3D_evc83")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=70969489]
+shape = SubResource("SphereShape3D_ff1in")
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="." unique_id=467123664]
+transform = Transform3D(1, 0, 0, 0, 0.46643758, 0, 0, 0, 1, 0, 0, 0)
+amount = 100
+lifetime = 100.0
+explosiveness = 1.0
+fixed_fps = 143
+process_material = SubResource("ShaderMaterial_k1k6c")
+draw_pass_1 = SubResource("QuadMesh_1u54g")
+script = ExtResource("4_nfqrx")
+length_seconds = 0.6993006993006993
+color_ramp = SubResource("GradientTexture1D_qujwy")
+curve = SubResource("CurveTexture_c300h")
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://b7a1kemh7y1hi"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

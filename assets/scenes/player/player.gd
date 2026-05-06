@@ -8,12 +8,26 @@ extends CharacterBody3D
 
 # --- ARM- cof cof, itens de defesa ---
 
+
+
 enum aparato_de_ataque {
 	SAVUBU,
 	CUMBUCA
 }
-
 var aparato_atual = aparato_de_ataque.SAVUBU
+
+var ammo = {
+	aparato_de_ataque.SAVUBU: 5,
+	aparato_de_ataque.CUMBUCA: 20
+}
+
+var ammo_max = {
+	aparato_de_ataque.SAVUBU: 5,
+	aparato_de_ataque.CUMBUCA: 20
+}
+
+func adicionar_municao(arma, quantidade):
+	ammo[arma] = clamp(ammo[arma] + quantidade, 0, ammo_max[arma])
 
 # --- CONFIGURAÇÕES DE BALANÇO (HEAD BOB) ---
 const BOB_FREQ = 1.8    # Diminuído de 2.4 para 1.8 (mais lento)
@@ -30,6 +44,8 @@ var vida = 100:
 			morrer()
 
 var aura = 1000
+var cortisol = 0.0
+var cortisol_max = 10.0
 var morto = false
 
 # --- SINAIS ---
@@ -77,11 +93,17 @@ func _input(event):
 
 	# Atirar/Gerar Objeto
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if ammo[aparato_atual] <= 0:
+			print("sem munição")
+			return
+		
 		match aparato_atual:
 			aparato_de_ataque.SAVUBU:
 				savubu_shoot()
 			aparato_de_ataque.CUMBUCA:
 				cumbuca_shoot()
+		
+		ammo[aparato_atual] -= 1
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_1:
 			aparato_atual = aparato_de_ataque.SAVUBU
@@ -115,6 +137,8 @@ func _process(delta: float) -> void:
 		t_bob = 0.0
 		camera.transform.origin = camera.transform.origin.lerp(camera_origin_base, delta * 10.0)
 		step_timer = 0
+		
+	calcular_cortisol()
 
 	# 2. SISTEMA DE SHAKE (Impacto e Dano)
 	if shake_intensity > 0:
@@ -211,11 +235,15 @@ func cumbuca_shoot():
 	var novo_corpo = farofa_prop.instantiate()
 	get_parent().add_child(novo_corpo)
 	play_audio(gun_stream, cough)
+
 	var origem = camera.global_position + (-camera.global_transform.basis.z * 1.5)
-	novo_corpo.global_position = camera.global_position + (-camera.global_transform.basis.z * 1.5)
+	novo_corpo.global_position = origem
 	
 	var radius = 4.0
-
+	var parry_radius = 2.0
+	# -------------------------
+	# KNOCKBACK (já existe)
+	# -------------------------
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if enemy is CharacterBody3D:
 			var dir = enemy.global_position - origem
@@ -223,8 +251,35 @@ func cumbuca_shoot():
 
 			if dist < radius:
 				dir = dir.normalized()
-
-				# força decresce com distância
 				var force = (3.0 - (dist / radius)) * 18.0
-
 				enemy.aplicar_knockback(dir, force)
+
+	# -------------------------
+	#PARRY NAS BALAS
+	# -------------------------
+	for bullet in get_tree().get_nodes_in_group("enemy_bullets"):
+		var dist_cumbuca = bullet.global_position.distance_to(origem)
+		var dist_player = bullet.global_position.distance_to(camera.global_position)
+
+		if dist_cumbuca < radius and dist_player < parry_radius:
+			if bullet.has_method("parry"):
+				bullet.parry(self)
+				
+				
+
+func calcular_cortisol():
+	var origem = global_position
+	var raio = 15.0
+	var count = 0
+	
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy is CharacterBody3D:
+			var dist = enemy.global_position.distance_to(origem)
+			if dist < raio:
+				count += 1
+	
+	cortisol = clamp(count, 0, cortisol_max)
+	aura_alterada.emit(cortisol) # reaproveita ou cria outro sinal se quiser
+	
+func get_cortisol_normalizado():
+	return cortisol / cortisol_max

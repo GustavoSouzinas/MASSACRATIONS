@@ -111,7 +111,8 @@ font_color = Color(0.98644596, 0, 0.21835831, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
 shader = ExtResource("21_getpj")
 shader_parameter/pixel_size = 2.0
-shader_parameter/color_levels = 32.0
+shader_parameter/color_steps = 32.0
+shader_parameter/chroma = 1.0
 
 [node name="main" type="Node3D" unique_id=1560260624]
 
@@ -231,7 +232,7 @@ offset = Vector2(2.565, 25.85)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="gui" unique_id=1372911262]
 
-[node name="ColorRect" type="ColorRect" parent="gui/CanvasLayer" unique_id=2140420759]
+[node name="shaderPS1" type="ColorRect" parent="gui/CanvasLayer" unique_id=2140420759]
 material = SubResource("ShaderMaterial_ryguw")
 anchors_preset = 15
 anchor_right = 1.0
@@ -285,3 +286,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.38039216)
 script = ExtResource("33_jq2sk")
+
+[node name="morte" type="Label" parent="gui" unique_id=1337467389]
+offset_left = 223.0
+offset_top = 238.0
+offset_right = 1022.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 35
+text = "morreu!!!
+
+
+aperte R para reviver"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1

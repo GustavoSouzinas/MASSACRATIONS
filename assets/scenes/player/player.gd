@@ -263,7 +263,7 @@ func cumbuca_shoot():
 		if dist_cumbuca < radius and dist_player < parry_radius:
 			if bullet.has_method("parry"):
 				bullet.parry(self)
-				aura.adicionar_combo(15)
+				aura.adicionar_combo(10)
 				
 				
 

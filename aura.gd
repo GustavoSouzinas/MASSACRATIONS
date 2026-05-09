@@ -82,7 +82,7 @@ func atualizar_aura():
 	elif combo < 80:
 		texture = aura_levels[3]
 
-	elif combo < 100:
+	elif combo < 150:
 		texture = aura_levels[4]
 
 	else:

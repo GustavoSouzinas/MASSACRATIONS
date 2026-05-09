@@ -107,5 +107,5 @@ func tomar_dano(tipo):
 	
 func die():
 	splash.mostrar_mensagem_random()
-	aura.adicionar_combo(10)
+	aura.adicionar_combo(5)
 	queue_free()

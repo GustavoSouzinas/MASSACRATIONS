@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 @onready var anim = $"Run Forward (2)/AnimationPlayer"
 
-
+@onready var splash = $"../gui/splash"
+@onready var aura = $"../gui/aura"
 @onready var shoot_audio = $atiramacaco
 @export var shoot_sound: AudioStream
 
@@ -157,6 +158,8 @@ func tomar_dano(tipo):
 	die()
 
 func die():
+	splash.mostrar_mensagem_random()
+	aura.adicionar_combo(5)
 	queue_free()
 
 #animação

@@ -15,7 +15,7 @@ func _process(delta):
 		modulate = Color.from_hsv(fmod(hue_timer, 1.0), 0.8, 1.0)
 
 func mostrar_mensagem_random():
-	var frases = ["VC É CHAD", "BETINHA?", "SKILL ISSUE", "QUE AUDÁCIA!", "SAI DA FRENTE!", "LÁ ELE!", "RECEBA", "QUÊ?", "JO!","MOGGOU ELES", "LUCROU NA BET", "RESENHOU", "AII TOMA", "QUÉ OTA?", "HÃ?", "BURGER", "VISH", "CALMA PAI", "APELÃO", "TOME", "CAVALO"]
+	var frases = ["VC EH CHAD", "BETINHA?", "SKILL ISSUE", "QUE AUDACIA!", "SAI DA FRENTE!", "LA ELE!", "RECEBA", "QUE?", "JO!","MOGGOU ELES", "LUCROU NA BET", "RESENHOU", "AII TOMA", "QUE OTA?", "HA?", "BURGER", "VISH", "CALMA PAI", "APELAO", "TOME", "CAVALO"]
 	mostrar_mensagem_encantada(frases.pick_random())
 
 func mostrar_mensagem_encantada(texto: String):

@@ -1,5 +1,7 @@
 extends Label
 
+var fonte = load("res://assets/scenes/player/gui/fonts/INVASION2000.TTF")
+
 func criar_popup(texto, cor):
 
 	var popup = Label.new()
@@ -10,7 +12,14 @@ func criar_popup(texto, cor):
 	# tamanho da fonte
 	popup.add_theme_font_size_override(
 		"font_size",
-		150
+		150,
+		
+	)
+
+	popup.add_theme_font_override(
+		"font",
+		fonte
+		
 	)
 
 	get_parent().add_child(popup)

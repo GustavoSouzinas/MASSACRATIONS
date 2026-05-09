@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
 [ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://detnvpwiayoky" path="res://assets/scenes/player/gui/mira.png" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b66pnekthvbl2" path="res://assets/scenes/skytexture/3265149.jpg" id="18_jq2sk"]
 [ext_resource type="Shader" uid="uid://bc16lahd3vl26" path="res://assets/ps1shader.gdshader" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://ccmkcubbnsrht" path="res://assets/scenes/player/gui/gauge.png" id="22_ryguw"]
@@ -110,6 +111,11 @@ glow_strength = 1.37
 glow_hdr_threshold = 0.75
 glow_hdr_scale = 1.59
 
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = ExtResource("35_h8e4i")
+font_size = 55
+font_color = Color(0.98644596, 0, 0.21835831, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
 shader = ExtResource("21_getpj")
 shader_parameter/pixel_size = 2.0
@@ -124,11 +130,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_4lmeg"]
 font = ExtResource("35_h8e4i")
 font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
-font = ExtResource("35_h8e4i")
-font_size = 104
-font_color = Color(0.98644596, 0, 0.21835831, 1)
 
 [node name="main" type="Node3D" unique_id=1560260624]
 
@@ -219,6 +220,23 @@ script = ExtResource("36_ok6jj")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="gui/aura_vinheta" unique_id=1974326634]
 stream = ExtResource("24_b1qrp")
 volume_db = -2.737
+
+[node name="VIDA" type="Label" parent="gui" unique_id=1080290022]
+offset_left = 101.0
+offset_top = 167.0
+offset_right = 138.00003
+offset_bottom = 243.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+label_settings = SubResource("LabelSettings_efxa6")
+script = ExtResource("14_vivmo")
+
+[node name="LifeText" type="Sprite2D" parent="gui" unique_id=617020098]
+texture_filter = 2
+position = Vector2(49.999996, 221.00003)
+scale = Vector2(0.13125, 0.12375003)
+texture = ExtResource("15_vivmo")
 
 [node name="CenterContainer" type="CenterContainer" parent="gui" unique_id=1334760952]
 anchors_preset = 8
@@ -340,22 +358,8 @@ fill_mode = 3
 texture_progress = ExtResource("40_0cp0l")
 script = ExtResource("40_4lmeg")
 
-[node name="VIDA" type="Label" parent="gui/aura" unique_id=1080290022]
-layout_mode = 0
-offset_left = 371.0002
-offset_top = 455.00024
-offset_right = 674.00024
-offset_bottom = 621.00024
-pivot_offset = Vector2(151.5, 83)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "100"
-label_settings = SubResource("LabelSettings_efxa6")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("14_vivmo")
-
 [node name="parryflash" type="ColorRect" parent="gui" unique_id=573530240 groups=["flash"]]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

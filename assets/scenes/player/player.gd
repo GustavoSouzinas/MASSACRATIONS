@@ -36,9 +36,11 @@ var t_bob = 0.0
 var camera_origin_base = Vector3.ZERO #Armazenando o valor original
 
 # --- STATUS ---
-var vida = 100:
+var vida_maxima = 100
+
+var vida = vida_maxima:
 	set(valor):
-		vida = clamp(valor, 0, 100)
+		vida = clamp(valor, 0, vida_maxima)
 		vida_alterada.emit(vida)
 		if vida <= 0 and not morto:
 			morrer()

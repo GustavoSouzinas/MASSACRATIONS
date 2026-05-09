@@ -1,7 +1,9 @@
 extends TextureRect
 
-@onready var gain = $"../aura/aura_gain"
+signal insanity_frame_changed(frame: bool)
+signal insanity_ended
 
+@onready var gain = $"../aura/aura_gain"
 var combo = 0
 var max_combo = 100
 var original_position
@@ -10,24 +12,12 @@ func _ready():
 	original_position = position
 	pivot_offset = size / 2
 
-# tempo sem ganhar combo
 var decay_timer = 0.0
-
-# de quantos em quantos segundos perde aura
 var decay_delay = 1.0
-
-# quanto perde por tick
 var decay_amount = 5
-
-# tempo em aura máxima
 var max_aura_timer = 0.0
-
-# timer da alternância insana
 var insanity_timer = 0.0
-
-# frame atual
 var insanity_frame = false
-
 var aura_levels = [
 	preload("res://assets/scenes/player/gui/Aura1.png"),
 	preload("res://assets/scenes/player/gui/Aura2.png"),
@@ -45,93 +35,58 @@ func _input(event):
 			adicionar_combo(20)
 
 func _process(delta):
-
-	# shake
 	if combo > 60:
-		position = original_position + Vector2(
-			randf_range(-2, 2),
-			randf_range(-2, 2)
-		)
+		position = original_position + Vector2(randf_range(-2, 2), randf_range(-2, 2))
 	else:
 		position = original_position
 
-	# decay
 	decay_timer += delta
-
 	if decay_timer >= decay_delay:
 		perder_combo(decay_amount)
 		decay_timer = 0.0
 
-	# -------------------------
-	# MODO INSANIDADE
-	# -------------------------
-
 	if combo >= max_combo:
-
 		max_aura_timer += delta
-
-		# depois de X segundos no máximo
 		if max_aura_timer >= 2.0:
-
 			insanity_timer += delta
-
-			# alterna rápido
 			if insanity_timer >= 0.08:
-
 				insanity_timer = 0.0
-
 				insanity_frame = !insanity_frame
-
 				if insanity_frame:
 					texture = aura_levels[6]
 				else:
 					texture = aura_levels[7]
-
+				emit_signal("insanity_frame_changed", insanity_frame)
 	else:
-
+		if max_aura_timer > 0.0:
+			emit_signal("insanity_ended")
 		max_aura_timer = 0.0
 
 func adicionar_combo(valor):
-
-	# reseta o timer quando ganha combo
 	decay_timer = 0.0
-
 	combo += valor
 	combo = clamp(combo, 0, max_combo)
-
 	gain.criar_popup("+ AURA", Color.GREEN)
-
 	atualizar_aura()
 
 func perder_combo(valor):
-
 	combo -= valor
 	combo = clamp(combo, 0, max_combo)
-
 	gain.criar_popup("- AURA", Color.RED)
-
 	atualizar_aura()
 
 func atualizar_aura():
-
-	# impede sobrescrever o modo insanidade
 	if max_aura_timer >= 5.0 and combo >= max_combo:
 		return
-
 	if combo < 20:
 		texture = aura_levels[0]
-
 	elif combo < 40:
 		texture = aura_levels[1]
-
 	elif combo < 60:
 		texture = aura_levels[2]
-
 	elif combo < 80:
 		texture = aura_levels[3]
-
 	elif combo < 100:
 		texture = aura_levels[4]
-
 	else:
 		texture = aura_levels[5]

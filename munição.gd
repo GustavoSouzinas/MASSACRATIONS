@@ -11,7 +11,7 @@ func _process(delta):
 		text = "%d / %d" % [atual, maximo]
 		
 		if atual <= 0:
-			text = "SEM MUNIÇÃO"
+			text = "CABOU"
 			modulate = Color(1,0,0)
 		else: 
 			modulate = Color(1,1,1)

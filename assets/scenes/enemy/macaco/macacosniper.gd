@@ -12,7 +12,7 @@ extends CharacterBody3D
 @export var MIN_DISTANCE = 6.0   # muito perto → recua
 @export var MAX_DISTANCE = 12.0  # muito longe → aproxima
 
-@export var SHOOT_COOLDOWN = 2.0
+@export var SHOOT_COOLDOWN = 1.0
 
 # projétil
 @export var bullet_scene: PackedScene

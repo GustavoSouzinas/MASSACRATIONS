@@ -26,19 +26,13 @@
 [ext_resource type="Texture2D" uid="uid://ccmkcubbnsrht" path="res://assets/scenes/player/gui/gauge.png" id="22_ryguw"]
 [ext_resource type="Texture2D" uid="uid://tiht0psq6kbt" path="res://assets/scenes/player/gui/ponteiro.png" id="23_d13ii"]
 [ext_resource type="Script" uid="uid://dpqj2a1i6iwvu" path="res://ponteiro.gd" id="24_1u8w0"]
-[ext_resource type="AudioStream" uid="uid://xb2su7yas3p3" path="res://assets/scenes/player/audio/saiyan.mp3" id="24_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://ce2xa6px4ldgu" path="res://assets/scenes/player/gui/cortisol.png" id="25_0odxb"]
 [ext_resource type="Script" uid="uid://d3bsmhjn1nhhp" path="res://cortisol.gd" id="25_xuqvo"]
 [ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
 [ext_resource type="PackedScene" uid="uid://nhpxcn4y6m05" path="res://assets/scenes/enemy/macaco/macacosniper.tscn" id="32_htxhm"]
-[ext_resource type="Texture2D" uid="uid://8cmq5gciu832" path="res://assets/scenes/player/gui/Aura1.png" id="33_0rl1p"]
 [ext_resource type="Script" uid="uid://dxi5rqcxea25e" path="res://parryflash.gd" id="33_jq2sk"]
-[ext_resource type="Script" uid="uid://i5aw5vwy7k4a" path="res://aura.gd" id="34_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://bxysin3hiuel5" path="res://assets/scenes/favela/mapaFAVELA.gltf" id="34_4k2k6"]
-[ext_resource type="Texture2D" uid="uid://drsenu5cbu15y" path="res://assets/scenes/player/gui/aura_vinheta.png" id="36_facbu"]
-[ext_resource type="Script" uid="uid://dfsougjxcopwf" path="res://aura_vinheta.gd" id="36_ok6jj"]
-[ext_resource type="Script" uid="uid://cu4ky8sg6aq3j" path="res://aura_gain.gd" id="38_come4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
 size = Vector3(5.7018433, 0.51745605, 4.864258)
@@ -102,11 +96,6 @@ sky_material = SubResource("PanoramaSkyMaterial_jq2sk")
 [sub_resource type="Environment" id="Environment_dg77c"]
 background_mode = 2
 sky = SubResource("Sky_efxa6")
-glow_enabled = true
-glow_intensity = 0.46
-glow_strength = 1.37
-glow_hdr_threshold = 0.75
-glow_hdr_scale = 1.59
 
 [sub_resource type="SystemFont" id="SystemFont_w48qg"]
 
@@ -204,16 +193,6 @@ enemy_scene = ExtResource("8_5vw27")
 
 [node name="gui" type="CanvasLayer" parent="." unique_id=2052648172]
 
-[node name="aura_vinheta" type="TextureRect" parent="gui" unique_id=798163340]
-offset_right = 1280.0
-offset_bottom = 720.0
-texture = ExtResource("36_facbu")
-script = ExtResource("36_ok6jj")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="gui/aura_vinheta" unique_id=1974326634]
-stream = ExtResource("24_b1qrp")
-volume_db = -2.737
-
 [node name="VIDA" type="Label" parent="gui" unique_id=1080290022]
 offset_left = 101.0
 offset_top = 167.0
@@ -288,58 +267,14 @@ texture = ExtResource("25_0odxb")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 198.0
-offset_top = -99.0
-offset_right = 430.0
-offset_bottom = -38.0
+offset_left = 60.0
+offset_top = -81.0
+offset_right = 292.0
+offset_bottom = -20.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 44
 text = "TEMPLATE"
 script = ExtResource("29_qsp4k")
-
-[node name="splash" type="Label" parent="gui" unique_id=283579422]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -235.0
-offset_right = 55.0
-offset_bottom = -190.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(62.5, 22.5)
-theme_override_font_sizes/font_size = 29
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("12_ycdy4")
-
-[node name="aura" type="TextureRect" parent="gui" unique_id=211732387]
-offset_left = -374.0
-offset_top = -281.00003
-offset_right = 568.0
-offset_bottom = 1389.0
-scale = Vector2(0.2, 0.2)
-pivot_offset = Vector2(471, 835)
-texture = ExtResource("33_0rl1p")
-script = ExtResource("34_0rl1p")
-
-[node name="aura_gain" type="Label" parent="gui/aura" unique_id=159547829]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.55600005
-anchor_top = 0.45800003
-anchor_right = 0.55600005
-anchor_bottom = 0.45800003
-offset_left = 212.24799
-offset_top = -164.85999
-offset_right = 642.2479
-offset_bottom = 25.140015
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 111
-script = ExtResource("38_come4")
 
 [node name="parryflash" type="ColorRect" parent="gui" unique_id=573530240 groups=["flash"]]
 anchors_preset = 15
@@ -349,3 +284,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.38039216)
 script = ExtResource("33_jq2sk")
+
+[node name="splash" type="Label" parent="gui" unique_id=283579422]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("12_ycdy4")

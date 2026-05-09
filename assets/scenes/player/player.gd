@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var gun_stream = $gun_audio
 @onready var walk_stream = $walk_audio
 @onready var dano_stream = $dano
-
+@onready var aura = $"../gui/aura"
 # --- ARM- cof cof, itens de defesa ---
 
 
@@ -43,7 +43,6 @@ var vida = 100:
 		if vida <= 0 and not morto:
 			morrer()
 
-var aura = 1000
 var cortisol = 0.0
 var cortisol_max = 10.0
 var morto = false
@@ -264,6 +263,7 @@ func cumbuca_shoot():
 		if dist_cumbuca < radius and dist_player < parry_radius:
 			if bullet.has_method("parry"):
 				bullet.parry(self)
+				aura.adicionar_combo(15)
 				
 				
 

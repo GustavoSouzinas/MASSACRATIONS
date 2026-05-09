@@ -2,6 +2,8 @@ extends ColorRect
 
 @export var flash_time := 0.08
 
+
+
 func _ready():
 	modulate.a = 0.0
 

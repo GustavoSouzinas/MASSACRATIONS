@@ -47,7 +47,8 @@ var bateria = 0
 var bateria_max = 10
 
 func ganhar_bateria(valor := 1):
-	bateria = clamp(bateria + valor, 0, bateria_max)
+	var ganho = valor * get_multiplicador_cortisol()
+	bateria = clamp(bateria + ganho, 0, bateria_max)
 	
 var curando = false
 	
@@ -71,7 +72,7 @@ func usar_celular_cura():
 
 	if morto: return
 
-	vida += 35
+	vida += 25 * get_multiplicador_cortisol()
 	cura_efeito.tocar()
 	vida = clamp(vida, 0, vida_maxima)
 
@@ -334,3 +335,6 @@ func calcular_cortisol():
 	
 func get_cortisol_normalizado():
 	return cortisol / cortisol_max
+
+func get_multiplicador_cortisol():
+	return 1.0 + (cortisol * 0.2)

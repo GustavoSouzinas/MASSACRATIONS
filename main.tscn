@@ -92,6 +92,7 @@
 [ext_resource type="Texture2D" uid="uid://ch2wrqsv2nb81" path="res://assets/scenes/player/gui/cura.png" id="65_yysqy"]
 [ext_resource type="Script" uid="uid://ifghc7pf8kcw" path="res://dano_vinheta.gd" id="66_53bls"]
 [ext_resource type="Script" uid="uid://cdw0r2sbwjhkl" path="res://cura_vinheta.gd" id="66_n5t1e"]
+[ext_resource type="Texture2D" uid="uid://c7o0t6odqmo51" path="res://assets/scenes/player/gui/cabo.png" id="71_53bls"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
 size = Vector3(5.7018433, 0.51745605, 4.864258)
@@ -439,12 +440,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="gui" unique_id=2089824442]
+offset_left = 979.00006
+offset_top = 63.0
+offset_right = 1990.0001
+offset_bottom = 1619.0
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("71_53bls")
+
 [node name="cortisol" type="TextureRect" parent="gui" unique_id=1472518658]
-offset_left = 1048.0
-offset_top = 56.0
-offset_right = 1660.0
-offset_bottom = 552.0
-scale = Vector2(0.4, 0.4)
+offset_left = 1061.0001
+offset_top = 73.99999
+offset_right = 1673.0001
+offset_bottom = 570.0
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("22_ryguw")
 flip_h = true
 script = ExtResource("25_xuqvo")
@@ -547,7 +556,6 @@ vertical_alignment = 1
 script = ExtResource("14_vivmo")
 
 [node name="parryflash" type="ColorRect" parent="gui" unique_id=573530240 groups=["flash"]]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

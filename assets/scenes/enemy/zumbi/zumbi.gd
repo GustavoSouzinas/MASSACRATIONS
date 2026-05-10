@@ -5,6 +5,10 @@ extends CharacterBody3D
 @export var DAMAGE = 10
 @export var ATTACK_COOLDOWN = 1.0
 
+@onready var splash = $"../gui/splash"
+@onready var aura = $"../gui/aura"
+@onready var node_player = $"../player"
+
 # Áudio
 @onready var audio = $Naotemaura
 @export var min_time := 3.0
@@ -103,4 +107,7 @@ func tomar_dano(tipo):
 		die()
 	
 func die():
+	splash.mostrar_mensagem_random()
+	aura.adicionar_combo(5)
+	node_player.ganhar_bateria(1)
 	queue_free()

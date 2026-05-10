@@ -2,7 +2,9 @@ extends CharacterBody3D
 
 @onready var anim = $"Run Forward (2)/AnimationPlayer"
 
-
+@onready var node_player = $"../player"
+@onready var splash = $"../gui/splash"
+@onready var aura = $"../gui/aura"
 @onready var shoot_audio = $atiramacaco
 @export var shoot_sound: AudioStream
 
@@ -12,7 +14,7 @@ extends CharacterBody3D
 @export var MIN_DISTANCE = 6.0   # muito perto → recua
 @export var MAX_DISTANCE = 12.0  # muito longe → aproxima
 
-@export var SHOOT_COOLDOWN = 2.0
+@export var SHOOT_COOLDOWN = 1.0
 
 # projétil
 @export var bullet_scene: PackedScene
@@ -157,6 +159,9 @@ func tomar_dano(tipo):
 	die()
 
 func die():
+	splash.mostrar_mensagem_random()
+	aura.adicionar_combo(5)
+	node_player.ganhar_bateria(1)
 	queue_free()
 
 #animação

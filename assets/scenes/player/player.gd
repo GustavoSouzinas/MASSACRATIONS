@@ -1,9 +1,18 @@
 extends CharacterBody3D
 
+<<<<<<< HEAD
+=======
+# --- NÓS ---
+@onready var anim = $vision/AnimatedSprite3D
+>>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 @onready var camera = $vision
 @onready var gun_stream = $gun_audio
 @onready var walk_stream = $walk_audio
 @onready var dano_stream = $dano
+@onready var aura = $"../gui/aura"
+@onready var cura_efeito = $"../gui/cura_vinheta"
+@onready var dano_efeito = $"../gui/dano_vinheta"
+
 
 enum aparato_de_ataque {
 	SAVUBU,
@@ -28,6 +37,7 @@ func adicionar_municao(arma, quantidade):
 const BOB_FREQ = 1.8
 const BOB_AMP = 0.05
 
+<<<<<<< HEAD
 var t_bob = 0.0
 var camera_origin_base = Vector3.ZERO
 var camera_rotation_base = Vector3.ZERO
@@ -42,9 +52,55 @@ var vida:
 		_vida = clamp(value, 0, vida_max)
 		vida_alterada.emit(_vida)
 		if _vida <= 0 and not morto:
+=======
+# --- STATUS ---
+var vida_maxima = 100
+# --- SISTEMA DE CURA (CELULAR) ---
+var bateria = 0
+var bateria_max = 10
+
+func ganhar_bateria(valor := 1):
+	var ganho = valor * get_multiplicador_cortisol()
+	bateria = clamp(bateria + ganho, 0, bateria_max)
+	
+var curando = false
+	
+func usar_celular_cura():
+
+	#print("tentou curar")
+
+	if bateria < bateria_max:
+		#print("sem bateria")
+		return
+
+	if curando:
+		#print("já curando")
+		return
+
+	curando = true
+	
+	anim.play("scroll")
+
+	await anim.tocar_animacao_unica("scroll")
+
+	if morto: return
+
+	vida += 25 * get_multiplicador_cortisol()
+	cura_efeito.tocar()
+	vida = clamp(vida, 0, vida_maxima)
+
+	bateria = 0
+
+	curando = false
+
+var vida = vida_maxima:
+	set(valor):
+		vida = clamp(valor, 0, vida_maxima)
+		vida_alterada.emit(vida)
+		if vida <= 0 and not morto:
+>>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 			morrer()
 
-var aura = 1000
 var cortisol = 0.0
 var cortisol_max = 10.0
 var morto = false
@@ -105,16 +161,28 @@ func _input(event):
 		resetar()
 		return
 
+<<<<<<< HEAD
 	if morto:
 		return
 
 	if event is InputEventKey and event.is_action_pressed("ui_cancel"):
+=======
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_C:
+			usar_celular_cura()
+
+	# Alternar Mouse (ESC)
+	if event is InputEventKey and event.is_action_pressed("ui_cancel"): # Recomendado usar Actions
+>>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_CAPTURED
 
 	if event is InputEventKey and event.keycode == KEY_SHIFT:
 		SPEED = (17.0 / 3.0) if event.pressed else 17.0
 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if curando:
+			return
+		
 		if ammo[aparato_atual] <= 0:
 			print("sem munição")
 			return
@@ -210,6 +278,7 @@ func tomar_dano(quantidade):
 		dano_stream.play()
 
 	vision_shake(0.4, 0.8)
+	dano_efeito.tocar()
 
 func morrer():
 	morto = true
@@ -275,6 +344,12 @@ func cumbuca_shoot():
 		if dist_cumbuca < radius and dist_player < parry_radius:
 			if bullet.has_method("parry"):
 				bullet.parry(self)
+<<<<<<< HEAD
+=======
+				aura.adicionar_combo(10)
+				
+				
+>>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 
 func calcular_cortisol():
 	var origem = global_position
@@ -292,3 +367,6 @@ func calcular_cortisol():
 
 func get_cortisol_normalizado():
 	return cortisol / cortisol_max
+
+func get_multiplicador_cortisol():
+	return 1.0 + (cortisol * 0.2)

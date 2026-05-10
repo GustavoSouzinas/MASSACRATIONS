@@ -1,0 +1,369 @@
+[gd_scene format=4 uid="uid://c1hlv1iyn4sk3"]
+
+[ext_resource type="Script" uid="uid://ov4cppvnpyff" path="res://assets/scenes/player/player.gd" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://c82v5joth18ip" path="res://assets/audios/music/massacrationdance.mp3" id="2_lswn8"]
+[ext_resource type="Texture2D" uid="uid://dxbkxaoxjmr0g" path="res://assets/sprites/guns/cumbuca/c1.png" id="3_82xsv"]
+[ext_resource type="Script" uid="uid://xrgvygeyas3d" path="res://ost.gd" id="3_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://d3ha6hehw2u3p" path="res://assets/sprites/guns/savubu/output/f1.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://3qyfye5agd7x" path="res://assets/sprites/guns/cumbuca/c2.png" id="4_getpj"]
+[ext_resource type="Texture2D" uid="uid://bbn5unwhwwdq" path="res://assets/sprites/guns/savubu/output/f2.png" id="4_kek77"]
+[ext_resource type="Texture2D" uid="uid://d3bc6f1do3hv8" path="res://assets/sprites/guns/savubu/output/f3.png" id="5_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cye4kgukper8w" path="res://assets/sprites/guns/cumbuca/c3.png" id="5_ryguw"]
+[ext_resource type="PackedScene" uid="uid://b4ohapltrnwkn" path="res://assets/scenes/pickup_item/savubu_pickup.tscn" id="5_seu75"]
+[ext_resource type="Texture2D" uid="uid://crsy3nq2ix66q" path="res://assets/sprites/guns/cumbuca/c4.png" id="6_d13ii"]
+[ext_resource type="Texture2D" uid="uid://cdhlavpyhb43e" path="res://assets/sprites/guns/savubu/output/f4.png" id="6_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bee281bu0loud" path="res://assets/sprites/guns/cumbuca/c5.png" id="7_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://x6h13r4a0x6a" path="res://assets/sprites/guns/savubu/output/f5.png" id="7_dg77c"]
+[ext_resource type="Script" uid="uid://cc0diikil6gqy" path="res://animated_sprite_3d.gd" id="8_4c57u"]
+[ext_resource type="PackedScene" uid="uid://ckvf8tkmug6jm" path="res://assets/scenes/enemy/zumbi/zumbi.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://borvwhelk6fxr" path="res://Spawner.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
+[ext_resource type="Texture2D" uid="uid://detnvpwiayoky" path="res://assets/scenes/player/gui/mira.png" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://b3mlhsu11yrmk" path="res://assets/scenes/player/gui/life text.png" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://b66pnekthvbl2" path="res://assets/scenes/skytexture/3265149.jpg" id="18_jq2sk"]
+[ext_resource type="Shader" uid="uid://bc16lahd3vl26" path="res://assets/ps1shader.gdshader" id="21_getpj"]
+[ext_resource type="Texture2D" uid="uid://ccmkcubbnsrht" path="res://assets/scenes/player/gui/gauge.png" id="22_ryguw"]
+[ext_resource type="Texture2D" uid="uid://tiht0psq6kbt" path="res://assets/scenes/player/gui/ponteiro.png" id="23_d13ii"]
+[ext_resource type="Script" uid="uid://dpqj2a1i6iwvu" path="res://ponteiro.gd" id="24_1u8w0"]
+[ext_resource type="AudioStream" uid="uid://xb2su7yas3p3" path="res://assets/scenes/player/audio/saiyan.mp3" id="24_b1qrp"]
+[ext_resource type="Texture2D" uid="uid://ce2xa6px4ldgu" path="res://assets/scenes/player/gui/cortisol.png" id="25_0odxb"]
+[ext_resource type="Script" uid="uid://d3bsmhjn1nhhp" path="res://cortisol.gd" id="25_xuqvo"]
+[ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
+[ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
+[ext_resource type="PackedScene" uid="uid://nhpxcn4y6m05" path="res://assets/scenes/enemy/macaco/macacosniper.tscn" id="32_htxhm"]
+[ext_resource type="Texture2D" uid="uid://8cmq5gciu832" path="res://assets/scenes/player/gui/Aura1.png" id="33_0rl1p"]
+[ext_resource type="Script" uid="uid://dxi5rqcxea25e" path="res://parryflash.gd" id="33_jq2sk"]
+[ext_resource type="Script" uid="uid://i5aw5vwy7k4a" path="res://aura.gd" id="34_0rl1p"]
+[ext_resource type="PackedScene" uid="uid://bxysin3hiuel5" path="res://assets/scenes/favela/mapaFAVELA.gltf" id="34_4k2k6"]
+[ext_resource type="FontFile" uid="uid://c7r2fu72msf6w" path="res://assets/scenes/player/gui/fonts/INVASION2000.TTF" id="35_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://drsenu5cbu15y" path="res://assets/scenes/player/gui/aura_vinheta.png" id="36_facbu"]
+[ext_resource type="Script" uid="uid://dfsougjxcopwf" path="res://aura_vinheta.gd" id="36_ok6jj"]
+[ext_resource type="Script" uid="uid://cu4ky8sg6aq3j" path="res://aura_gain.gd" id="38_come4"]
+[ext_resource type="Texture2D" uid="uid://sayu2vyptovv" path="res://assets/scenes/player/gui/Aura_overlap.png" id="40_0cp0l"]
+[ext_resource type="Script" uid="uid://cckbrv5e3qmgb" path="res://texture_progress_bar.gd" id="40_4lmeg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
+size = Vector3(5.7018433, 0.51745605, 4.864258)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_82xsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_getpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ryguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d13ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1u8w0")
+}],
+"loop": true,
+"name": &"cumbuca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kek77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4c57u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_efxa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dg77c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_getpj"]
+data = PackedByteArray("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")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jq2sk"]
+panorama = ExtResource("18_jq2sk")
+
+[sub_resource type="Sky" id="Sky_efxa6"]
+sky_material = SubResource("PanoramaSkyMaterial_jq2sk")
+
+[sub_resource type="Environment" id="Environment_dg77c"]
+background_mode = 2
+sky = SubResource("Sky_efxa6")
+glow_enabled = true
+glow_intensity = 0.46
+glow_strength = 1.37
+glow_hdr_threshold = 0.75
+glow_hdr_scale = 1.59
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = ExtResource("35_h8e4i")
+font_size = 55
+font_color = Color(0.98644596, 0, 0.21835831, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
+shader = ExtResource("21_getpj")
+shader_parameter/pixel_size = 2.0
+shader_parameter/color_levels = 32.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8e4i"]
+font = ExtResource("35_h8e4i")
+font_size = 55
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lmeg"]
+font = ExtResource("35_h8e4i")
+font_size = 30
+
+[node name="main" type="Node3D" unique_id=1560260624]
+
+[node name="map" type="StaticBody3D" parent="." unique_id=1255493123]
+transform = Transform3D(3.8751452, 0, 0, 0, 1.3774563, 0, 0, 0, 5.7085643, -20.144854, 1.0272236, -25.524014)
+
+[node name="mapaFAVELA" parent="map" unique_id=18925267 instance=ExtResource("34_4k2k6")]
+transform = Transform3D(5.792, 0, 0, 0, 16.294, 0, 0, 0, 3.932, 2.129974, 0.20627803, 4.471179)
+
+[node name="farofa_pickup" parent="map" unique_id=267819157 instance=ExtResource("30_kq58d")]
+transform = Transform3D(0.25805482, 0, 0, 0, 0.72597575, 0, 0, 0, 0.17517538, 2.7614205, -0.0060405135, -0.11409092)
+
+[node name="OST" type="AudioStreamPlayer" parent="map" unique_id=1620934163]
+stream = ExtResource("2_lswn8")
+autoplay = true
+script = ExtResource("3_a6jrf")
+
+[node name="savubu_pickup" parent="map" unique_id=118201621 instance=ExtResource("5_seu75")]
+transform = Transform3D(0.25805485, 0, 0, 0, 0.72597575, 0, 0, 0, 0.1751754, 4.040856, -0.061972737, -0.018119812)
+arma = 0
+quantidade = 5
+respawn_time = 7.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map" unique_id=1700324035]
+transform = Transform3D(14.085011, 0, 0, 0, 14.085001, 0, 0, 0, 14.085, 0, -3.443413, 0)
+shape = SubResource("BoxShape3D_4k2k6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="map" unique_id=1020569320]
+transform = Transform3D(-0.21709564, -0.06761769, 0.15139496, 0.12180438, -0.52639115, 0.4848885, 0.04639429, 0.12743394, 0.12143087, -5.5129094, 28.676254, 0)
+shadow_enabled = true
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=668506230]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -43.261047, 3.044035, 92.02664)
+script = ExtResource("1_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=2021657719]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_0xm2m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player" unique_id=1547857730]
+mesh = SubResource("CapsuleMesh_h2yge")
+
+[node name="vision" type="Camera3D" parent="player" unique_id=15524673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608, -0.558)
+fov = 100.0
+near = 0.001
+far = 500.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="player/vision" unique_id=989847990]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.02122885, -0.017131507, -0.39474684)
+sprite_frames = SubResource("SpriteFrames_272bh")
+animation = &"cumbuca"
+speed_scale = 0.5
+script = ExtResource("8_4c57u")
+
+[node name="gun_audio" type="AudioStreamPlayer3D" parent="player" unique_id=1348551641]
+transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 1.7827611, -1.4359106)
+
+[node name="walk_audio" type="AudioStreamPlayer3D" parent="player" unique_id=269584973]
+transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 0.5942906, 0)
+
+[node name="dano" type="AudioStreamPlayer3D" parent="player" unique_id=495931999]
+stream = SubResource("AudioStreamMP3_getpj")
+
+[node name="dead" type="AudioStreamPlayer3D" parent="player" unique_id=1824439716]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
+environment = SubResource("Environment_dg77c")
+
+[node name="Spawner2" type="Node3D" parent="." unique_id=2070155150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.2935, 4.62451, -70.43684)
+script = ExtResource("9_kek77")
+enemy_scene = ExtResource("32_htxhm")
+
+[node name="Spawner" type="Node3D" parent="." unique_id=201269209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.16019, 5.8534746, -47.204628)
+script = ExtResource("9_kek77")
+enemy_scene = ExtResource("8_5vw27")
+
+[node name="gui" type="CanvasLayer" parent="." unique_id=2052648172]
+
+[node name="aura_vinheta" type="TextureRect" parent="gui" unique_id=798163340]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("36_facbu")
+script = ExtResource("36_ok6jj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="gui/aura_vinheta" unique_id=1974326634]
+stream = ExtResource("24_b1qrp")
+volume_db = -2.737
+
+[node name="VIDA" type="Label" parent="gui" unique_id=1080290022]
+offset_left = 101.0
+offset_top = 167.0
+offset_right = 138.00003
+offset_bottom = 243.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+label_settings = SubResource("LabelSettings_efxa6")
+script = ExtResource("14_vivmo")
+
+[node name="LifeText" type="Sprite2D" parent="gui" unique_id=617020098]
+texture_filter = 2
+position = Vector2(49.999996, 221.00003)
+scale = Vector2(0.13125, 0.12375003)
+texture = ExtResource("15_vivmo")
+
+[node name="CenterContainer" type="CenterContainer" parent="gui" unique_id=1334760952]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="gui/CenterContainer" unique_id=1363961309]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_2cqfq")
+offset = Vector2(2.565, 25.85)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="gui" unique_id=1372911262]
+
+[node name="ColorRect" type="ColorRect" parent="gui/CanvasLayer" unique_id=2140420759]
+material = SubResource("ShaderMaterial_ryguw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cortisol" type="TextureRect" parent="gui" unique_id=1472518658]
+offset_left = 1034.0
+offset_top = 123.99999
+offset_right = 1646.0
+offset_bottom = 620.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("22_ryguw")
+flip_h = true
+script = ExtResource("25_xuqvo")
+
+[node name="ponteiro" type="Sprite2D" parent="gui/cortisol" unique_id=508508931]
+position = Vector2(304.99997, 299.99985)
+texture = ExtResource("23_d13ii")
+offset = Vector2(0, -51.125)
+script = ExtResource("24_1u8w0")
+
+[node name="TextureRect2" type="TextureRect" parent="gui/cortisol" unique_id=946302885]
+layout_mode = 0
+offset_left = 141.9
+offset_top = 329.615
+offset_right = 960.65
+offset_bottom = 506.86502
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("25_0odxb")
+
+[node name="munição" type="Label" parent="gui" unique_id=485254312]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 198.0
+offset_top = -99.0
+offset_right = 430.0
+offset_bottom = -38.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 44
+text = "TEMPLATE"
+label_settings = SubResource("LabelSettings_h8e4i")
+script = ExtResource("29_qsp4k")
+
+[node name="splash" type="Label" parent="gui" unique_id=283579422]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -235.0
+offset_right = 55.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(62.5, 22.5)
+theme_override_font_sizes/font_size = 29
+label_settings = SubResource("LabelSettings_4lmeg")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("12_ycdy4")
+
+[node name="aura" type="TextureRect" parent="gui" unique_id=211732387]
+offset_left = -376.00003
+offset_top = -269.00006
+offset_right = 566.0
+offset_bottom = 1401.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(471, 835)
+texture = ExtResource("33_0rl1p")
+script = ExtResource("34_0rl1p")
+
+[node name="aura_gain" type="Label" parent="gui/aura" unique_id=159547829]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55600005
+anchor_top = 0.45800003
+anchor_right = 0.55600005
+anchor_bottom = 0.45800003
+offset_left = 212.24799
+offset_top = -164.85999
+offset_right = 642.2479
+offset_bottom = 25.140015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 111
+script = ExtResource("38_come4")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="gui/aura" unique_id=667005065]
+layout_mode = 0
+offset_right = 942.0
+offset_bottom = 1670.0
+fill_mode = 3
+texture_progress = ExtResource("40_0cp0l")
+script = ExtResource("40_4lmeg")
+
+[node name="parryflash" type="ColorRect" parent="gui" unique_id=573530240 groups=["flash"]]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.38039216)
+script = ExtResource("33_jq2sk")

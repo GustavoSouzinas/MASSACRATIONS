@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ov4cppvnpyff" path="res://assets/scenes/player/player.gd" id="1_ig7tw"]
 [ext_resource type="AudioStream" uid="uid://c82v5joth18ip" path="res://assets/audios/music/massacrationdance.mp3" id="2_lswn8"]
 [ext_resource type="Texture2D" uid="uid://dxbkxaoxjmr0g" path="res://assets/sprites/guns/cumbuca/c1.png" id="3_82xsv"]
-[ext_resource type="Script" uid="uid://xrgvygeyas3d" path="res://ost.gd" id="3_a6jrf"]
+[ext_resource type="Script" path="res://ost.gd" id="3_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://d3ha6hehw2u3p" path="res://assets/sprites/guns/savubu/output/f1.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://3qyfye5agd7x" path="res://assets/sprites/guns/cumbuca/c2.png" id="4_getpj"]
 [ext_resource type="Texture2D" uid="uid://bbn5unwhwwdq" path="res://assets/sprites/guns/savubu/output/f2.png" id="4_kek77"]
@@ -310,6 +310,11 @@ font = ExtResource("35_h8e4i")
 font_size = 27
 outline_size = 9
 outline_color = Color(0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
+shader = ExtResource("21_getpj")
+shader_parameter/pixel_size = 2.0
+shader_parameter/color_steps = 32.0
+shader_parameter/chroma = 1.0
 
 [node name="main" type="Node3D" unique_id=1560260624]
 
@@ -432,7 +437,7 @@ offset = Vector2(2.565, 25.85)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="gui" unique_id=1372911262]
 
-[node name="ColorRect" type="ColorRect" parent="gui/CanvasLayer" unique_id=2140420759]
+[node name="shaderPS1" type="ColorRect" parent="gui/CanvasLayer" unique_id=2140420759]
 material = SubResource("ShaderMaterial_ryguw")
 anchors_preset = 15
 anchor_right = 1.0
@@ -614,3 +619,16 @@ offset_right = 193.93816
 offset_bottom = 344.67413
 text = "C - SE CURAR"
 label_settings = SubResource("LabelSettings_hrvbo")
+[node name="morte" type="Label" parent="gui" unique_id=1337467389]
+offset_left = 223.0
+offset_top = 238.0
+offset_right = 1022.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 35
+text = "morreu!!!
+
+
+aperte R para reviver"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1

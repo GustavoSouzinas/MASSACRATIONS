@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @onready var splash = $"../gui/splash"
 @onready var aura = $"../gui/aura"
+@onready var node_player = $"../player"
 
 # Áudio
 @onready var audio = $Naotemaura
@@ -108,4 +109,5 @@ func tomar_dano(tipo):
 func die():
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
+	node_player.ganhar_bateria(1)
 	queue_free()

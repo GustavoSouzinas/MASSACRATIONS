@@ -20,34 +20,83 @@
 [ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
 [ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://detnvpwiayoky" path="res://assets/scenes/player/gui/mira.png" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://drpdt7tvm0a1r" path="res://assets/sprites/guns/celular/2.png" id="17_23xmf"]
 [ext_resource type="Texture2D" uid="uid://b66pnekthvbl2" path="res://assets/scenes/skytexture/3265149.jpg" id="18_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://c26b3lgix5y14" path="res://assets/sprites/guns/celular/3.png" id="18_swlj1"]
+[ext_resource type="Texture2D" uid="uid://bskw2emwyaar5" path="res://assets/sprites/guns/celular/4.png" id="19_yysqy"]
+[ext_resource type="Texture2D" uid="uid://bfi1ajrkn6eqn" path="res://assets/sprites/guns/celular/5.png" id="20_n5t1e"]
 [ext_resource type="Shader" uid="uid://bc16lahd3vl26" path="res://assets/ps1shader.gdshader" id="21_getpj"]
+[ext_resource type="Texture2D" uid="uid://b7uit64pogly2" path="res://assets/sprites/guns/celular/6.png" id="21_h6isl"]
+[ext_resource type="Texture2D" uid="uid://b4cg4bg57l6ai" path="res://assets/sprites/guns/celular/7.png" id="22_53bls"]
 [ext_resource type="Texture2D" uid="uid://ccmkcubbnsrht" path="res://assets/scenes/player/gui/gauge.png" id="22_ryguw"]
 [ext_resource type="Texture2D" uid="uid://tiht0psq6kbt" path="res://assets/scenes/player/gui/ponteiro.png" id="23_d13ii"]
+[ext_resource type="Texture2D" uid="uid://dwgr837o0bk3b" path="res://assets/sprites/guns/celular/8.png" id="23_lwnsi"]
 [ext_resource type="Script" uid="uid://dpqj2a1i6iwvu" path="res://ponteiro.gd" id="24_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://cm21towjex6xy" path="res://assets/sprites/guns/celular/9.png" id="24_41lik"]
 [ext_resource type="AudioStream" uid="uid://xb2su7yas3p3" path="res://assets/scenes/player/audio/saiyan.mp3" id="24_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://ce2xa6px4ldgu" path="res://assets/scenes/player/gui/cortisol.png" id="25_0odxb"]
+[ext_resource type="Texture2D" uid="uid://otp8qk32i03b" path="res://assets/sprites/guns/celular/10.png" id="25_jbvwl"]
 [ext_resource type="Script" uid="uid://d3bsmhjn1nhhp" path="res://cortisol.gd" id="25_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://du6tkgakw87sg" path="res://assets/sprites/guns/celular/11.png" id="26_sn1fb"]
+[ext_resource type="Texture2D" uid="uid://dcekd5ac7p2lb" path="res://assets/sprites/guns/celular/12.png" id="27_yvsr8"]
+[ext_resource type="Texture2D" uid="uid://dvw0pj3sqe6du" path="res://assets/sprites/guns/celular/13.png" id="28_vieuh"]
 [ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://bohjri20ma4fe" path="res://assets/sprites/guns/celular/14.png" id="29_yjja3"]
 [ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
+[ext_resource type="Texture2D" uid="uid://ccv3rk028651e" path="res://assets/sprites/guns/celular/15.png" id="30_l0gw7"]
+[ext_resource type="Texture2D" uid="uid://bvbtrd5356s8g" path="res://assets/sprites/guns/celular/16.png" id="31_inymm"]
 [ext_resource type="PackedScene" uid="uid://nhpxcn4y6m05" path="res://assets/scenes/enemy/macaco/macacosniper.tscn" id="32_htxhm"]
+[ext_resource type="Texture2D" uid="uid://bi8hm5mwnqt7m" path="res://assets/sprites/guns/celular/17.png" id="32_jcxqu"]
+[ext_resource type="Texture2D" uid="uid://c5nfl14rfg0jb" path="res://assets/sprites/guns/celular/18.png" id="33_0arob"]
 [ext_resource type="Texture2D" uid="uid://8cmq5gciu832" path="res://assets/scenes/player/gui/Aura1.png" id="33_0rl1p"]
 [ext_resource type="Script" uid="uid://dxi5rqcxea25e" path="res://parryflash.gd" id="33_jq2sk"]
 [ext_resource type="Script" uid="uid://i5aw5vwy7k4a" path="res://aura.gd" id="34_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://bxysin3hiuel5" path="res://assets/scenes/favela/mapaFAVELA.gltf" id="34_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://c1u0mjv66rs0c" path="res://assets/sprites/guns/celular/19.png" id="34_dij0e"]
 [ext_resource type="FontFile" uid="uid://c7r2fu72msf6w" path="res://assets/scenes/player/gui/fonts/INVASION2000.TTF" id="35_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://bga12hypgq266" path="res://assets/sprites/guns/celular/20.png" id="35_k1udn"]
 [ext_resource type="Texture2D" uid="uid://drsenu5cbu15y" path="res://assets/scenes/player/gui/aura_vinheta.png" id="36_facbu"]
 [ext_resource type="Script" uid="uid://dfsougjxcopwf" path="res://aura_vinheta.gd" id="36_ok6jj"]
+[ext_resource type="Texture2D" uid="uid://bb02dvto6es5f" path="res://assets/sprites/guns/celular/21.png" id="36_wat4s"]
+[ext_resource type="Texture2D" uid="uid://bp0exh4egefoq" path="res://assets/sprites/guns/celular/22.png" id="37_ywjan"]
 [ext_resource type="Script" uid="uid://cu4ky8sg6aq3j" path="res://aura_gain.gd" id="38_come4"]
+[ext_resource type="Texture2D" uid="uid://dc3ybofa2g4jl" path="res://assets/sprites/guns/celular/23.png" id="38_m74q3"]
+[ext_resource type="Texture2D" uid="uid://bl3h58f4a7fch" path="res://assets/sprites/guns/celular/24.png" id="39_tko6h"]
 [ext_resource type="Texture2D" uid="uid://sayu2vyptovv" path="res://assets/scenes/player/gui/Aura_overlap.png" id="40_0cp0l"]
 [ext_resource type="Script" uid="uid://cckbrv5e3qmgb" path="res://texture_progress_bar.gd" id="40_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://bvww8q20hubkl" path="res://assets/sprites/guns/celular/25.png" id="40_am8a1"]
+[ext_resource type="Texture2D" uid="uid://j10oyaf3pelt" path="res://assets/sprites/guns/celular/26.png" id="41_8dc3g"]
+[ext_resource type="Texture2D" uid="uid://0th0d4c8qpft" path="res://assets/scenes/player/gui/celular.png" id="42_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://gwswf76nsp4n" path="res://assets/sprites/guns/celular/27.png" id="42_htgcl"]
+[ext_resource type="Texture2D" uid="uid://jdu2fl1ar18m" path="res://assets/scenes/player/gui/template_charge.png" id="43_0n3wm"]
+[ext_resource type="Texture2D" uid="uid://drpis1oognjv7" path="res://assets/scenes/player/gui/celular_ovelap.png" id="43_d2t1y"]
+[ext_resource type="Script" uid="uid://jhlcwgelxg23" path="res://bateria.gd" id="43_gngh3"]
+[ext_resource type="Script" uid="uid://crhc04r2njeht" path="res://celular.gd" id="43_qnost"]
+[ext_resource type="Texture2D" uid="uid://4qj0xsayv77u" path="res://assets/sprites/guns/celular/29.png" id="43_smeu8"]
+[ext_resource type="Texture2D" uid="uid://blnaogsqhpwmd" path="res://assets/sprites/guns/celular/31.png" id="44_f3y11"]
+[ext_resource type="Texture2D" uid="uid://ckpfh1edwwdd" path="res://assets/sprites/guns/celular/33.png" id="45_cpm2s"]
+[ext_resource type="Texture2D" uid="uid://b0416h6jfx4vu" path="res://assets/sprites/guns/celular/35.png" id="46_u81y6"]
+[ext_resource type="Script" uid="uid://b0r5s6lfhrsio" path="res://control.gd" id="47_f6a44"]
+[ext_resource type="Texture2D" uid="uid://rk8fj6hclnyd" path="res://assets/sprites/guns/celular/37.png" id="47_rt5wr"]
+[ext_resource type="Texture2D" uid="uid://bfbmfeewpmnui" path="res://assets/scenes/player/gui/raio.png" id="48_0cbny"]
+[ext_resource type="Texture2D" uid="uid://dq6kvfo6ob3l7" path="res://assets/sprites/guns/celular/39.png" id="48_mnw77"]
+[ext_resource type="Texture2D" uid="uid://doarnhhaa688n" path="res://assets/sprites/guns/celular/41.png" id="49_vjgyh"]
+[ext_resource type="Texture2D" uid="uid://60i3af1atc3d" path="res://assets/sprites/guns/celular/43.png" id="50_d5iia"]
+[ext_resource type="Texture2D" uid="uid://b1torye830ecj" path="res://assets/sprites/guns/celular/45.png" id="51_asu84"]
+[ext_resource type="Texture2D" uid="uid://daougjegfeim4" path="res://assets/sprites/guns/celular/47.png" id="52_qwt6e"]
+[ext_resource type="Texture2D" uid="uid://b5muw1n2bc53g" path="res://assets/sprites/guns/celular/49.png" id="53_off2o"]
+[ext_resource type="Texture2D" uid="uid://c4cn2ynkc5y70" path="res://assets/sprites/guns/celular/52.png" id="54_tttfs"]
+[ext_resource type="Texture2D" uid="uid://cwu834nfocb5b" path="res://assets/sprites/guns/celular/55.png" id="55_1iygd"]
+[ext_resource type="Texture2D" uid="uid://bv1nwayvx71yr" path="res://assets/sprites/guns/celular/58.png" id="56_g5xqc"]
+[ext_resource type="Texture2D" uid="uid://djc1yhas01iqj" path="res://assets/scenes/player/gui/dano.png" id="65_h6isl"]
+[ext_resource type="Texture2D" uid="uid://ch2wrqsv2nb81" path="res://assets/scenes/player/gui/cura.png" id="65_yysqy"]
+[ext_resource type="Script" uid="uid://ifghc7pf8kcw" path="res://dano_vinheta.gd" id="66_53bls"]
+[ext_resource type="Script" uid="uid://cdw0r2sbwjhkl" path="res://cura_vinheta.gd" id="66_n5t1e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
 size = Vector3(5.7018433, 0.51745605, 4.864258)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
 animations = [{
@@ -90,6 +139,131 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_23xmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_swlj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yysqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_n5t1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_h6isl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_53bls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lwnsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_41lik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jbvwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sn1fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yvsr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vieuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yjja3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_l0gw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_inymm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jcxqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0arob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dij0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_k1udn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_wat4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ywjan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_m74q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tko6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_am8a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8dc3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_htgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_smeu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_f3y11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_cpm2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_u81y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rt5wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_mnw77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_vjgyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_d5iia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_asu84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_qwt6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_off2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_tttfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_1iygd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_g5xqc")
+}],
+"loop": false,
+"name": &"scroll",
+"speed": 40.0
 }]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_getpj"]
@@ -130,6 +304,12 @@ font = ExtResource("35_h8e4i")
 font_size = 104
 font_color = Color(0.98644596, 0, 0.21835831, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_hrvbo"]
+font = ExtResource("35_h8e4i")
+font_size = 27
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
 [node name="main" type="Node3D" unique_id=1560260624]
 
 [node name="map" type="StaticBody3D" parent="." unique_id=1255493123]
@@ -168,9 +348,6 @@ script = ExtResource("1_ig7tw")
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_0xm2m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player" unique_id=1547857730]
-mesh = SubResource("CapsuleMesh_h2yge")
-
 [node name="vision" type="Camera3D" parent="player" unique_id=15524673]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608, -0.558)
 fov = 100.0
@@ -180,7 +357,7 @@ far = 500.0
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="player/vision" unique_id=989847990]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.02122885, -0.017131507, -0.39474684)
 sprite_frames = SubResource("SpriteFrames_272bh")
-animation = &"cumbuca"
+animation = &"scroll"
 speed_scale = 0.5
 script = ExtResource("8_4c57u")
 
@@ -220,6 +397,20 @@ script = ExtResource("36_ok6jj")
 stream = ExtResource("24_b1qrp")
 volume_db = -2.737
 
+[node name="dano_vinheta" type="TextureRect" parent="gui" unique_id=1009662275]
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(640, 360)
+texture = ExtResource("65_h6isl")
+script = ExtResource("66_53bls")
+
+[node name="cura_vinheta" type="TextureRect" parent="gui" unique_id=899421583]
+offset_right = 1280.0
+offset_bottom = 720.0
+pivot_offset = Vector2(640, 360)
+texture = ExtResource("65_yysqy")
+script = ExtResource("66_n5t1e")
+
 [node name="CenterContainer" type="CenterContainer" parent="gui" unique_id=1334760952]
 anchors_preset = 8
 anchor_left = 0.5
@@ -249,10 +440,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="cortisol" type="TextureRect" parent="gui" unique_id=1472518658]
-offset_left = 1034.0
-offset_top = 123.99999
-offset_right = 1646.0
-offset_bottom = 620.0
+offset_left = 1048.0
+offset_top = 56.0
+offset_right = 1660.0
+offset_bottom = 552.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("22_ryguw")
 flip_h = true
@@ -356,6 +547,7 @@ vertical_alignment = 1
 script = ExtResource("14_vivmo")
 
 [node name="parryflash" type="ColorRect" parent="gui" unique_id=573530240 groups=["flash"]]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -363,3 +555,54 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.38039216)
 script = ExtResource("33_jq2sk")
+
+[node name="celular" type="TextureRect" parent="gui" unique_id=2124714046]
+offset_left = 1084.0
+offset_top = 252.0
+offset_right = 1253.0
+offset_bottom = 564.0
+scale = Vector2(0.89, 0.89)
+pivot_offset = Vector2(84.5, 156)
+texture = ExtResource("42_0cp0l")
+script = ExtResource("43_qnost")
+
+[node name="bateria" type="TextureProgressBar" parent="gui/celular" unique_id=690367233]
+layout_mode = 0
+offset_left = 54.72461
+offset_top = 107.68536
+offset_right = 454.7246
+offset_bottom = 507.68536
+scale = Vector2(0.145, 0.25)
+fill_mode = 3
+texture_progress = ExtResource("43_0n3wm")
+script = ExtResource("43_gngh3")
+
+[node name="celularoverlap" type="TextureRect" parent="gui/celular" unique_id=419921023]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("43_d2t1y")
+
+[node name="Control" type="Control" parent="gui/celular" unique_id=1584207254]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("47_f6a44")
+
+[node name="TextureRect" type="TextureRect" parent="gui/celular/Control" unique_id=1610467651]
+layout_mode = 0
+offset_left = 50.2303
+offset_top = -13.662931
+offset_right = 400.2303
+offset_bottom = 472.33707
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("48_0cbny")
+
+[node name="Label" type="Label" parent="gui/celular/Control" unique_id=2085388235]
+layout_mode = 0
+offset_left = -16.061848
+offset_top = 316.67413
+offset_right = 193.93816
+offset_bottom = 344.67413
+text = "C - SE CURAR"
+label_settings = SubResource("LabelSettings_hrvbo")

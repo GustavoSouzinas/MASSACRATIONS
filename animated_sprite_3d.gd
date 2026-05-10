@@ -5,7 +5,21 @@ var anim_map = {
 	1: "cumbuca"
 }
 
+var travado = false
+
+func tocar_animacao_unica(nome):
+	travado = true
+	play(nome)
+
+	await animation_finished
+
+	travado = false
+
 func _process(_delta):
+
+	if travado:
+		return
+
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return

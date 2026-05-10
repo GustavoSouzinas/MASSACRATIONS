@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 extends CanvasLayer
 
 @onready var label_morte = $morte
@@ -45,7 +44,6 @@ func esconder_morte():
 	label_morte.visible = false
 	label_morte.modulate.a = 0.0
 	label_morte.scale = Vector2.ONE
-=======
 extends Label
 
 var efeito_ativo = false
@@ -90,4 +88,3 @@ func mostrar_mensagem_encantada(texto: String):
 	var tween_out = create_tween().set_parallel(true)
 	tween_out.tween_property(self, "modulate:a", 0.0, 0.5)
 	tween_out.tween_property(self, "scale", Vector2(2.0, 2.0), 0.5)
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5

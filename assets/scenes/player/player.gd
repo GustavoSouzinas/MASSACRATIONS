@@ -1,10 +1,7 @@
 extends CharacterBody3D
 
-<<<<<<< HEAD
-=======
 # --- NÓS ---
 @onready var anim = $vision/AnimatedSprite3D
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 @onready var camera = $vision
 @onready var gun_stream = $gun_audio
 @onready var walk_stream = $walk_audio
@@ -37,7 +34,6 @@ func adicionar_municao(arma, quantidade):
 const BOB_FREQ = 1.8
 const BOB_AMP = 0.05
 
-<<<<<<< HEAD
 var t_bob = 0.0
 var camera_origin_base = Vector3.ZERO
 var camera_rotation_base = Vector3.ZERO
@@ -52,7 +48,6 @@ var vida:
 		_vida = clamp(value, 0, vida_max)
 		vida_alterada.emit(_vida)
 		if _vida <= 0 and not morto:
-=======
 # --- STATUS ---
 var vida_maxima = 100
 # --- SISTEMA DE CURA (CELULAR) ---
@@ -98,7 +93,6 @@ var vida = vida_maxima:
 		vida = clamp(valor, 0, vida_maxima)
 		vida_alterada.emit(vida)
 		if vida <= 0 and not morto:
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 			morrer()
 
 var cortisol = 0.0
@@ -161,19 +155,16 @@ func _input(event):
 		resetar()
 		return
 
-<<<<<<< HEAD
 	if morto:
 		return
 
 	if event is InputEventKey and event.is_action_pressed("ui_cancel"):
-=======
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_C:
 			usar_celular_cura()
 
 	# Alternar Mouse (ESC)
 	if event is InputEventKey and event.is_action_pressed("ui_cancel"): # Recomendado usar Actions
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_CAPTURED
 
 	if event is InputEventKey and event.keycode == KEY_SHIFT:
@@ -344,12 +335,9 @@ func cumbuca_shoot():
 		if dist_cumbuca < radius and dist_player < parry_radius:
 			if bullet.has_method("parry"):
 				bullet.parry(self)
-<<<<<<< HEAD
-=======
 				aura.adicionar_combo(10)
 				
 				
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 
 func calcular_cortisol():
 	var origem = global_position

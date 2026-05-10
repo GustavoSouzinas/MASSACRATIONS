@@ -30,12 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://b4cg4bg57l6ai" path="res://assets/sprites/guns/celular/7.png" id="22_53bls"]
 [ext_resource type="Texture2D" uid="uid://ccmkcubbnsrht" path="res://assets/scenes/player/gui/gauge.png" id="22_ryguw"]
 [ext_resource type="Texture2D" uid="uid://tiht0psq6kbt" path="res://assets/scenes/player/gui/ponteiro.png" id="23_d13ii"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://ponteiro.gd" id="24_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://ce2xa6px4ldgu" path="res://assets/scenes/player/gui/cortisol.png" id="25_0odxb"]
 [ext_resource type="Script" path="res://cortisol.gd" id="25_xuqvo"]
 [ext_resource type="Script" path="res://munição.gd" id="29_qsp4k"]
-=======
 [ext_resource type="Texture2D" uid="uid://dwgr837o0bk3b" path="res://assets/sprites/guns/celular/8.png" id="23_lwnsi"]
 [ext_resource type="Script" uid="uid://dpqj2a1i6iwvu" path="res://ponteiro.gd" id="24_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://cm21towjex6xy" path="res://assets/sprites/guns/celular/9.png" id="24_41lik"]
@@ -48,20 +46,16 @@
 [ext_resource type="Texture2D" uid="uid://dvw0pj3sqe6du" path="res://assets/sprites/guns/celular/13.png" id="28_vieuh"]
 [ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bohjri20ma4fe" path="res://assets/sprites/guns/celular/14.png" id="29_yjja3"]
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 [ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
 [ext_resource type="Texture2D" uid="uid://ccv3rk028651e" path="res://assets/sprites/guns/celular/15.png" id="30_l0gw7"]
 [ext_resource type="Texture2D" uid="uid://bvbtrd5356s8g" path="res://assets/sprites/guns/celular/16.png" id="31_inymm"]
 [ext_resource type="PackedScene" uid="uid://nhpxcn4y6m05" path="res://assets/scenes/enemy/macaco/macacosniper.tscn" id="32_htxhm"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://parryflash.gd" id="33_jq2sk"]
-=======
 [ext_resource type="Texture2D" uid="uid://bi8hm5mwnqt7m" path="res://assets/sprites/guns/celular/17.png" id="32_jcxqu"]
 [ext_resource type="Texture2D" uid="uid://c5nfl14rfg0jb" path="res://assets/sprites/guns/celular/18.png" id="33_0arob"]
 [ext_resource type="Texture2D" uid="uid://8cmq5gciu832" path="res://assets/scenes/player/gui/Aura1.png" id="33_0rl1p"]
 [ext_resource type="Script" uid="uid://dxi5rqcxea25e" path="res://parryflash.gd" id="33_jq2sk"]
 [ext_resource type="Script" uid="uid://i5aw5vwy7k4a" path="res://aura.gd" id="34_0rl1p"]
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5
 [ext_resource type="PackedScene" uid="uid://bxysin3hiuel5" path="res://assets/scenes/favela/mapaFAVELA.gltf" id="34_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://c1u0mjv66rs0c" path="res://assets/sprites/guns/celular/19.png" id="34_dij0e"]
 [ext_resource type="FontFile" uid="uid://c7r2fu72msf6w" path="res://assets/scenes/player/gui/fonts/INVASION2000.TTF" id="35_h8e4i"]
@@ -576,7 +570,6 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.38039216)
 script = ExtResource("33_jq2sk")
 
-<<<<<<< HEAD
 [node name="morte" type="Label" parent="gui" unique_id=1337467389]
 offset_left = 223.0
 offset_top = 238.0
@@ -590,7 +583,6 @@ aperte R para reviver"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
-=======
 [node name="celular" type="TextureRect" parent="gui" unique_id=2124714046]
 offset_left = 1084.0
 offset_top = 252.0
@@ -641,4 +633,3 @@ offset_right = 193.93816
 offset_bottom = 344.67413
 text = "C - SE CURAR"
 label_settings = SubResource("LabelSettings_hrvbo")
->>>>>>> 997534200d523731e42b2db30480304b250cb4f5

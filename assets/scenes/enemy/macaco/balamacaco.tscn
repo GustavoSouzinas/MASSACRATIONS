@@ -47,6 +47,8 @@ material = SubResource("ShaderMaterial_fem2g")
 
 [node name="balamacaco" type="Area3D" unique_id=1711576891]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_i6aib")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1542502280]
@@ -58,7 +60,7 @@ shape = SubResource("SphereShape3D_ff1in")
 
 [node name="GPUTrail3D" type="GPUParticles3D" parent="." unique_id=467123664]
 transform = Transform3D(1, 0, 0, 0, 0.46643758, 0, 0, 0, 1, 0, 0, 0)
-amount = 10
+amount = 100
 lifetime = 100.0
 explosiveness = 1.0
 fixed_fps = 143

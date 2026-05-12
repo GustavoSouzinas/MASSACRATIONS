@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var aura = $"../gui/aura"
 @onready var shoot_audio = $atiramacaco
 @export var shoot_sound: AudioStream
+@export var ragdoll_scene: PackedScene
 
 @export var SPEED = 4.0
 
@@ -159,9 +160,22 @@ func tomar_dano(tipo):
 	die()
 
 func die():
+	var saved_pos = global_position
+	var saved_rot = global_rotation
+	# Direção: empurra pra longe do player
+	var direcao = (global_position - player.global_position).normalized()
+
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
 	node_player.ganhar_bateria(1)
+
+	if ragdoll_scene:
+		var ragdoll = ragdoll_scene.instantiate()
+		get_tree().current_scene.add_child(ragdoll)
+		ragdoll.iniciar(saved_pos, saved_rot, direcao)
+	else:
+		push_error("ragdoll_scene não atribuído: " + name)
+
 	queue_free()
 
 #animação

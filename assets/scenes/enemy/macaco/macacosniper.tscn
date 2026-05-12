@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cif282w7kdrit" path="res://assets/scenes/enemy/macaco/macacosniper.gd" id="2_8susi"]
 [ext_resource type="AudioStream" uid="uid://c12rv4krd2ilq" path="res://assets/audios/macaco.mp3" id="3_k1q7t"]
 [ext_resource type="PackedScene" uid="uid://dydm7m7nlx0i7" path="res://assets/scenes/enemy/macaco/balamacaco.tscn" id="3_t6wj7"]
+[ext_resource type="PackedScene" uid="uid://bfcdkvektu5db" path="res://assets/scenes/enemy/macaco/ragdoll_m.tscn" id="3_t8ibh"]
 [ext_resource type="PackedScene" uid="uid://d0wybfu5akkmb" path="res://assets/scenes/enemy/macaco/Run Forward (2).fbx" id="5_gjnl0"]
 [ext_resource type="AudioStream" uid="uid://be5w64nf2owhx" path="res://assets/scenes/enemy/zumbi/voce-nao-tem-aura.mp3" id="6_53mh1"]
 [ext_resource type="Script" uid="uid://dogytqb6a05kv" path="res://assets/scenes/enemy/macaco/run_forward_(2).gd" id="6_t8ibh"]
@@ -10,8 +11,11 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qlmac"]
 
 [node name="enemy" type="CharacterBody3D" unique_id=812455656]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("2_8susi")
 shoot_sound = ExtResource("3_k1q7t")
+ragdoll_scene = ExtResource("3_t8ibh")
 bullet_scene = ExtResource("3_t6wj7")
 
 [node name="colision" type="CollisionShape3D" parent="." unique_id=652605648]

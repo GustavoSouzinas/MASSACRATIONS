@@ -34,7 +34,7 @@ func freeze(duration := 0.05):
 	if flash:
 		flash.flash()
 	
-	Engine.time_scale = 0.0
+	Engine.time_scale = 0.02
 	
 	timer.start(duration)
 

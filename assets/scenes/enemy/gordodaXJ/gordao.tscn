@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://e5jnqcpx6g1g"]
+
+[ext_resource type="AudioStream" uid="uid://be5w64nf2owhx" path="res://assets/scenes/enemy/zumbi/voce-nao-tem-aura.mp3" id="2_8ohnu"]
+[ext_resource type="AudioStream" uid="uid://dugskjcoo3133" path="res://assets/scenes/enemy/gordodaXJ/motoacelera.mp3" id="2_d84f0"]
+[ext_resource type="Script" uid="uid://ci7es4f5winba" path="res://assets/scenes/enemy/gordodaXJ/gordaoXJ.gd" id="2_jyfbt"]
+[ext_resource type="PackedScene" uid="uid://ctweg6ddh8i5c" path="res://assets/scenes/enemy/gordodaXJ/gordinhoXJ.fbx" id="3_d84f0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qlmac"]
+
+[node name="enemy" type="CharacterBody3D" unique_id=812455656]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("2_jyfbt")
+
+[node name="colision" type="CollisionShape3D" parent="." unique_id=652605648]
+shape = SubResource("CylinderShape3D_qlmac")
+debug_color = Color(0.8715102, 0.0004863131, 0.8475583, 0.41960785)
+
+[node name="motoacelera" type="AudioStreamPlayer3D" parent="." unique_id=1682880891]
+stream = ExtResource("2_d84f0")
+
+[node name="Naotemaura" type="AudioStreamPlayer3D" parent="." unique_id=170999836]
+stream = ExtResource("2_8ohnu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2053198292]
+transform = Transform3D(1, 0, 0, 0, -0.91234905, -0.40941352, 0, 0.40941352, -0.91234905, -0.14111376, 1.2138093, -1.3051345)
+light_color = Color(0.7177141, 8.7020395e-05, 0.5964251, 1)
+light_energy = 16.0
+spot_range = 1.7551377
+spot_angle = 34.737984
+
+[node name="gordinhoXJ" parent="." unique_id=1913004531 instance=ExtResource("3_d84f0")]
+transform = Transform3D(-2.055, 0, -3.1029637e-07, 0, 2.055, 0, 3.1029637e-07, 0, -2.055, -0.049648285, -0.9800573, -0.26596653)

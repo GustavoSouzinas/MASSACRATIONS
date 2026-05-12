@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var ATTACK_RANGE = 2.0
 @export var DAMAGE = 10
 @export var ATTACK_COOLDOWN = 1.0
+@export var ragdoll_scene: PackedScene
 
 @onready var splash = $"../gui/splash"
 @onready var aura = $"../gui/aura"
@@ -107,7 +108,20 @@ func tomar_dano(tipo):
 		die()
 	
 func die():
+	var saved_pos = global_position
+	var saved_rot = global_rotation
+	# Direção: empurra pra longe do player
+	var direcao = (global_position - player.global_position).normalized()
+
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
 	node_player.ganhar_bateria(1)
+
+	if ragdoll_scene:
+		var ragdoll = ragdoll_scene.instantiate()
+		get_tree().current_scene.add_child(ragdoll)
+		ragdoll.iniciar(saved_pos, saved_rot, direcao)
+	else:
+		push_error("ragdoll_scene não atribuído: " + name)
+
 	queue_free()

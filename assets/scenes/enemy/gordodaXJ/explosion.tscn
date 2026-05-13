@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cuw7vt8lc7p40"]
+
+[ext_resource type="Texture2D" uid="uid://c6xauxv51qoc5" path="res://assets/sprites/guns/explosao/frame_08_delay-0.1s.png" id="1_jgmia"]
+[ext_resource type="Texture2D" uid="uid://c58vdn1ah3cvf" path="res://assets/sprites/guns/explosao/frame_09_delay-0.1s.png" id="2_x1nt2"]
+[ext_resource type="Texture2D" uid="uid://bomm4qy0m8uyq" path="res://assets/sprites/guns/explosao/frame_10_delay-0.1s.png" id="3_rwbmu"]
+[ext_resource type="Texture2D" uid="uid://bx2ogmk3udcr0" path="res://assets/sprites/guns/explosao/frame_11_delay-0.1s.png" id="4_tsqt6"]
+[ext_resource type="Texture2D" uid="uid://b2iqr14ghrbn2" path="res://assets/sprites/guns/explosao/frame_12_delay-0.1s.png" id="5_b5pw1"]
+[ext_resource type="Texture2D" uid="uid://c0es664g7ogai" path="res://assets/sprites/guns/explosao/frame_13_delay-0.1s.png" id="6_m0ww2"]
+[ext_resource type="Texture2D" uid="uid://d07pfbkio2ywt" path="res://assets/sprites/guns/explosao/frame_14_delay-0.1s.png" id="7_wgtx5"]
+[ext_resource type="Texture2D" uid="uid://btwx308ch5opk" path="res://assets/sprites/guns/explosao/frame_15_delay-0.1s.png" id="8_1h5hl"]
+[ext_resource type="Texture2D" uid="uid://be7ropemuglg5" path="res://assets/sprites/guns/explosao/frame_16_delay-0.1s.png" id="9_qwbyw"]
+[ext_resource type="Texture2D" uid="uid://c6esvvjgq3hve" path="res://assets/sprites/guns/explosao/frame_17_delay-0.1s.png" id="10_0mxo3"]
+[ext_resource type="Texture2D" uid="uid://he6et2omjf1o" path="res://assets/sprites/guns/explosao/frame_18_delay-0.1s.png" id="11_jynqh"]
+[ext_resource type="Texture2D" uid="uid://c3g64fa7wcvp" path="res://assets/sprites/guns/explosao/frame_19_delay-0.1s.png" id="12_p2bvb"]
+[ext_resource type="Texture2D" uid="uid://bpqdy4775cryq" path="res://assets/sprites/guns/explosao/frame_20_delay-0.1s.png" id="13_emc0n"]
+[ext_resource type="Texture2D" uid="uid://k670c5qnyrlm" path="res://assets/sprites/guns/explosao/frame_21_delay-0.1s.png" id="14_16w0t"]
+[ext_resource type="Texture2D" uid="uid://hwklvcpkqhyd" path="res://assets/sprites/guns/explosao/frame_22_delay-0.1s.png" id="15_tpkt6"]
+[ext_resource type="Texture2D" uid="uid://dlj8e267lxkxt" path="res://assets/sprites/guns/explosao/frame_23_delay-0.1s.png" id="16_bnj1j"]
+[ext_resource type="Texture2D" uid="uid://b747fjn4cjjjd" path="res://assets/sprites/guns/explosao/frame_24_delay-0.1s.png" id="17_awdck"]
+[ext_resource type="Script" uid="uid://ckx7dwdfehtxo" path="res://explosion_sprite.gd" id="18_orta3"]
+[ext_resource type="AudioStream" uid="uid://brc40j4af2mj4" path="res://assets/audios/explosao.mp3" id="19_x1nt2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cosn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jgmia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x1nt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rwbmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tsqt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b5pw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m0ww2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wgtx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1h5hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qwbyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0mxo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jynqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p2bvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_emc0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_16w0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tpkt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bnj1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_awdck")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="explosion" type="Node3D" unique_id=2024086354]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1476805535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9028482, 0)
+pixel_size = 0.2
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_1cosn")
+frame = 16
+frame_progress = 1.0
+script = ExtResource("18_orta3")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1704590583]
+stream = ExtResource("19_x1nt2")
+autoplay = true

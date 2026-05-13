@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var splash = $"../gui/splash"
 @onready var aura = $"../gui/aura"
 @onready var node_player = $"../player"
+@onready var streak = $"../gui/Control"
 
 # Áudio
 @onready var audio = $Naotemaura
@@ -102,21 +103,34 @@ func play_random_loop():
 # -----------------------------
 # MORTE
 # -----------------------------
+var morto = false
 func tomar_dano(tipo):
 	if tipo == "savubu":
 	
 		die()
+	if tipo == "explosao":
 	
+		die()
 func die():
+
+	if morto:
+		return
+
+	morto = true
+
 	var saved_pos = global_position
 	var saved_rot = global_rotation
+
 	# Direção: empurra pra longe do player
-	var direcao = (global_position - player.global_position).normalized()
+	var direcao = (
+		global_position - player.global_position
+	).normalized()
 
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
 	node_player.ganhar_bateria(1)
-
+	streak.registrar_kill()
+	
 	if ragdoll_scene:
 		var ragdoll = ragdoll_scene.instantiate()
 		get_tree().current_scene.add_child(ragdoll)

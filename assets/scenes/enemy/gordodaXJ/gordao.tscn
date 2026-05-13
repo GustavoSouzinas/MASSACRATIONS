@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e5jnqcpx6g1g"]
 
 [ext_resource type="AudioStream" uid="uid://be5w64nf2owhx" path="res://assets/scenes/enemy/zumbi/voce-nao-tem-aura.mp3" id="2_8ohnu"]
+[ext_resource type="PackedScene" uid="uid://cuw7vt8lc7p40" path="res://assets/scenes/enemy/gordodaXJ/explosion.tscn" id="2_d0047"]
 [ext_resource type="AudioStream" uid="uid://dugskjcoo3133" path="res://assets/scenes/enemy/gordodaXJ/motoacelera.mp3" id="2_d84f0"]
 [ext_resource type="Script" uid="uid://ci7es4f5winba" path="res://assets/scenes/enemy/gordodaXJ/gordaoXJ.gd" id="2_jyfbt"]
 [ext_resource type="PackedScene" uid="uid://ctweg6ddh8i5c" path="res://assets/scenes/enemy/gordodaXJ/gordinhoXJ.fbx" id="3_d84f0"]
@@ -11,6 +12,8 @@
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("2_jyfbt")
+EXPLOSION_RADIUS = 8.0
+explosao_scene = ExtResource("2_d0047")
 
 [node name="colision" type="CollisionShape3D" parent="." unique_id=652605648]
 shape = SubResource("CylinderShape3D_qlmac")

@@ -93,6 +93,8 @@
 [ext_resource type="Script" uid="uid://ifghc7pf8kcw" path="res://dano_vinheta.gd" id="66_53bls"]
 [ext_resource type="Script" uid="uid://cdw0r2sbwjhkl" path="res://cura_vinheta.gd" id="66_n5t1e"]
 [ext_resource type="Texture2D" uid="uid://c7o0t6odqmo51" path="res://assets/scenes/player/gui/cabo.png" id="71_53bls"]
+[ext_resource type="AudioStream" uid="uid://cqup8igbl6k7" path="res://assets/audios/carga.mp3" id="89_41lik"]
+[ext_resource type="Script" uid="uid://dis8vwenp0iqg" path="res://streak.gd" id="90_jbvwl"]
 [ext_resource type="PackedScene" uid="uid://cgodqmoveqq1i" path="res://assets/scenes/spawner.tscn" id="91_h6isl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
@@ -289,6 +291,12 @@ font_color = Color(0.98644596, 0, 0.21835831, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_hrvbo"]
 font = ExtResource("35_h8e4i")
 font_size = 27
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbvwl"]
+font = ExtResource("35_h8e4i")
+font_size = 70
 outline_size = 9
 outline_color = Color(0, 0, 0, 1)
 
@@ -599,11 +607,48 @@ offset_bottom = 344.67413
 text = "C - SE CURAR"
 label_settings = SubResource("LabelSettings_hrvbo")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="gui/celular/Control" unique_id=953787033]
+stream = ExtResource("89_41lik")
+volume_db = 3.649
+
+[node name="Control" type="Control" parent="gui" unique_id=570605305]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 136.0
+offset_right = 301.0
+offset_bottom = 223.0
+pivot_offset = Vector2(48.51, 44.425)
+script = ExtResource("90_jbvwl")
+reset_time = 4.0
+
+[node name="streak2" type="Label" parent="gui/Control" unique_id=224981981]
+layout_mode = 1
+offset_right = 54.0
+offset_bottom = 71.0
+pivot_offset = Vector2(27, 35.5)
+text = "X"
+label_settings = SubResource("LabelSettings_jbvwl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="streak" type="Label" parent="gui/Control" unique_id=1828190662]
+layout_mode = 1
+offset_left = 64.255
+offset_right = 94.25504
+offset_bottom = 71.0
+pivot_offset = Vector2(16.5, 36.5)
+text = "1"
+label_settings = SubResource("LabelSettings_jbvwl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
 environment = SubResource("Environment_dg77c")
 
 [node name="shader" type="CanvasLayer" parent="." unique_id=1112945703]
 layer = 0
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="shader" unique_id=2047437930]
 material = SubResource("ShaderMaterial_lwnsi")

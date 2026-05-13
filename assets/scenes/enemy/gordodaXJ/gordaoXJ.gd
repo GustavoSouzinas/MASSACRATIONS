@@ -7,12 +7,17 @@ extends CharacterBody3D
 @export var DAMAGE = 10
 @export var ATTACK_COOLDOWN = 1.0
 @export var CHARGE_DURATION = 0.7
+@export var EXPLOSION_DAMAGE = 25
+@export var EXPLOSION_RADIUS = 6.0
+@export var EXPLOSION_FORCE = 18.0
 # tempo tremendo antes do ataque
 @export var CHARGE_PREPARE_TIME = 0.4
 
+@export var explosao_scene: PackedScene
 @onready var splash = $"../gui/splash"
 @onready var aura = $"../gui/aura"
 @onready var node_player = $"../player"
+@onready var streak = $"../gui/Control"
 
 # Áudio
 @onready var audio = $Naotemaura
@@ -208,15 +213,50 @@ func play_random_loop():
 # -----------------------------
 # MORTE
 # -----------------------------
+var morto = false
 func tomar_dano(tipo):
 
 	if tipo == "savubu":
 		die()
+		
+func explodir():
+
+	var enemies = get_tree().get_nodes_in_group("enemies")
+
+	for p in enemies:
+
+		if p == self or p.morto:
+			continue
+
+		var dist = global_position.distance_to(p.global_position)
+
+		if dist <= EXPLOSION_RADIUS:
+
+			if p.has_method("tomar_dano"):
+				p.tomar_dano("explosao")
 
 func die():
+
+	if morto:
+		return
+
+	morto = true
+
+	var saved_pos = global_position
+
+	explodir()
 
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
 	node_player.ganhar_bateria(1)
+	streak.registrar_kill()
+
+	# explosão visual
+	if explosao_scene:
+		var explosao = explosao_scene.instantiate()
+		get_tree().current_scene.add_child(explosao)
+		explosao.global_position = saved_pos
+
+	explodir()
 
 	queue_free()

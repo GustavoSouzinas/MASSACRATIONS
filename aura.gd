@@ -4,6 +4,7 @@ signal insanity_frame_changed(frame: bool)
 signal insanity_ended
 
 @onready var gain = $"../aura/aura_gain"
+
 var combo = 0
 var max_combo = 100
 var original_position

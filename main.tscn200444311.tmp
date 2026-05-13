@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bee281bu0loud" path="res://assets/sprites/guns/cumbuca/c5.png" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://x6h13r4a0x6a" path="res://assets/sprites/guns/savubu/output/f5.png" id="7_dg77c"]
 [ext_resource type="Script" uid="uid://cc0diikil6gqy" path="res://animated_sprite_3d.gd" id="8_4c57u"]
-[ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://splash.gd" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://canvas_layer.gd" id="12_ycdy4"]
 [ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://detnvpwiayoky" path="res://assets/scenes/player/gui/mira.png" id="15_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://drpdt7tvm0a1r" path="res://assets/sprites/guns/celular/2.png" id="17_23xmf"]
@@ -271,6 +271,12 @@ animations = [{
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_getpj"]
 data = PackedByteArray("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")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
+shader = ExtResource("21_getpj")
+shader_parameter/pixel_size = 2.0
+shader_parameter/color_steps = 32.0
+shader_parameter/chroma = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_h8e4i"]
 font = ExtResource("35_h8e4i")
 font_size = 55
@@ -310,7 +316,8 @@ glow_hdr_scale = 1.59
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwnsi"]
 shader = ExtResource("21_getpj")
 shader_parameter/pixel_size = 2.0
-shader_parameter/color_levels = 32.0
+shader_parameter/color_steps = 32.0
+shader_parameter/chroma = 1.0
 
 [node name="main" type="Node3D" unique_id=1560260624]
 
@@ -423,6 +430,16 @@ grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("15_2cqfq")
 offset = Vector2(2.565, 25.85)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="gui" unique_id=1372911262]
+
+[node name="shaderPS1" type="ColorRect" parent="gui/CanvasLayer" unique_id=2140420759]
+material = SubResource("ShaderMaterial_ryguw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="gui" unique_id=2089824442]
 offset_left = 979.00006
@@ -547,6 +564,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.38039216)
 script = ExtResource("33_jq2sk")
+
+[node name="morte" type="Label" parent="gui" unique_id=1337467389]
+offset_left = 223.0
+offset_top = 238.0
+offset_right = 1022.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 35
+text = "morreu!!!
+
+
+aperte R para reviver"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="celular" type="TextureRect" parent="gui" unique_id=2124714046]
 offset_left = 1084.0

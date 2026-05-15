@@ -14,7 +14,7 @@ extends CharacterBody3D
 
 # Distâncias tipo sentry
 @export var MIN_DISTANCE = 6.0   # muito perto → recua
-@export var MAX_DISTANCE = 12.0  # muito longe → aproxima
+@export var MAX_DISTANCE = 16.0  # muito longe → aproxima
 
 @export var SHOOT_COOLDOWN = 1.0
 

@@ -96,6 +96,7 @@
 [ext_resource type="AudioStream" uid="uid://cqup8igbl6k7" path="res://assets/audios/carga.mp3" id="89_41lik"]
 [ext_resource type="Script" uid="uid://dis8vwenp0iqg" path="res://streak.gd" id="90_jbvwl"]
 [ext_resource type="PackedScene" uid="uid://cgodqmoveqq1i" path="res://assets/scenes/spawner.tscn" id="91_h6isl"]
+[ext_resource type="PackedScene" uid="uid://bmy21nldrmg52" path="res://assets/scenes/enemy/cria/cria.tscn" id="94_lwnsi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
 size = Vector3(5.7018433, 0.51745605, 4.864258)
@@ -365,7 +366,7 @@ transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0,
 shape = SubResource("CapsuleShape3D_0xm2m")
 
 [node name="vision" type="Camera3D" parent="player" unique_id=15524673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608, -0.558)
+transform = Transform3D(0.7692308, 0, 0, 0, 0.7692308, 0, 0, 0, 0.7692308, 0, 0.60800004, -0.495636)
 fov = 100.0
 near = 0.001
 far = 500.0
@@ -648,7 +649,6 @@ environment = SubResource("Environment_dg77c")
 
 [node name="shader" type="CanvasLayer" parent="." unique_id=1112945703]
 layer = 0
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="shader" unique_id=2047437930]
 material = SubResource("ShaderMaterial_lwnsi")
@@ -658,17 +658,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="spawner2" parent="." unique_id=1080600049 instance=ExtResource("91_h6isl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.75349, 5.102661, -49.172585)
-enemy_scene = ExtResource("62_lwnsi")
-max_enemies = 6
-
-[node name="spawner3" parent="." unique_id=206774395 instance=ExtResource("91_h6isl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.772884, 5.3706703, -111.698906)
-enemy_scene = ExtResource("61_53bls")
+[node name="spawner" parent="." unique_id=1727636662 instance=ExtResource("91_h6isl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.095856, 6.582939, -4.478119)
+enemy_scene = ExtResource("94_lwnsi")
+spawn_time = 4.0
 max_enemies = 2
 
-[node name="spawner" parent="." unique_id=1727636662 instance=ExtResource("91_h6isl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.150715, 6.582939, -55.849453)
+[node name="spawner2" parent="." unique_id=1080600049 instance=ExtResource("91_h6isl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.150723, 8.140099, -131.48972)
+enemy_scene = ExtResource("61_53bls")
+spawn_time = 7.0
+max_enemies = 2
+
+[node name="spawner3" parent="." unique_id=540594543 instance=ExtResource("91_h6isl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.01526, 2.9944954, -45.256653)
+enemy_scene = ExtResource("62_lwnsi")
+max_enemies = 7
+
+[node name="spawner4" parent="." unique_id=1556946849 instance=ExtResource("91_h6isl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.629135, 2.9944954, -76.24497)
 enemy_scene = ExtResource("32_htxhm")
-max_enemies = 3
+max_enemies = 4

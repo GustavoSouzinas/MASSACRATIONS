@@ -1,7 +1,7 @@
 extends Area3D
 
 @export var SPEED = 40.0
-@export var DAMAGE = 25
+@export var DAMAGE = 5
 
 var velocity = Vector3.ZERO
 var parried = false

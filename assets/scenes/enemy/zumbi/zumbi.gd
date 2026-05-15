@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@export var SPEED = 5.0
+@export var SPEED = 10.0
 @export var ATTACK_RANGE = 2.0
-@export var DAMAGE = 10
+@export var DAMAGE = 12
 @export var ATTACK_COOLDOWN = 1.0
 @export var ragdoll_scene: PackedScene
 

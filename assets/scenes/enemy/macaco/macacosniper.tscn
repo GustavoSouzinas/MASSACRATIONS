@@ -12,7 +12,7 @@
 
 [node name="enemy" type="CharacterBody3D" unique_id=812455656]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("2_8susi")
 shoot_sound = ExtResource("3_k1q7t")
 ragdoll_scene = ExtResource("3_t8ibh")

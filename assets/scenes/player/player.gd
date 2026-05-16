@@ -17,19 +17,25 @@ extends CharacterBody3D
 
 enum aparato_de_ataque {
 	SAVUBU,
-	CUMBUCA
+	CUMBUCA,
+	BADOGUE
 }
 var aparato_atual = aparato_de_ataque.SAVUBU
+var badogue_shooting = false
 
 var ammo = {
-	aparato_de_ataque.SAVUBU: 5,
-	aparato_de_ataque.CUMBUCA: 20
+	aparato_de_ataque.SAVUBU: 3,
+	aparato_de_ataque.CUMBUCA: 1,
+	aparato_de_ataque.BADOGUE: 1
 }
 
 var ammo_max = {
-	aparato_de_ataque.SAVUBU: 5,
-	aparato_de_ataque.CUMBUCA: 20
+	aparato_de_ataque.SAVUBU: 3,
+	aparato_de_ataque.CUMBUCA: 1,
+	aparato_de_ataque.BADOGUE: 1
 }
+
+
 
 func adicionar_municao(arma, quantidade):
 	ammo[arma] = clamp(ammo[arma] + quantidade, 0, ammo_max[arma])
@@ -43,10 +49,10 @@ var camera_origin_base = Vector3.ZERO #Armazenando o valor original
 # --- STATUS ---
 var vida_maxima = 100
 # --- SISTEMA DE CURA (CELULAR) ---
-var bateria = 0
-var bateria_max = 10
+var bateria: float = 0.0
+var bateria_max: float = 10.0
 
-func ganhar_bateria(valor := 1):
+func ganhar_bateria(valor: float = 1.0):
 	var ganho = valor * get_multiplicador_cortisol()
 	bateria = clamp(bateria + ganho, 0, bateria_max)
 	
@@ -54,19 +60,15 @@ var curando = false
 	
 func usar_celular_cura():
 
-	#print("tentou curar")
-
 	if bateria < bateria_max:
-		#print("sem bateria")
 		return
 
 	if curando:
-		#print("já curando")
 		return
 
 	curando = true
-	
-	anim.play("scroll")
+
+	anim.speed_scale = 0.49
 
 	await anim.tocar_animacao_unica("scroll")
 
@@ -104,8 +106,10 @@ var camera_rot_x = 0.0
 # --- RECURSOS ---
 var farofa_prop = preload("res://assets/scenes/cumbuca/farofa_particle.tscn")
 var savubu_prop = preload("res://assets/scenes/savubu/savubu_prop.tscn")
+var pedra_prop = preload("res://assets/scenes/pedra/pedra.tscn")
 var step1 = preload("res://assets/audios/step1.mp3")
 var crowbar = preload("res://assets/audios/hl_crowbar.mp3")
+var badogue = preload("res://assets/audios/badogue.mp3")
 var cough = preload("res://assets/audios/cough.mp3")
 var sound_dead = preload("res://assets/scenes/player/audio/dead.mp3")
 
@@ -150,17 +154,24 @@ func _input(event):
 		match aparato_atual:
 			aparato_de_ataque.SAVUBU:
 				savubu_shoot()
+				ammo[aparato_atual] -= 1
 			aparato_de_ataque.CUMBUCA:
 				cumbuca_shoot()
+				
+			aparato_de_ataque.BADOGUE:
+				badogue_shoot()
 		
-		ammo[aparato_atual] -= 1
+		
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_1:
-			aparato_atual = aparato_de_ataque.SAVUBU
+			aparato_atual = aparato_de_ataque.BADOGUE
+			
 
 		if event.keycode == KEY_2:
 			aparato_atual = aparato_de_ataque.CUMBUCA
-
+		
+		if event.keycode == KEY_3:
+			aparato_atual = aparato_de_ataque.SAVUBU
 	# Movimento da Câmera
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(event.relative.x * -0.002)
@@ -243,6 +254,7 @@ func tomar_dano(quantidade):
 		dano_stream.play()
 	vision_shake(0.4, 0.8)
 	dano_efeito.tocar()
+	aura.perder_combo(5)
 
 func morrer():
 	morto = true
@@ -262,31 +274,68 @@ func morrer():
 func vision_shake(forca: float, tempo: float = 0.5):
 	shake_intensity = forca
 	shake_decay = (forca / tempo) if tempo > 0 else 10.0
-
 func play_audio(stream: AudioStreamPlayer3D, audio: AudioStream):
 	if stream:
 		stream.stream = audio
 		stream.pitch_scale = randf_range(0.9, 1.1)
 		stream.play()
 
-func savubu_shoot():
-	var novo_corpo = savubu_prop.instantiate()
+func arremessar_objeto(cena, audio, forca := 25.0):
+	
+	var novo_corpo = cena.instantiate()
+
 	get_parent().add_child(novo_corpo)
-	play_audio(gun_stream, crowbar)
+
+	play_audio(gun_stream, audio)
+
 	novo_corpo.global_position = camera.global_position + (-camera.global_transform.basis.z * 1.5)
 	novo_corpo.global_rotation = camera.global_rotation
-	
+
+
 	if novo_corpo is RigidBody3D:
 		var direcao_tiro = -camera.global_transform.basis.z
-		direcao_tiro = direcao_tiro.rotated(Vector3.UP, deg_to_rad(4.5)) # ajuste fino
-		novo_corpo.apply_central_impulse(direcao_tiro * 25.0)
-		novo_corpo.apply_torque_impulse(Vector3(randf(), randf(), randf()) * 5.0)
+		direcao_tiro = direcao_tiro.rotated(Vector3.UP, deg_to_rad(1.6))
+
+		novo_corpo.apply_central_impulse(direcao_tiro * forca)
+		novo_corpo.apply_torque_impulse(
+			Vector3(randf(), randf(), randf()) * 5.0
+		)
+
+func savubu_shoot():
+	arremessar_objeto(savubu_prop, crowbar)
+
+func pedra_shoot():
+	arremessar_objeto(pedra_prop, badogue,  40)
+
+func badogue_shoot():
+	if badogue_shooting:
+		return
+
+	badogue_shooting = true
+
+	pedra_shoot()
+
+	var sprite = anim
+
+	if sprite:
+		# velocidade baseada na aura
+		var aura_normalizada = float(aura.combo) / aura.max_combo
+
+		 #de 1x até 3x
+		sprite.speed_scale = lerp(0.4, 2.5, aura_normalizada)
+
+		sprite.play("badogue shoot")
+
+		await sprite.animation_finished
+
+		sprite.speed_scale = 1.0
+
+	badogue_shooting = false
 
 func cumbuca_shoot():
 	var novo_corpo = farofa_prop.instantiate()
 	get_parent().add_child(novo_corpo)
 	play_audio(gun_stream, cough)
-
 	var origem = camera.global_position + (-camera.global_transform.basis.z * 1.5)
 	novo_corpo.global_position = origem
 	
@@ -304,6 +353,8 @@ func cumbuca_shoot():
 				dir = dir.normalized()
 				var force = (3.0 - (dist / radius)) * 18.0
 				enemy.aplicar_knockback(dir, force)
+
+
 
 	# -------------------------
 	#PARRY NAS BALAS

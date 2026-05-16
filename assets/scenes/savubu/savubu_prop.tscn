@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://51ktni173amj" path="res://assets/scenes/savubu/savubu.glb" id="1_def16"]
 [ext_resource type="Script" uid="uid://tkuijxwgm3kl" path="res://assets/scenes/savubu/savubu_prop.gd" id="2_6tkmk"]
 [ext_resource type="Script" uid="uid://bhd476l66v7a5" path="res://assets/scenes/savubu/collision.gd" id="2_nxxfu"]
+[ext_resource type="PackedScene" uid="uid://cuw7vt8lc7p40" path="res://assets/scenes/enemy/gordodaXJ/explosion.tscn" id="3_ksw4d"]
 [ext_resource type="Shader" uid="uid://dlsr1sj3f3lsm" path="res://addons/GPUTrail/shaders/trail.gdshader" id="4_aajj2"]
 [ext_resource type="Shader" uid="uid://dknayv8ljaovo" path="res://addons/GPUTrail/shaders/trail_draw_pass.gdshader" id="5_amhq8"]
 [ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail/defaults/texture.tres" id="6_amhq8"]
@@ -44,6 +45,7 @@ material = SubResource("ShaderMaterial_od4eq")
 
 [node name="savubu_prop" unique_id=1681170881 instance=ExtResource("1_def16")]
 script = ExtResource("2_6tkmk")
+explosao_scene = ExtResource("3_ksw4d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=28754280]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.2020874, 0)

@@ -14,34 +14,58 @@
 [ext_resource type="Texture2D" uid="uid://cdhlavpyhb43e" path="res://assets/sprites/guns/savubu/output/f4.png" id="6_efxa6"]
 [ext_resource type="Texture2D" uid="uid://bee281bu0loud" path="res://assets/sprites/guns/cumbuca/c5.png" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://x6h13r4a0x6a" path="res://assets/sprites/guns/savubu/output/f5.png" id="7_dg77c"]
+[ext_resource type="Texture2D" uid="uid://b0w3pl626fhxr" path="res://assets/sprites/guns/badogue/0000.png" id="7_ywjan"]
 [ext_resource type="Script" uid="uid://cc0diikil6gqy" path="res://animated_sprite_3d.gd" id="8_4c57u"]
+[ext_resource type="Texture2D" uid="uid://w5c4761x2bge" path="res://assets/sprites/guns/badogue/0001.png" id="8_m74q3"]
+[ext_resource type="Texture2D" uid="uid://bhlx3fcq5die1" path="res://assets/sprites/guns/badogue/0002.png" id="9_tko6h"]
+[ext_resource type="Texture2D" uid="uid://dnirknvvp6nb5" path="res://assets/sprites/guns/badogue/0003.png" id="10_am8a1"]
+[ext_resource type="Texture2D" uid="uid://cuxdtdvqd1pgm" path="res://assets/sprites/guns/badogue/0004.png" id="11_8dc3g"]
+[ext_resource type="Texture2D" uid="uid://bfmcietk4qvy" path="res://assets/sprites/guns/badogue/0005.png" id="12_htgcl"]
 [ext_resource type="Script" uid="uid://b41x3da6ch7n5" path="res://splash.gd" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://wlj6x1wjtdso" path="res://assets/sprites/guns/badogue/0006.png" id="13_smeu8"]
+[ext_resource type="Texture2D" uid="uid://c8yw4ykariemj" path="res://assets/sprites/guns/badogue/0007.png" id="14_f3y11"]
 [ext_resource type="Script" uid="uid://xtvanely8ai" path="res://vida.gd" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://detnvpwiayoky" path="res://assets/scenes/player/gui/mira.png" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://cumna4wwwnsdl" path="res://assets/sprites/guns/badogue/0008.png" id="15_cpm2s"]
+[ext_resource type="Texture2D" uid="uid://oed6oe7iv3oo" path="res://assets/sprites/guns/badogue/0009.png" id="16_u81y6"]
 [ext_resource type="Texture2D" uid="uid://drpdt7tvm0a1r" path="res://assets/sprites/guns/celular/2.png" id="17_23xmf"]
+[ext_resource type="Texture2D" uid="uid://cacrm0q2c7v0w" path="res://assets/sprites/guns/badogue/0010.png" id="17_rt5wr"]
+[ext_resource type="Texture2D" uid="uid://bwq5xgaa7r5dp" path="res://assets/sprites/guns/badogue/shoot/0000.png" id="18_d5iia"]
 [ext_resource type="Texture2D" uid="uid://b66pnekthvbl2" path="res://assets/scenes/skytexture/3265149.jpg" id="18_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://c26b3lgix5y14" path="res://assets/sprites/guns/celular/3.png" id="18_swlj1"]
+[ext_resource type="Texture2D" uid="uid://cgf8he8px6gkw" path="res://assets/sprites/guns/badogue/shoot/0001.png" id="19_asu84"]
 [ext_resource type="Texture2D" uid="uid://bskw2emwyaar5" path="res://assets/sprites/guns/celular/4.png" id="19_yysqy"]
 [ext_resource type="Texture2D" uid="uid://bfi1ajrkn6eqn" path="res://assets/sprites/guns/celular/5.png" id="20_n5t1e"]
+[ext_resource type="Texture2D" uid="uid://cn16bd3yidua" path="res://assets/sprites/guns/badogue/shoot/0002.png" id="20_qwt6e"]
 [ext_resource type="Shader" uid="uid://bc16lahd3vl26" path="res://assets/ps1shader.gdshader" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://b7uit64pogly2" path="res://assets/sprites/guns/celular/6.png" id="21_h6isl"]
+[ext_resource type="Texture2D" uid="uid://cuygaieplacmn" path="res://assets/sprites/guns/badogue/shoot/0003.png" id="21_off2o"]
 [ext_resource type="Texture2D" uid="uid://b4cg4bg57l6ai" path="res://assets/sprites/guns/celular/7.png" id="22_53bls"]
 [ext_resource type="Texture2D" uid="uid://ccmkcubbnsrht" path="res://assets/scenes/player/gui/gauge.png" id="22_ryguw"]
+[ext_resource type="Texture2D" uid="uid://dxsj8j603b7tg" path="res://assets/sprites/guns/badogue/shoot/0004.png" id="22_tttfs"]
+[ext_resource type="Texture2D" uid="uid://bi52crmtb28sd" path="res://assets/sprites/guns/badogue/shoot/0005.png" id="23_1iygd"]
 [ext_resource type="Texture2D" uid="uid://tiht0psq6kbt" path="res://assets/scenes/player/gui/ponteiro.png" id="23_d13ii"]
 [ext_resource type="Texture2D" uid="uid://dwgr837o0bk3b" path="res://assets/sprites/guns/celular/8.png" id="23_lwnsi"]
 [ext_resource type="Script" uid="uid://dpqj2a1i6iwvu" path="res://ponteiro.gd" id="24_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://cm21towjex6xy" path="res://assets/sprites/guns/celular/9.png" id="24_41lik"]
 [ext_resource type="AudioStream" uid="uid://xb2su7yas3p3" path="res://assets/scenes/player/audio/saiyan.mp3" id="24_b1qrp"]
+[ext_resource type="Texture2D" uid="uid://uvw54jokypjw" path="res://assets/sprites/guns/badogue/shoot/0006.png" id="24_g5xqc"]
 [ext_resource type="Texture2D" uid="uid://ce2xa6px4ldgu" path="res://assets/scenes/player/gui/cortisol.png" id="25_0odxb"]
 [ext_resource type="Texture2D" uid="uid://otp8qk32i03b" path="res://assets/sprites/guns/celular/10.png" id="25_jbvwl"]
+[ext_resource type="Texture2D" uid="uid://dhlonr5238y6x" path="res://assets/sprites/guns/badogue/shoot/0007.png" id="25_s4o1y"]
 [ext_resource type="Script" uid="uid://d3bsmhjn1nhhp" path="res://cortisol.gd" id="25_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://dqk5ro1ph1lkr" path="res://assets/sprites/guns/badogue/shoot/0008.png" id="26_7mmqq"]
 [ext_resource type="Texture2D" uid="uid://du6tkgakw87sg" path="res://assets/sprites/guns/celular/11.png" id="26_sn1fb"]
+[ext_resource type="Texture2D" uid="uid://dex2k8snc6poq" path="res://assets/sprites/guns/badogue/shoot/0009.png" id="27_3exxq"]
 [ext_resource type="Texture2D" uid="uid://dcekd5ac7p2lb" path="res://assets/sprites/guns/celular/12.png" id="27_yvsr8"]
+[ext_resource type="Texture2D" uid="uid://ds02qdiwtoggl" path="res://assets/sprites/guns/badogue/shoot/0010.png" id="28_5aa3q"]
 [ext_resource type="Texture2D" uid="uid://dvw0pj3sqe6du" path="res://assets/sprites/guns/celular/13.png" id="28_vieuh"]
+[ext_resource type="Texture2D" uid="uid://5wdtuga3pe8v" path="res://assets/sprites/guns/badogue/shoot/0011.png" id="29_bmvma"]
 [ext_resource type="Script" uid="uid://cx75n3gbflre2" path="res://munição.gd" id="29_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bohjri20ma4fe" path="res://assets/sprites/guns/celular/14.png" id="29_yjja3"]
 [ext_resource type="PackedScene" uid="uid://d2lhpacwr1rjy" path="res://assets/scenes/pickup_item/farofa_pickup.tscn" id="30_kq58d"]
 [ext_resource type="Texture2D" uid="uid://ccv3rk028651e" path="res://assets/sprites/guns/celular/15.png" id="30_l0gw7"]
+[ext_resource type="Texture2D" uid="uid://c1al2g5pacc08" path="res://assets/sprites/guns/badogue/shoot/0012.png" id="30_shlp4"]
 [ext_resource type="Texture2D" uid="uid://bvbtrd5356s8g" path="res://assets/sprites/guns/celular/16.png" id="31_inymm"]
 [ext_resource type="PackedScene" uid="uid://nhpxcn4y6m05" path="res://assets/scenes/enemy/macaco/macacosniper.tscn" id="32_htxhm"]
 [ext_resource type="Texture2D" uid="uid://bi8hm5mwnqt7m" path="res://assets/sprites/guns/celular/17.png" id="32_jcxqu"]
@@ -107,6 +131,88 @@ size = Vector3(5.7018433, 0.51745605, 4.864258)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_ywjan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m74q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tko6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_am8a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8dc3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_htgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_smeu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f3y11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cpm2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u81y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rt5wr")
+}],
+"loop": true,
+"name": &"badogue",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_d5iia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_asu84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qwt6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_off2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tttfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1iygd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_g5xqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_s4o1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7mmqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3exxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5aa3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bmvma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_shlp4")
+}],
+"loop": false,
+"name": &"badogue shoot",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_82xsv")
 }, {
 "duration": 1.0,
@@ -123,7 +229,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"cumbuca",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -375,6 +481,8 @@ far = 500.0
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.02122885, -0.017131507, -0.39474684)
 sprite_frames = SubResource("SpriteFrames_272bh")
 animation = &"scroll"
+frame = 39
+frame_progress = 1.0
 speed_scale = 0.5
 script = ExtResource("8_4c57u")
 
@@ -574,6 +682,7 @@ offset_top = 107.68536
 offset_right = 454.7246
 offset_bottom = 507.68536
 scale = Vector2(0.145, 0.25)
+step = 0.01
 fill_mode = 3
 texture_progress = ExtResource("43_0n3wm")
 script = ExtResource("43_gngh3")
@@ -649,6 +758,7 @@ environment = SubResource("Environment_dg77c")
 
 [node name="shader" type="CanvasLayer" parent="." unique_id=1112945703]
 layer = 0
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="shader" unique_id=2047437930]
 material = SubResource("ShaderMaterial_lwnsi")

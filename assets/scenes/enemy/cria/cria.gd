@@ -270,7 +270,7 @@ func die():
 
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
-	node_player.ganhar_bateria(1)
+	node_player.ganhar_bateria(0.2)
 	streak.registrar_kill()
 
 	if ragdoll_scene:
@@ -300,7 +300,7 @@ func atualizar_audio():
 
 		# toca asminaae aleatoriamente
 		if not asminaae.playing:
-			if randf() < 0.001:
+			if randf() < 0.002:
 				asminaae.play()
 
 	# =========================================

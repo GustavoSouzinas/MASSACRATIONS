@@ -128,7 +128,7 @@ func die():
 
 	splash.mostrar_mensagem_random()
 	aura.adicionar_combo(5)
-	node_player.ganhar_bateria(1)
+	node_player.ganhar_bateria(0.5)
 	streak.registrar_kill()
 	
 	if ragdoll_scene:

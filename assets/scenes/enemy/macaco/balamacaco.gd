@@ -55,8 +55,11 @@ func parry(player):
 			alvo = e
 
 	if alvo:
-		var dir = (alvo.global_position - global_position).normalized()
-		velocity = dir * SPEED * 1.0
+		var alvo_pos = alvo.global_position + Vector3.UP * 1.2
+
+		var dir = (alvo_pos - global_position).normalized()
+
+		velocity = dir * SPEED
 
 	# feedback visual
 	scale *= 1.8

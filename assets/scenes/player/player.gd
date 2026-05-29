@@ -103,6 +103,48 @@ const ACCEL = 0.75
 const JUMP_VELOCITY = 4.5
 var camera_rot_x = 0.0
 
+# --- DASH ---
+var dashing = false
+var invulneravel = false
+
+const DASH_SPEED = 35.0
+const DASH_DURATION = 0.05
+const DASH_COOLDOWN = 0.4
+
+var dash_timer = 0.0
+var dash_cooldown_timer = 0.0
+var dash_direction = Vector3.ZERO
+
+func iniciar_dash():
+
+	if dashing:
+		return
+
+	if dash_cooldown_timer > 0:
+		return
+
+	var input_dir = Vector2(
+		float(Input.is_key_pressed(KEY_D)) - float(Input.is_key_pressed(KEY_A)),
+		float(Input.is_key_pressed(KEY_S)) - float(Input.is_key_pressed(KEY_W))
+	)
+
+	# se não estiver andando, dash pra frente
+	if input_dir == Vector2.ZERO:
+		input_dir = Vector2(0, -1)
+
+	dash_direction = (
+		camera.global_transform.basis *
+		Vector3(input_dir.x, 0, input_dir.y)
+	).normalized()
+
+	dashing = true
+	invulneravel = true
+
+	dash_timer = DASH_DURATION
+	dash_cooldown_timer = DASH_COOLDOWN
+
+	vision_shake(0.15, 0.15)
+
 # --- RECURSOS ---
 var farofa_prop = preload("res://assets/scenes/cumbuca/farofa_particle.tscn")
 var savubu_prop = preload("res://assets/scenes/savubu/savubu_prop.tscn")
@@ -139,8 +181,13 @@ func _input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_CAPTURED
 
 	# Correr/Agachar (Shift) - Ajustado para lógica simples
-	if event is InputEventKey and event.keycode == KEY_SHIFT:
-		SPEED = (17.0 / 3.0) if event.pressed else 17.0
+	#if event is InputEventKey and event.keycode == KEY_SHIFT:
+	#	SPEED = (17.0 / 3.0) if event.pressed else 17.0
+	
+	#DASH (SHIFT)
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_SHIFT:
+			iniciar_dash()
 
 	# Atirar/Gerar Objeto
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -213,6 +260,10 @@ func _process(delta: float) -> void:
 		camera.rotation.z = move_toward(camera.rotation.z, 0, delta)
 
 func _physics_process(delta: float) -> void:
+
+	if dash_cooldown_timer > 0:
+		dash_cooldown_timer -= delta
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -222,18 +273,35 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
+	# ---------------- DASH ----------------
+	if dashing:
+		dash_timer -= delta
+
+		velocity.x = dash_direction.x * DASH_SPEED
+		velocity.z = dash_direction.z * DASH_SPEED
+
+		move_and_slide()
+
+		if dash_timer <= 0:
+			dashing = false
+			invulneravel = false
+
+		return
+	# --------------------------------------
+
 	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
 	if input_dir == Vector2.ZERO:
 		input_dir = Vector2(
 			float(Input.is_key_pressed(KEY_D)) - float(Input.is_key_pressed(KEY_A)),
 			float(Input.is_key_pressed(KEY_S)) - float(Input.is_key_pressed(KEY_W))
 		)
-	
+
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
+
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCEL)
 		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCEL)
@@ -246,12 +314,19 @@ func _physics_process(delta: float) -> void:
 # --- FUNÇÕES DE APOIO ---
 
 func tomar_dano(quantidade):
-	if morto: return
+
+	if morto:
+		return
+
+	if invulneravel:
+		return
+
 	vida -= quantidade
-	
+
 	if dano_stream:
 		dano_stream.pitch_scale = randf_range(0.9, 1.1)
 		dano_stream.play()
+
 	vision_shake(0.4, 0.8)
 	dano_efeito.tocar()
 	aura.perder_combo(5)

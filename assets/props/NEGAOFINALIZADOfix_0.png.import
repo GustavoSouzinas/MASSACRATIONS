@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfbmfeewpmnui"
-path.s3tc="res://.godot/imported/raio.png-44dc59bad3e25748926c9744f2612d61.s3tc.ctex"
+uid="uid://xgwse2ddyf0e"
+path.s3tc="res://.godot/imported/NEGAOFINALIZADOfix_0.png-df0680a2893bd01d535df844893803bc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "35310c6eb6daa3733fae868048da155c"
+}
 
 [deps]
 
-source_file="res://assets/scenes/player/gui/raio.png"
-dest_files=["res://.godot/imported/raio.png-44dc59bad3e25748926c9744f2612d61.s3tc.ctex"]
+source_file="res://assets/props/NEGAOFINALIZADOfix_0.png"
+dest_files=["res://.godot/imported/NEGAOFINALIZADOfix_0.png-df0680a2893bd01d535df844893803bc.s3tc.ctex"]
 
 [params]
 

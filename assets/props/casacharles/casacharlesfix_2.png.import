@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfbmfeewpmnui"
-path.s3tc="res://.godot/imported/raio.png-44dc59bad3e25748926c9744f2612d61.s3tc.ctex"
+uid="uid://dt5yfp7jxjcu8"
+path.s3tc="res://.godot/imported/casacharlesfix_2.png-a63110145fe01bc33afd9a264c1c869a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "b1b97d2160636cbab0db80e6f2d746ca"
+}
 
 [deps]
 
-source_file="res://assets/scenes/player/gui/raio.png"
-dest_files=["res://.godot/imported/raio.png-44dc59bad3e25748926c9744f2612d61.s3tc.ctex"]
+source_file="res://assets/props/casacharles/casacharlesfix_2.png"
+dest_files=["res://.godot/imported/casacharlesfix_2.png-a63110145fe01bc33afd9a264c1c869a.s3tc.ctex"]
 
 [params]
 

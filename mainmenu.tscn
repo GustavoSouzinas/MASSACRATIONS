@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://e72y3ta5g2rj"]
 
 [ext_resource type="Texture2D" uid="uid://btt013f1tjws2" path="res://assets/scenes/player/gui/MASSACRATIONS_titlecard.png" id="1_d2nv2"]
-[ext_resource type="Script" path="res://button.gd" id="2_wgsso"]
+[ext_resource type="Script" uid="uid://d3473pyynp46g" path="res://button.gd" id="2_wgsso"]
 [ext_resource type="AudioStream" uid="uid://ctespacuf2fo5" path="res://assets/audios/music/mainmenu.wav" id="3_wgsso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igs2m"]

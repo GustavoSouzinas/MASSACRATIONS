@@ -19,9 +19,9 @@ var proxima_cena: String
 # CONFIG
 # =========================================================
 
-@export var fade_in_duration := 2.0
-@export var fade_out_duration := 1.5
-@export var camera_move_duration := 0.0
+@export var fade_in_duration := 1.0
+@export var fade_out_duration := 0.6
+@export var camera_move_duration := 0.05
 @export var text_speed := 0.02
 
 # =========================================================

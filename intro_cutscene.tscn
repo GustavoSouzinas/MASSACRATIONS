@@ -7,6 +7,126 @@
 [ext_resource type="PackedScene" uid="uid://d1k2ftb1sy6ol" path="res://assets/props/casacharles/casacharlesfix.fbx" id="3_pcp2w"]
 [ext_resource type="FontFile" uid="uid://c2iahhs1qh0ka" path="res://assets/scenes/player/gui/fonts/BlockBlueprint.ttf" id="4_87rbk"]
 [ext_resource type="Texture2D" uid="uid://dj6aqgwh2uuo4" path="res://assets/textures/notificaçãoTigrinho.png" id="5_660lu"]
+[ext_resource type="Texture2D" uid="uid://s02v4pehbc8n" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086400.jpg" id="8_60hli"]
+[ext_resource type="Texture2D" uid="uid://c5gwuml2t35t6" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086401.jpg" id="9_6a83v"]
+[ext_resource type="Texture2D" uid="uid://j46bedgsuyvq" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086402.jpg" id="10_2l74r"]
+[ext_resource type="Texture2D" uid="uid://curu7s4tvh3w4" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086403.jpg" id="11_u8ylo"]
+[ext_resource type="Texture2D" uid="uid://dlu4fm5i8n8ky" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086404.jpg" id="12_m5krq"]
+[ext_resource type="Texture2D" uid="uid://dw5pfib5l8f4x" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086405.jpg" id="13_2mqn2"]
+[ext_resource type="Texture2D" uid="uid://cq58tqhqkwq0q" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086406.jpg" id="14_2sabl"]
+[ext_resource type="Texture2D" uid="uid://cy7rplhphqhhw" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086407.jpg" id="15_v0tot"]
+[ext_resource type="Texture2D" uid="uid://cxc01rgxeav0t" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086408.jpg" id="16_n0vu7"]
+[ext_resource type="Texture2D" uid="uid://dm38h2sx7supy" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086409.jpg" id="17_fh5dg"]
+[ext_resource type="Texture2D" uid="uid://teev84ia5rtf" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086410.jpg" id="18_ogmgn"]
+[ext_resource type="Texture2D" uid="uid://ccai2kwumexwq" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086411.jpg" id="19_e1omo"]
+[ext_resource type="Texture2D" uid="uid://7f4oqr7ou6g8" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086412.jpg" id="20_andsa"]
+[ext_resource type="Texture2D" uid="uid://ccx6q5c1rv275" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086413.jpg" id="21_xhe8t"]
+[ext_resource type="Texture2D" uid="uid://bfnbq4vhj6rqq" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086414.jpg" id="22_1htcl"]
+[ext_resource type="Texture2D" uid="uid://u1rs81vufxna" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086415.jpg" id="23_1ra3y"]
+[ext_resource type="Texture2D" uid="uid://bkeuun3o105jb" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086416.jpg" id="24_yksu2"]
+[ext_resource type="Texture2D" uid="uid://chsu6uyfvisb5" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086417.jpg" id="25_pfkyk"]
+[ext_resource type="Texture2D" uid="uid://cys6tdygrl53k" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086418.jpg" id="26_uiqkv"]
+[ext_resource type="Texture2D" uid="uid://dwoni1b7ufamk" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086419.jpg" id="27_ktc27"]
+[ext_resource type="Texture2D" uid="uid://cds4gokmae766" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086420.jpg" id="28_mx5me"]
+[ext_resource type="Texture2D" uid="uid://dfudexc5puyft" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086421.jpg" id="29_8geer"]
+[ext_resource type="Texture2D" uid="uid://dunb00g3g2f6f" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086422.jpg" id="30_6jcgu"]
+[ext_resource type="Texture2D" uid="uid://dix5ysqp7wfvr" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086423.jpg" id="31_ousp5"]
+[ext_resource type="Texture2D" uid="uid://bio71qeau8h2e" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086424.jpg" id="32_sjvmj"]
+[ext_resource type="Texture2D" uid="uid://c68oqtfoe62ew" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086425.jpg" id="33_3bp55"]
+[ext_resource type="Texture2D" uid="uid://dlu4goh067que" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086426.jpg" id="34_w87mf"]
+[ext_resource type="Texture2D" uid="uid://driqkt3pguh7i" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086427.jpg" id="35_tdcsr"]
+[ext_resource type="Texture2D" uid="uid://cf30dbx3gb7q3" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086428.jpg" id="36_af4vf"]
+[ext_resource type="Texture2D" uid="uid://cmcb7elbu78pw" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086429.jpg" id="37_v7tlh"]
+[ext_resource type="Texture2D" uid="uid://buwen1n5fstw6" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086430.jpg" id="38_1i283"]
+[ext_resource type="Texture2D" uid="uid://nuk62gwxsomb" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086431.jpg" id="39_4bymu"]
+[ext_resource type="Texture2D" uid="uid://b8rwlodxoeujh" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086432.jpg" id="40_b4ede"]
+[ext_resource type="Texture2D" uid="uid://dum1nh8icu1bs" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086433.jpg" id="41_47pnd"]
+[ext_resource type="Texture2D" uid="uid://b1lnp2drok1uq" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086434.jpg" id="42_v7e5l"]
+[ext_resource type="Texture2D" uid="uid://bemlibo8pwyw7" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086435.jpg" id="43_vhbxc"]
+[ext_resource type="Texture2D" uid="uid://volecbr0yxy5" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086436.jpg" id="44_yn42p"]
+[ext_resource type="Texture2D" uid="uid://toppk8xhlylv" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086437.jpg" id="45_aorp0"]
+[ext_resource type="Texture2D" uid="uid://12cwxdi5u812" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086438.jpg" id="46_6u8dg"]
+[ext_resource type="Texture2D" uid="uid://d3t0weayi67qp" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086439.jpg" id="47_io1od"]
+[ext_resource type="Texture2D" uid="uid://y10yklwvulig" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086440.jpg" id="48_omc6m"]
+[ext_resource type="Texture2D" uid="uid://drucvkjc8xy6d" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086441.jpg" id="49_bvelr"]
+[ext_resource type="Texture2D" uid="uid://bckhu2b0yl5qa" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086442.jpg" id="50_62eng"]
+[ext_resource type="Texture2D" uid="uid://bf6tjeyk6o84f" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086443.jpg" id="51_klhm8"]
+[ext_resource type="Texture2D" uid="uid://bt1o044odyd3t" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086444.jpg" id="52_32vo8"]
+[ext_resource type="Texture2D" uid="uid://db7ekq7emkf2f" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086445.jpg" id="53_cf6va"]
+[ext_resource type="Texture2D" uid="uid://1qcm1i8rbmuh" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086446.jpg" id="54_xb25m"]
+[ext_resource type="Texture2D" uid="uid://chusrlfc2yxc6" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086447.jpg" id="55_qsaqr"]
+[ext_resource type="Texture2D" uid="uid://biph8d6iqve5n" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086448.jpg" id="56_y6a7s"]
+[ext_resource type="Texture2D" uid="uid://cysiu7e0iihe0" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086449.jpg" id="57_vfpvg"]
+[ext_resource type="Texture2D" uid="uid://sne4o0muwcua" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086450.jpg" id="58_uxdi0"]
+[ext_resource type="Texture2D" uid="uid://b584oxo04kgdg" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086451.jpg" id="59_rx3xf"]
+[ext_resource type="Texture2D" uid="uid://ttw1uo1vi8rh" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086452.jpg" id="60_e43wd"]
+[ext_resource type="Texture2D" uid="uid://bv1dhkljvfxq5" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086453.jpg" id="61_wmcl3"]
+[ext_resource type="Texture2D" uid="uid://ga676dbkohga" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086454.jpg" id="62_mumqq"]
+[ext_resource type="Texture2D" uid="uid://cv6blnox6s6n" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086455.jpg" id="63_05quo"]
+[ext_resource type="Texture2D" uid="uid://bctw0hnuy1yei" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086456.jpg" id="64_8te1o"]
+[ext_resource type="Texture2D" uid="uid://lq5dj0dgb2tj" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086457.jpg" id="65_7l0f7"]
+[ext_resource type="Texture2D" uid="uid://d3fpx0o51a4xs" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086458.jpg" id="66_ckjqp"]
+[ext_resource type="Texture2D" uid="uid://dfubu6i2k8elt" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086459.jpg" id="67_66j5d"]
+[ext_resource type="Texture2D" uid="uid://nv7b8lhwpxc3" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086460.jpg" id="68_bbpvp"]
+[ext_resource type="Texture2D" uid="uid://bbqvif48m1ygj" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086461.jpg" id="69_qvoto"]
+[ext_resource type="Texture2D" uid="uid://gkk3eukxh03x" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086462.jpg" id="70_lq8nf"]
+[ext_resource type="Texture2D" uid="uid://bnd8a7udjtbp3" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086463.jpg" id="71_aywed"]
+[ext_resource type="Texture2D" uid="uid://rh2578uuemv4" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086464.jpg" id="72_vtyx5"]
+[ext_resource type="Texture2D" uid="uid://dc53aropfep36" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086465.jpg" id="73_4n8do"]
+[ext_resource type="Texture2D" uid="uid://dx0ep2sqtymvb" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086466.jpg" id="74_58aws"]
+[ext_resource type="Texture2D" uid="uid://2c0uejphn7po" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086467.jpg" id="75_0b4oj"]
+[ext_resource type="Texture2D" uid="uid://clhh80eyjdm75" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086468.jpg" id="76_yp5v2"]
+[ext_resource type="Texture2D" uid="uid://x4k0dvggol5t" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086469.jpg" id="77_r6la8"]
+[ext_resource type="Texture2D" uid="uid://dkadixm5s6n7e" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086470.jpg" id="78_n6c1x"]
+[ext_resource type="Texture2D" uid="uid://02mcunx5hqer" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086471.jpg" id="79_xwwin"]
+[ext_resource type="Texture2D" uid="uid://n6cp0ie05m67" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086472.jpg" id="80_eab3n"]
+[ext_resource type="Texture2D" uid="uid://qs8cklphb1vr" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086473.jpg" id="81_6ijpb"]
+[ext_resource type="Texture2D" uid="uid://cjlyiy2lblu1d" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086474.jpg" id="82_x1s0y"]
+[ext_resource type="Texture2D" uid="uid://5e553ytkibr3" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086475.jpg" id="83_frgpd"]
+[ext_resource type="Texture2D" uid="uid://d12j57d4co21o" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086476.jpg" id="84_4a665"]
+[ext_resource type="Texture2D" uid="uid://270ciuah4k1y" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086477.jpg" id="85_lubs0"]
+[ext_resource type="Texture2D" uid="uid://lbhnt6wc4upw" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086478.jpg" id="86_4o2gb"]
+[ext_resource type="Texture2D" uid="uid://dijb0oichetd4" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086479.jpg" id="87_ibvyv"]
+[ext_resource type="Texture2D" uid="uid://diu5iip1fbk6f" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086480.jpg" id="88_o1of4"]
+[ext_resource type="Texture2D" uid="uid://dclgsbrps10ul" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086481.jpg" id="89_p1w0q"]
+[ext_resource type="Texture2D" uid="uid://bg2pihfkxnv63" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086482.jpg" id="90_hkm2w"]
+[ext_resource type="Texture2D" uid="uid://yrp4577xswp8" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086483.jpg" id="91_4vr5j"]
+[ext_resource type="Texture2D" uid="uid://b2o23cl7k10h1" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086484.jpg" id="92_c2ltp"]
+[ext_resource type="Texture2D" uid="uid://cfvlfm7tmwl1q" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086485.jpg" id="93_8mtej"]
+[ext_resource type="Texture2D" uid="uid://batt3i8eu0vg1" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086486.jpg" id="94_qvbwp"]
+[ext_resource type="Texture2D" uid="uid://c5sxgud1nu23o" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086487.jpg" id="95_nj8wp"]
+[ext_resource type="Texture2D" uid="uid://kqn56ofpqh06" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086488.jpg" id="96_iryrk"]
+[ext_resource type="Texture2D" uid="uid://diq4mnebwud8o" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086489.jpg" id="97_k84t8"]
+[ext_resource type="Texture2D" uid="uid://dixihw6ug3rvs" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086490.jpg" id="98_lcoti"]
+[ext_resource type="Texture2D" uid="uid://cxnl0hrnp4svs" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086491.jpg" id="99_2uoqy"]
+[ext_resource type="Texture2D" uid="uid://tvojjj2b3n7d" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086492.jpg" id="100_8cs28"]
+[ext_resource type="Texture2D" uid="uid://cb8aoh4jwo4ry" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086493.jpg" id="101_rjx4s"]
+[ext_resource type="Texture2D" uid="uid://bnilje38s2r8s" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086494.jpg" id="102_6fjjr"]
+[ext_resource type="Texture2D" uid="uid://d0tqyy828si5c" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086495.jpg" id="103_x7wnr"]
+[ext_resource type="Texture2D" uid="uid://dh42544fc7fwi" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086496.jpg" id="104_n2ri0"]
+[ext_resource type="Texture2D" uid="uid://bjkeukurs4y6n" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086497.jpg" id="105_awhk2"]
+[ext_resource type="Texture2D" uid="uid://ci6cp2wjyeo4" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086498.jpg" id="106_u8igr"]
+[ext_resource type="Texture2D" uid="uid://b4plscwbca7vk" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086499.jpg" id="107_lpdo6"]
+[ext_resource type="Texture2D" uid="uid://ckw6enmsv1prm" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086500.jpg" id="108_c5flx"]
+[ext_resource type="Texture2D" uid="uid://dxlr28u2dxq58" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086501.jpg" id="109_o5sh2"]
+[ext_resource type="Texture2D" uid="uid://d0j60mbbpscpa" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086502.jpg" id="110_oa65i"]
+[ext_resource type="Texture2D" uid="uid://w6culcdeojcd" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086503.jpg" id="111_ianvl"]
+[ext_resource type="Texture2D" uid="uid://dcqls75lkm4x1" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086504.jpg" id="112_1v7s3"]
+[ext_resource type="Texture2D" uid="uid://dd0pjg8q724vt" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086505.jpg" id="113_v5vxs"]
+[ext_resource type="Texture2D" uid="uid://drvw4wfrvxmav" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086506.jpg" id="114_syeby"]
+[ext_resource type="Texture2D" uid="uid://dqihrn67kw2s8" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086507.jpg" id="115_d3mia"]
+[ext_resource type="Texture2D" uid="uid://d2p8wety7885g" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086508.jpg" id="116_g7goe"]
+[ext_resource type="Texture2D" uid="uid://dlkoy48twwxat" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086509.jpg" id="117_gpanq"]
+[ext_resource type="Texture2D" uid="uid://ba8iekq6ybf3h" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086510.jpg" id="118_oky73"]
+[ext_resource type="Texture2D" uid="uid://byprfo1lhelio" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086511.jpg" id="119_66jkx"]
+[ext_resource type="Texture2D" uid="uid://3rky483qwwgn" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086512.jpg" id="120_8sm87"]
+[ext_resource type="Texture2D" uid="uid://nchhac45bte6" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086513.jpg" id="121_6wjkw"]
+[ext_resource type="Texture2D" uid="uid://c0xtnfvk0irpj" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086514.jpg" id="122_fp40p"]
+[ext_resource type="Texture2D" uid="uid://bpm570s0giefm" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086515.jpg" id="123_bt8s2"]
+[ext_resource type="Texture2D" uid="uid://dkqtju33q1nfp" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086516.jpg" id="124_50ddb"]
+[ext_resource type="Texture2D" uid="uid://r14pck8jox8x" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086517.jpg" id="125_inyeo"]
+[ext_resource type="Texture2D" uid="uid://csmpqugtkxct" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086518.jpg" id="126_popst"]
+[ext_resource type="Script" uid="uid://b4qepv0w0l6wn" path="res://calabreso.gd" id="127_6a83v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lvalt"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,6 +157,371 @@ emission_texture = ExtResource("5_660lu")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87rbk"]
 material = SubResource("StandardMaterial3D_suuxw")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xj4g3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_60hli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6a83v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2l74r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u8ylo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m5krq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2mqn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2sabl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v0tot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_n0vu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fh5dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ogmgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e1omo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_andsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xhe8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1htcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1ra3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_yksu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pfkyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_uiqkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ktc27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mx5me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_8geer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6jcgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ousp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sjvmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3bp55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_w87mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_tdcsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_af4vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_v7tlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1i283")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4bymu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_b4ede")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_47pnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_v7e5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_vhbxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_yn42p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_aorp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6u8dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_io1od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_omc6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bvelr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_62eng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_klhm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_32vo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_cf6va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_xb25m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_qsaqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_y6a7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_vfpvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_uxdi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_rx3xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_e43wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_wmcl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_mumqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_05quo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_8te1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_7l0f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ckjqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_66j5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_bbpvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qvoto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_lq8nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_aywed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_vtyx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_4n8do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_58aws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_0b4oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_yp5v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_r6la8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_n6c1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_xwwin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_eab3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_6ijpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_x1s0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_frgpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4a665")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_lubs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_4o2gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_ibvyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_o1of4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_p1w0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_hkm2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_4vr5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_c2ltp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_8mtej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_qvbwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_nj8wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_iryrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_k84t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_lcoti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_2uoqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_8cs28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_rjx4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_6fjjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_x7wnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_n2ri0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_awhk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_u8igr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_lpdo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_c5flx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_o5sh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_oa65i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_ianvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_1v7s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_v5vxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_syeby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_d3mia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_g7goe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_gpanq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_oky73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_66jkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_8sm87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_6wjkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_fp40p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_bt8s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_50ddb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_inyeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_popst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
 
 [node name="IntroCutscene" type="Node3D" unique_id=1814017143]
 script = ExtResource("1_rlq26")
@@ -111,7 +596,6 @@ text = "BLAH BLAH"
 label_settings = SubResource("LabelSettings_lvalt")
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=611404197]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -199,6 +683,12 @@ mesh = SubResource("PlaneMesh_87rbk")
 
 [node name="notify" type="Marker3D" parent="Markers" unique_id=1553037765]
 transform = Transform3D(5.154033e-10, -0.020249607, 0.008599618, -1.0147945e-09, -0.008599618, -0.020249607, 0.022000002, 7.772132e-11, -1.1355209e-09, -0.9670671, 0.570999, 1.0647112)
+
+[node name="calabreso" type="AnimatedSprite3D" parent="." unique_id=365806873]
+transform = Transform3D(-1.5023058e-10, -0.0018112141, 0.0027962513, -6.3336565e-11, 0.0046604187, 0.0010867285, -0.004, -5.768781e-12, -1.2222803e-10, -0.9532205, 0.5355032, 1.0640981)
+sprite_frames = SubResource("SpriteFrames_xj4g3")
+frame_progress = 0.3885047
+script = ExtResource("127_6a83v")
 
 [editable path="casacharlesfix"]
 [editable path="NEGAOFINALIZADOfix"]

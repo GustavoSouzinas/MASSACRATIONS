@@ -10,7 +10,7 @@ var proxima_cena: String
 @onready var camera_rig = $CameraRig
 
 @onready var fade = $CanvasLayer/Fade
-
+@onready var skip_button = $CanvasLayer/DialogRoot/SkipButton
 @onready var dialog_box = $CanvasLayer/DialogRoot/DialogBox
 @onready var name_label = $CanvasLayer/DialogRoot/NameLabel
 @onready var text_label = $CanvasLayer/DialogRoot/TextLabel
@@ -19,10 +19,10 @@ var proxima_cena: String
 # CONFIG
 # =========================================================
 
-@export var fade_in_duration := 1.0
+@export var fade_in_duration := 2.0
 @export var fade_out_duration := 0.6
 @export var camera_move_duration := 0.05
-@export var text_speed := 0.02
+@export var text_speed := 0.04
 
 # =========================================================
 # CAMERAS
@@ -33,6 +33,30 @@ var cameras := {}
 # =========================================================
 # DIALOGOS
 # =========================================================
+
+@onready var dialog_sfx = $DialogSfx
+
+@onready var sfx_player = $SFXPlayer
+
+var sons = {
+	"notificacao": preload("res://assets/audios/iphonenotification.mp3"),
+}
+
+func tocar_som(nome):
+
+	if not sons.has(nome):
+		push_warning("Som não encontrado: " + nome)
+		return
+
+	sfx_player.stream = sons[nome]
+	sfx_player.play()
+
+var vozes = {
+	"Charles": preload("res://assets/audios/coé.mp3"),
+	"Carlão": preload("res://assets/audios/hã.mp3")
+}
+
+var voz_atual : AudioStream = null
 
 var dialogos = [
 
@@ -210,8 +234,9 @@ var dialogos = [
 	"move": {
 		"node": "Notificação",
 		"target": "Markers/notify",
-		"time": 0.2
+		"time": 0.2,
 	},
+		"sound": "notificacao"
 	},
 	
 	{
@@ -256,6 +281,8 @@ var texto_completo := ""
 func _ready():
 
 	registrar_cameras()
+
+	skip_button.pressed.connect(skip_cutscene)
 
 	fade.modulate.a = 1.0
 
@@ -360,6 +387,9 @@ func mostrar_dialogo():
 	if d.has("move"):
 		await executar_movimento(d["move"])
 
+	if d.has("sound"):
+		tocar_som(d["sound"])
+
 	# -----------------------------
 	# DIALOGO
 	# -----------------------------
@@ -373,7 +403,12 @@ func mostrar_dialogo():
 	if tem_texto:
 
 		name_label.text = d.get("nome", "")
-
+		
+		voz_atual = vozes.get(
+			d.get("nome", ""),
+			null
+		)
+		
 		await escrever_texto(
 			d.get("texto", "")
 		)
@@ -392,6 +427,8 @@ func escrever_texto(texto: String):
 
 	text_label.text = ""
 
+	var contador := 0
+
 	for letra in texto:
 
 		if not escrevendo:
@@ -399,6 +436,18 @@ func escrever_texto(texto: String):
 			return
 
 		text_label.text += letra
+
+		if letra != " " and letra != "." and letra != ",":
+
+			contador += 1
+
+			if contador % 2 == 0:
+
+				if voz_atual:
+
+					dialog_sfx.stream = voz_atual
+					dialog_sfx.pitch_scale = randf_range(0.95, 1.05)
+					dialog_sfx.play()
 
 		await get_tree().create_timer(text_speed).timeout
 
@@ -490,6 +539,29 @@ func finalizar_cutscene():
 		"modulate:a",
 		1.0,
 		fade_out_duration
+	)
+
+	await tween.finished
+
+	if proxima_cena != "":
+		get_tree().change_scene_to_file(proxima_cena)
+	else:
+		queue_free()
+
+func skip_cutscene():
+
+	pode_avancar = false
+
+	escrevendo = false
+	skip_evento = true
+
+	var tween = create_tween()
+
+	tween.tween_property(
+		fade,
+		"modulate:a",
+		1.0,
+		0.3
 	)
 
 	await tween.finished

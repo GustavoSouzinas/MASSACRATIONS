@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b2ck0y6nq8jus" path="res://cutscene1.gd" id="1_rlq26"]
 [ext_resource type="PackedScene" uid="uid://cme825wabr8s3" path="res://assets/props/iphone17.fbx" id="2_b82mh"]
+[ext_resource type="AudioStream" uid="uid://cnxdl5wbm5vfp" path="res://assets/audios/music/já que me ensinou a beber muffled.mp3" id="3_2l74r"]
 [ext_resource type="Texture2D" uid="uid://mj31vww3te7b" path="res://assets/textures/Dialogbox.png" id="3_87rbk"]
 [ext_resource type="PackedScene" uid="uid://bxmmjlj2twyvv" path="res://assets/props/NEGAOFINALIZADOfix.fbx" id="3_b82mh"]
 [ext_resource type="PackedScene" uid="uid://d1k2ftb1sy6ol" path="res://assets/props/casacharles/casacharlesfix.fbx" id="3_pcp2w"]
 [ext_resource type="FontFile" uid="uid://c2iahhs1qh0ka" path="res://assets/scenes/player/gui/fonts/BlockBlueprint.ttf" id="4_87rbk"]
+[ext_resource type="AudioStream" uid="uid://dbqtr8kqjq4wd" path="res://assets/audios/Som de rua do Brasil.mp3" id="4_u8ylo"]
 [ext_resource type="Texture2D" uid="uid://dj6aqgwh2uuo4" path="res://assets/textures/notificaçãoTigrinho.png" id="5_660lu"]
+[ext_resource type="Texture2D" uid="uid://cfeg0frma71bo" path="res://assets/textures/PULARbotao.png" id="7_m5krq"]
 [ext_resource type="Texture2D" uid="uid://s02v4pehbc8n" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086400.jpg" id="8_60hli"]
 [ext_resource type="Texture2D" uid="uid://c5gwuml2t35t6" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086401.jpg" id="9_6a83v"]
 [ext_resource type="Texture2D" uid="uid://j46bedgsuyvq" path="res://assets/textures/calabreso/WhatsApp Video 2026-05-30 at 21.24.21.mp4Calabreso_00086402.jpg" id="10_2l74r"]
@@ -538,7 +541,7 @@ fov = 54.7927
 [node name="CameraPoints" type="Node3D" parent="." unique_id=225149175]
 
 [node name="Cam1" type="Marker3D" parent="CameraPoints" unique_id=1912698195]
-transform = Transform3D(-0.70463413, -0.15357922, 0.69275105, 0, 0.976296, 0.2164396, -0.7095707, 0.15251076, -0.6879315, 0.1728718, 0.7268117, -0.16620779)
+transform = Transform3D(-0.6059883, -0.17217197, 0.7766175, 0, 0.976296, 0.2164396, -0.79547334, 0.1311599, -0.59162396, 0.1728718, 0.7268117, -0.16620779)
 
 [node name="Cam2" type="Marker3D" parent="CameraPoints" unique_id=272029537]
 transform = Transform3D(-0.35836792, -0.28849223, 0.8878877, 0, 0.95105654, 0.30901697, -0.9335804, 0.11074179, -0.34082815, -0.78125507, 0.58685094, 0.9095046)
@@ -558,9 +561,22 @@ transform = Transform3D(0.018635472, -0.007260796, 0, 0.007260796, 0.018635472, 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1729346275]
 root_node = NodePath("../CameraRig/Camera3D")
 
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1025425327]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=972632746]
+stream = ExtResource("3_2l74r")
+volume_db = -23.965
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=77770989]
+stream = ExtResource("4_u8ylo")
+volume_db = -19.94
+autoplay = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1763858115]
 
 [node name="DialogRoot" type="Node2D" parent="CanvasLayer" unique_id=834022863]
+position = Vector2(-13.455, 0)
 
 [node name="DialogBox" type="TextureRect" parent="CanvasLayer/DialogRoot" unique_id=800874008]
 anchors_preset = 7
@@ -583,7 +599,6 @@ offset_left = 459.0
 offset_top = 580.0
 offset_right = 856.0
 offset_bottom = 677.0
-text = "BLAH BLAHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 label_settings = SubResource("LabelSettings_usyqk")
 autowrap_mode = 1
 
@@ -592,8 +607,15 @@ offset_left = 459.0
 offset_top = 548.0
 offset_right = 597.0
 offset_bottom = 598.0
-text = "BLAH BLAH"
 label_settings = SubResource("LabelSettings_lvalt")
+
+[node name="SkipButton" type="Button" parent="CanvasLayer/DialogRoot" unique_id=2144400040]
+offset_left = 1015.455
+offset_top = 534.0
+offset_right = 1367.4551
+offset_bottom = 843.0
+icon = ExtResource("7_m5krq")
+flat = true
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=611404197]
 anchors_preset = 15
@@ -601,6 +623,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="casacharlesfix" parent="." unique_id=1406286197 instance=ExtResource("3_pcp2w")]
@@ -687,8 +710,10 @@ transform = Transform3D(5.154033e-10, -0.020249607, 0.008599618, -1.0147945e-09,
 [node name="calabreso" type="AnimatedSprite3D" parent="." unique_id=365806873]
 transform = Transform3D(-1.5023058e-10, -0.0018112141, 0.0027962513, -6.3336565e-11, 0.0046604187, 0.0010867285, -0.004, -5.768781e-12, -1.2222803e-10, -0.9532205, 0.5355032, 1.0640981)
 sprite_frames = SubResource("SpriteFrames_xj4g3")
-frame_progress = 0.3885047
+frame_progress = 0.15242995
 script = ExtResource("127_6a83v")
+
+[node name="DialogSfx" type="AudioStreamPlayer" parent="." unique_id=1883731668]
 
 [editable path="casacharlesfix"]
 [editable path="NEGAOFINALIZADOfix"]

@@ -12,15 +12,18 @@ extends CharacterBody3D
 
 @export var SPEED = 4.0
 
+
+
 # Distâncias tipo sentry
 @export var MIN_DISTANCE = 6.0   # muito perto → recua
 @export var MAX_DISTANCE = 16.0  # muito longe → aproxima
 
 @export var SHOOT_COOLDOWN = 1.0
+static var proximo_tiro_em := 0.0
 
 # projétil
 @export var bullet_scene: PackedScene
-@export var BULLET_SPEED = 30.0
+@export var BULLET_SPEED = 36.0
 
 # Áudio
 @onready var audio = $Naotemaura
@@ -99,6 +102,14 @@ func _physics_process(delta):
 func atirar():
 	if not can_shoot or not bullet_scene:
 		return
+		
+	var agora = Time.get_ticks_msec() / 1000.0
+
+	if agora < proximo_tiro_em:
+		return
+
+	# reserva o próximo slot de tiro
+	proximo_tiro_em = agora + 0.6
 
 	can_shoot = false
 
@@ -115,7 +126,32 @@ func atirar():
 
 	# direção
 	var target_pos = player.global_position + Vector3(0, 0.8, 0)
-	var dir = (target_pos - spawn_pos).normalized()
+
+	var player_vel = Vector3(
+		player.velocity.x,
+		0,
+		player.velocity.z
+	)
+
+	var dist = spawn_pos.distance_to(target_pos)
+	var tempo_de_voo = dist / BULLET_SPEED
+
+	var predicted_pos = target_pos + player_vel * tempo_de_voo
+
+	# 100% predictive até 8m
+	# 0% predictive a partir de 12m
+	var predictive_strength = 1.0 - clamp(
+		(dist - 8.0) / (15.0 - 8.0),
+		0.0,
+		1.0
+	)
+
+	var final_target = target_pos.lerp(
+		predicted_pos,
+		predictive_strength
+	)
+
+	var dir = (final_target - spawn_pos).normalized()
 
 	# aplica velocidade (depende do script da bala, é mentira)
 	if bullet.has_method("set_velocity"):

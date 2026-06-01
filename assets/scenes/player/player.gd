@@ -98,6 +98,11 @@ signal vida_alterada(valor)
 signal aura_alterada(valor)
 
 # --- MOVIMENTAÇÃO ---
+
+var tilt_atual := 0.0
+const MAX_TILT := deg_to_rad(2.0)
+const TILT_SPEED := 10.0
+
 var SPEED = 17
 const ACCEL = 0.75
 const JUMP_VELOCITY = 4.5
@@ -252,12 +257,27 @@ func _process(delta: float) -> void:
 	if shake_intensity > 0:
 		camera.h_offset = randf_range(-1.0, 1.0) * shake_intensity
 		camera.v_offset = randf_range(-1.0, 1.0) * shake_intensity
-		camera.rotation.z = randf_range(-0.05, 0.05) * shake_intensity
+		camera.rotation.z = tilt_atual + randf_range(-0.05, 0.05) * shake_intensity
 		shake_intensity = move_toward(shake_intensity, 0.0, delta * shake_decay)
 	elif not morto:
 		camera.h_offset = 0
 		camera.v_offset = 0
-		camera.rotation.z = move_toward(camera.rotation.z, 0, delta)
+		camera.rotation.z = tilt_atual
+
+	# 3. SISTEMA DE TILT CAMÊRA
+	var input_lateral := 0.0
+
+	if Input.is_key_pressed(KEY_A):
+		input_lateral -= 1.0
+
+	if Input.is_key_pressed(KEY_D):
+		input_lateral += 1.0
+
+	var tilt_alvo = -input_lateral * MAX_TILT
+
+	tilt_atual = lerp(tilt_atual, tilt_alvo, delta * TILT_SPEED)
+
+
 
 func _physics_process(delta: float) -> void:
 

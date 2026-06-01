@@ -4,6 +4,8 @@ extends Node3D
 @export var spawn_time := 2.0
 @export var max_enemies := 5
 
+@export var ativo := true
+
 var current_enemies := 0
 
 func _ready():
@@ -12,6 +14,9 @@ func _ready():
 func spawn_loop():
 	while true:
 		await get_tree().create_timer(spawn_time).timeout
+		
+		if not ativo:
+			continue
 		
 		if current_enemies < max_enemies:
 			spawn_enemy()

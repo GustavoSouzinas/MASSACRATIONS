@@ -9,7 +9,7 @@ var pos_base = Vector2.ZERO
 func _ready():
 	pos_base = position
 
-func _process(delta):
+func _process(_delta):
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
 		return

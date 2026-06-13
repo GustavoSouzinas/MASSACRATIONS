@@ -7,7 +7,7 @@ func _ready():
 	if player:
 		max_value = player.bateria_max
 
-func _process(delta):
+func _process(_delta):
 	if not player:
 		return
 	max_value = player.bateria_max

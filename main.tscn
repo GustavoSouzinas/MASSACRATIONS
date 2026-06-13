@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://c1hlv1iyn4sk3"]
 
 [ext_resource type="Script" uid="uid://ov4cppvnpyff" path="res://assets/scenes/player/player.gd" id="1_ig7tw"]
-[ext_resource type="AudioStream" uid="uid://c82v5joth18ip" path="res://assets/audios/music/massacrationdance.mp3" id="2_lswn8"]
 [ext_resource type="Texture2D" uid="uid://dxbkxaoxjmr0g" path="res://assets/sprites/guns/cumbuca/c1.png" id="3_82xsv"]
 [ext_resource type="Script" uid="uid://xrgvygeyas3d" path="res://ost.gd" id="3_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://goflllgpwkaf" path="res://assets/audios/music/SorrisoRonaldo.mp3" id="3_d5iia"]
 [ext_resource type="Texture2D" uid="uid://d3ha6hehw2u3p" path="res://assets/sprites/guns/savubu/output/f1.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://3qyfye5agd7x" path="res://assets/sprites/guns/cumbuca/c2.png" id="4_getpj"]
 [ext_resource type="Texture2D" uid="uid://bbn5unwhwwdq" path="res://assets/sprites/guns/savubu/output/f2.png" id="4_kek77"]
@@ -121,6 +121,11 @@
 [ext_resource type="Script" uid="uid://dis8vwenp0iqg" path="res://streak.gd" id="90_jbvwl"]
 [ext_resource type="PackedScene" uid="uid://cgodqmoveqq1i" path="res://assets/scenes/spawner.tscn" id="91_h6isl"]
 [ext_resource type="PackedScene" uid="uid://bmy21nldrmg52" path="res://assets/scenes/enemy/cria/cria.tscn" id="94_lwnsi"]
+[ext_resource type="Texture2D" uid="uid://bydmb0ikjmlyw" path="res://assets/scenes/player/gui/mp3-player-clean.png" id="115_1iygd"]
+[ext_resource type="Script" uid="uid://bhd3hdta0fl6n" path="res://mp3_icon.gd" id="116_qwt6e"]
+[ext_resource type="FontFile" uid="uid://buipqrc44u5b1" path="res://assets/scenes/player/gui/fonts/ticketing.regular.ttf" id="117_1iygd"]
+[ext_resource type="Script" uid="uid://dkjxx8fh3mjnp" path="res://song_name.gd" id="117_off2o"]
+[ext_resource type="Script" uid="uid://dxxp8wyt74rp1" path="res://spectrum_visualizer.gd" id="118_tttfs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k2k6"]
 size = Vector3(5.7018433, 0.51745605, 4.864258)
@@ -382,13 +387,13 @@ data = PackedByteArray("SUQzBAAAAAAATlRJVDIAAAARAAADY2xhc3NpY19tY19odXJ0AFRDT04A
 
 [sub_resource type="LabelSettings" id="LabelSettings_h8e4i"]
 font = ExtResource("35_h8e4i")
-font_size = 55
+font_size = 99
 outline_size = 11
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lmeg"]
 font = ExtResource("35_h8e4i")
-font_size = 30
+font_size = 38
 
 [sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
 font = ExtResource("35_h8e4i")
@@ -403,9 +408,12 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jbvwl"]
 font = ExtResource("35_h8e4i")
-font_size = 70
+font_size = 85
 outline_size = 9
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5xqc"]
+font = ExtResource("117_1iygd")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jq2sk"]
 panorama = ExtResource("18_jq2sk")
@@ -441,8 +449,9 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="OST" type="AudioStreamPlayer" parent="map" unique_id=1620934163]
-stream = ExtResource("2_lswn8")
+stream = ExtResource("3_d5iia")
 autoplay = true
+bus = &"Music"
 script = ExtResource("3_a6jrf")
 
 [node name="savubu_pickup" parent="map" unique_id=118201621 instance=ExtResource("5_seu75")]
@@ -498,6 +507,8 @@ stream = SubResource("AudioStreamMP3_getpj")
 [node name="dead" type="AudioStreamPlayer3D" parent="player" unique_id=1824439716]
 
 [node name="gui" type="CanvasLayer" parent="." unique_id=1816409122]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="aura_vinheta" type="TextureRect" parent="gui" unique_id=798163340]
 offset_right = 1280.0
@@ -529,10 +540,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -11.0
-offset_top = -10.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -289.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -578,11 +589,12 @@ texture = ExtResource("25_0odxb")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 198.0
-offset_top = -99.0
-offset_right = 430.0
-offset_bottom = -38.0
+offset_left = 184.815
+offset_top = -462.43597
+offset_right = 746.815
+offset_bottom = -361.43597
 grow_vertical = 0
+scale = Vector2(0.585, 0.585)
 theme_override_font_sizes/font_size = 44
 text = "TEMPLATE"
 label_settings = SubResource("LabelSettings_h8e4i")
@@ -594,10 +606,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -235.0
-offset_right = 55.0
-offset_bottom = -190.0
+offset_left = -382.75
+offset_top = -431.25
+offset_right = -257.75
+offset_bottom = -375.25
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(62.5, 22.5)
@@ -744,14 +756,52 @@ vertical_alignment = 1
 
 [node name="streak" type="Label" parent="gui/Control" unique_id=1828190662]
 layout_mode = 1
-offset_left = 64.255
-offset_right = 94.25504
-offset_bottom = 71.0
+offset_left = 79.31
+offset_right = 116.31
+offset_bottom = 86.0
 pivot_offset = Vector2(16.5, 36.5)
 text = "1"
 label_settings = SubResource("LabelSettings_jbvwl")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="mp3_icon" type="TextureRect" parent="gui" unique_id=346748908]
+offset_left = -44.02
+offset_top = -11.552
+offset_right = 362.98203
+offset_bottom = 128.448
+scale = Vector2(0.625, 0.625)
+pivot_offset = Vector2(203.5, 70)
+texture = ExtResource("115_1iygd")
+script = ExtResource("116_qwt6e")
+base_scale = 0.7
+
+[node name="TextArea" type="Control" parent="gui/mp3_icon" unique_id=80522885]
+clip_contents = true
+anchors_preset = 0
+offset_left = 149.755
+offset_top = 47.708
+offset_right = 262.71808
+offset_bottom = 87.70799
+
+[node name="SongName" type="Label" parent="gui/mp3_icon/TextArea" unique_id=1929319415]
+layout_mode = 0
+offset_left = -219.666
+offset_top = 5.641
+offset_right = -98.665985
+offset_bottom = 28.640999
+text = "ronaldoronaldo"
+label_settings = SubResource("LabelSettings_g5xqc")
+script = ExtResource("117_off2o")
+speed = 70.0
+
+[node name="SpectrumVisualizer" type="Control" parent="gui/mp3_icon" unique_id=1907299454]
+anchors_preset = 0
+offset_left = 151.60649
+offset_top = 68.078705
+offset_right = 263.6435
+offset_bottom = 84.93054
+script = ExtResource("118_tttfs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=407051975]
 environment = SubResource("Environment_dg77c")

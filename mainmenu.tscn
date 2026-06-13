@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=831199691]
 layout_mode = 1
@@ -28,9 +29,10 @@ offset_left = 192.0
 offset_top = 410.0
 offset_right = 603.0
 offset_bottom = 512.0
+scale = Vector2(0.635, 0.635)
 tooltip_text = "APERTA LOGO"
 theme_override_colors/font_color = Color(1, 0, 0.019607844, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_igs2m")
 text = "ESSE BOTAO FAZ O JOGO
 SER JOGADO"

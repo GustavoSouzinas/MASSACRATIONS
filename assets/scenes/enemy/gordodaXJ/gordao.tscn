@@ -5,8 +5,45 @@
 [ext_resource type="AudioStream" uid="uid://dugskjcoo3133" path="res://assets/scenes/enemy/gordodaXJ/motoacelera.mp3" id="2_d84f0"]
 [ext_resource type="Script" uid="uid://ci7es4f5winba" path="res://assets/scenes/enemy/gordodaXJ/gordaoXJ.gd" id="2_jyfbt"]
 [ext_resource type="PackedScene" uid="uid://ctweg6ddh8i5c" path="res://assets/scenes/enemy/gordodaXJ/gordinhoXJ.fbx" id="3_d84f0"]
+[ext_resource type="Shader" uid="uid://dlsr1sj3f3lsm" path="res://addons/GPUTrail/shaders/trail.gdshader" id="6_yvvwk"]
+[ext_resource type="Shader" uid="uid://dknayv8ljaovo" path="res://addons/GPUTrail/shaders/trail_draw_pass.gdshader" id="7_s586v"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail/defaults/texture.tres" id="8_bcmt3"]
+[ext_resource type="Script" uid="uid://b7a1kemh7y1hi" path="res://addons/GPUTrail/GPUTrail3D.gd" id="9_xlx0f"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qlmac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2yu33"]
+shader = ExtResource("6_yvvwk")
+
+[sub_resource type="Gradient" id="Gradient_jap2d"]
+offsets = PackedFloat32Array(0.012048192, 1)
+colors = PackedColorArray(0.8544353, 0.000581612, 0.85442966, 0.56078434, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i8b5f"]
+gradient = SubResource("Gradient_jap2d")
+
+[sub_resource type="Curve" id="Curve_cywug"]
+bake_resolution = 16
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fynkw"]
+curve = SubResource("Curve_cywug")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwj20"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_s586v")
+shader_parameter/tex = ExtResource("8_bcmt3")
+shader_parameter/mask_strength = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_i8b5f")
+shader_parameter/curve = SubResource("CurveTexture_fynkw")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 44
+
+[sub_resource type="QuadMesh" id="QuadMesh_6u62h"]
+material = SubResource("ShaderMaterial_rwj20")
 
 [node name="enemy" type="CharacterBody3D" unique_id=812455656]
 collision_layer = 4
@@ -34,3 +71,19 @@ spot_angle = 34.737984
 
 [node name="gordinhoXJ" parent="." unique_id=1913004531 instance=ExtResource("3_d84f0")]
 transform = Transform3D(-2.055, 0, -3.1029637e-07, 0, 2.055, 0, 3.1029637e-07, 0, -2.055, -0.049648285, -0.9800573, -0.26596653)
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="." unique_id=1011781747]
+transform = Transform3D(0.305, 0, 0, 0, -1.3331974e-08, -0.305, 0, 0.305, -1.3331974e-08, 0, 0.75348806, 0.42303473)
+amount = 100
+lifetime = 100.0
+explosiveness = 1.0
+fixed_fps = 143
+process_material = SubResource("ShaderMaterial_2yu33")
+draw_pass_1 = SubResource("QuadMesh_6u62h")
+script = ExtResource("9_xlx0f")
+length_seconds = 0.6993006993006993
+color_ramp = SubResource("GradientTexture1D_i8b5f")
+curve = SubResource("CurveTexture_fynkw")
+billboard = true
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://b7a1kemh7y1hi"

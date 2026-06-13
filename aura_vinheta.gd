@@ -8,7 +8,7 @@ var aura_alta = false
 func _ready():
 	modulate.a = 0.0
 
-func _process(delta):
+func _process(_delta):
 
 	if !aura:
 		return

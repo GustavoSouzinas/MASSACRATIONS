@@ -32,7 +32,7 @@ func _on_body_entered(body):
 
 
 #parry
-func parry(player):
+func parry(_player):
 	if parried:
 		return
 

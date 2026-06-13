@@ -2,7 +2,7 @@ extends Label
 
 @onready var player = get_tree().get_first_node_in_group("player")
 
-func _process(delta):
+func _process(_delta):
 	if player:
 		var arma = player.aparato_atual
 		var atual = player.ammo[arma]

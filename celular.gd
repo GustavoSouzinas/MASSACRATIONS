@@ -8,7 +8,7 @@ var original_position := Vector2.ZERO
 func _ready():
 	original_position = position
 
-func _process(delta):
+func _process(_delta):
 	if not player:
 		return
 

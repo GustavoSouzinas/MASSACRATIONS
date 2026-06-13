@@ -389,7 +389,7 @@ func arremessar_objeto(cena, audio, forca := 25.0):
 
 	if novo_corpo is RigidBody3D:
 		var direcao_tiro = -camera.global_transform.basis.z
-		direcao_tiro = direcao_tiro.rotated(Vector3.UP, deg_to_rad(1.6))
+		direcao_tiro = direcao_tiro.rotated(Vector3.UP, deg_to_rad(0.0))
 
 		novo_corpo.apply_central_impulse(direcao_tiro * forca)
 		novo_corpo.apply_torque_impulse(
@@ -467,7 +467,7 @@ func cumbuca_shoot():
 
 func calcular_cortisol():
 	var origem = global_position
-	var raio = 15.0
+	var raio = 20.0
 	var count = 0
 	
 	for enemy in get_tree().get_nodes_in_group("enemies"):

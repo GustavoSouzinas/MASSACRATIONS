@@ -7,7 +7,7 @@ extends Control
 @onready var text = $Label
 var tava_cheio = false
 
-func _process(delta):
+func _process(_delta):
 	if not player:
 		return
 
